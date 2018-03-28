@@ -1,0 +1,1283 @@
+/******************** Font *************************/
+/******************* end Font **********************/
+/* line 39, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+html {
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 43, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+body {
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+}
+
+/* line 47, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.clear {
+  display: block;
+  clear: both;
+  visibility: hidden;
+}
+
+/* line 52, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.wrapper {
+  overflow: hidden;
+}
+
+/* line 56, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+header {
+  padding-top: 50px;
+  background-color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 999999;
+}
+
+/* line 64, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+header .header-box {
+  padding-bottom: 50px;
+}
+
+/* line 67, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+header .header-mid-col {
+  text-align: center;
+}
+
+/* line 70, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+header .mainlogo {
+  display: inline-block;
+  width: auto;
+  height: auto;
+}
+
+/* line 74, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+header .mainlogo img {
+  width: 190px;
+  height: auto;
+}
+
+/* line 78, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+header .mainlogo h1 {
+  display: none;
+}
+
+/* line 83, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+header .mainmenu-holder .mainmenu {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+/* line 90, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+header .mainmenu-holder .mainmenu i {
+  color: rgba(29, 30, 28, 0.4);
+  font-size: 20px;
+  display: inline-block;
+}
+
+/* line 94, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+header .mainmenu-holder .mainmenu i:after {
+  font-family: 'FontAwesome';
+  content: "\f0c9";
+}
+
+/* line 101, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+header .mainmenu-holder.active .mainmenu {
+  border-bottom: 1px solid black;
+}
+
+/* line 104, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+header .mainmenu-holder.active .mainmenu i:after {
+  content: "\f00d";
+}
+
+/* line 112, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+header .member-menu {
+  float: right;
+}
+
+/* line 114, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+header .member-menu > img {
+  width: 23px;
+  height: auto;
+}
+
+/* line 119, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+header .header-line {
+  display: block;
+  margin-top: 0;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 0;
+  border-top: 1px solid #b2b2b2;
+}
+
+/* line 129, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu {
+  display: none;
+  overflow: auto;
+  position: fixed;
+  background-color: white;
+  margin-left: -15px;
+  margin-top: 10px;
+  height: 100%;
+  width: 250px;
+  padding-bottom: 170px;
+}
+
+/* line 140, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid black;
+  display: block;
+}
+
+/* line 17, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu > ul:after {
+  content: "";
+  clear: both;
+  display: block;
+  visibility: hidden;
+}
+
+/* line 148, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu > ul > li > a {
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  -moz-transition: all 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+/* line 155, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu > ul > li > a:hover {
+  background-color: black;
+  color: white;
+}
+
+/* line 162, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu .social-block {
+  border-bottom: 1px solid black;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/* line 17, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu .social-block:after {
+  content: "";
+  clear: both;
+  display: block;
+  visibility: hidden;
+}
+
+/* line 167, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu .social-block ul {
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  width: 100%;
+}
+
+/* line 174, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu .social-block ul li {
+  float: left;
+  display: inline-block;
+}
+
+/* line 177, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu .social-block ul li a {
+  padding: 15px;
+  -moz-transition: all 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+/* line 180, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu .social-block ul li a img {
+  height: 15px;
+  width: auto;
+}
+
+/* line 184, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu .social-block ul li a:hover {
+  opacity: 0.5;
+}
+
+/* line 194, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu .lang-menu .lang-dropdown a {
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  -moz-transition: all 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+/* line 201, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu .lang-menu .lang-dropdown a:hover {
+  background-color: black;
+  color: white;
+}
+
+/* line 205, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu .lang-menu .lang-dropdown a i {
+  margin-left: 10px;
+  -moz-transition: all 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+/* line 208, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu .lang-menu .lang-dropdown a i:after {
+  font-family: 'FontAwesome';
+  content: "\f107";
+}
+
+/* line 215, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu .lang-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 220, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu .lang-menu ul li a {
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  -moz-transition: all 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+/* line 227, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu .lang-menu ul li a:hover {
+  background-color: black;
+  color: white;
+}
+
+/* line 234, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu .lang-menu .lang-popover {
+  display: none;
+}
+
+/* line 237, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu .lang-menu.active .lang-dropdown a {
+  background-color: black;
+  color: white;
+}
+
+/* line 242, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.slide-menu .lang-menu.active .lang-dropdown i:after {
+  content: "\f106";
+}
+
+/* line 250, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.top-nav {
+  margin-top: 170px;
+  padding-bottom: 50px;
+}
+
+/* line 253, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.top-nav .header-category-menu {
+  text-align: center;
+}
+
+/* line 255, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.top-nav .header-category-menu ul {
+  display: inline-block;
+  list-style: none;
+}
+
+/* line 258, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.top-nav .header-category-menu ul li {
+  float: left;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* line 262, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.top-nav .header-category-menu ul li:first-child {
+  padding-left: 0;
+}
+
+/* line 265, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.top-nav .header-category-menu ul li:last-child {
+  padding-right: 0;
+}
+
+/* line 268, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.top-nav .header-category-menu ul li a {
+  padding: 7px 13px;
+  display: block;
+  border: 1px solid transparent;
+  font-family: "LemonMilklight", sans-serif;
+  font-size: 0.95em;
+  letter-spacing: 0.08em;
+  color: #6c6c6c;
+  text-decoration: none;
+  -moz-transition: all 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+/* line 278, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.top-nav .header-category-menu ul li a:hover {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  color: black;
+}
+
+/* line 284, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.top-nav .header-category-menu ul li.active a {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  color: black;
+}
+
+/* line 293, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+footer {
+  background-color: #150415;
+  padding-top: 70px;
+  padding-bottom: 50px;
+}
+
+/* line 297, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+footer p {
+  color: white;
+  font-size: 1.3em;
+  letter-spacing: 0.03em;
+}
+
+/* line 302, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+footer .subscribe {
+  color: white;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.08em;
+  display: block;
+  border: 1px solid #ed4848;
+  padding: 5px;
+  text-decoration: none;
+  margin-top: 15px;
+  -moz-transition: all 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+/* line 314, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+footer .subscribe:hover {
+  background-color: #ed4848;
+}
+
+/* line 318, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+footer .copyright-text {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1.3em;
+  color: #95989a;
+}
+
+/* line 325, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.footer-menu {
+  list-style: none;
+  column-count: 2;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 330, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.footer-menu li {
+  padding: 5px;
+}
+
+/* line 332, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.footer-menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  -moz-transition: all 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+/* line 339, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.footer-menu li a:hover {
+  color: #ed4848;
+}
+
+/* line 345, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.feature-banner {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 45px;
+  position: relative;
+}
+
+/* line 350, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.feature-banner img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 354, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.feature-banner .vid-time-holder {
+  max-width: 1140px;
+  margin: auto;
+  position: relative;
+  bottom: 0;
+}
+
+/* line 362, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+fieldset.featured-header {
+  border-top: 1px solid !important;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  color: #b2b2b2;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 371, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+fieldset.featured-header legend {
+  width: auto !important;
+  -webkit-padding-start: 50px;
+  -webkit-padding-end: 50px;
+  background: transparent;
+  font-family: "LemonMilkbold", sans-serif;
+  font-weight: normal;
+  border-bottom: 0;
+  color: black;
+  font-size: 1.7em;
+  letter-spacing: 0.08em;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+/* line 389, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.feature-section {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+/* line 393, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.thumb-list-child {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* line 396, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.thumb-list-child .thumb-cover {
+  position: relative;
+}
+
+/* line 398, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.thumb-list-child .thumb-cover img {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* line 404, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.thumb-list-child .thumb-cover a {
+  display: block;
+}
+
+/* line 408, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.thumb-list-child .thumb-caption {
+  margin-top: 10px;
+}
+
+/* line 410, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.thumb-list-child .thumb-caption a {
+  color: #969696;
+  font-style: italic;
+  font-weight: lighter;
+  text-decoration: none;
+}
+
+/* line 415, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.thumb-list-child .thumb-caption a span {
+  display: block;
+  width: 100%;
+  font-size: 0.9em;
+}
+
+/* line 424, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.vid-time-num {
+  background-image: url(../images/common/vid-time-bg.svg);
+  color: white;
+  padding: 5px 15px 5px 10px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  color: white;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* line 436, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.separator-line {
+  display: block;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  border-top: 1px solid #b2b2b2;
+}
+
+/* line 442, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.editor {
+  padding-bottom: 15px;
+}
+
+/* line 444, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.editor-banner {
+  margin-top: 45px;
+  margin-left: -15px;
+  margin-right: -15px;
+  position: relative;
+}
+
+/* line 449, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.editor-banner img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 456, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.most-section {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* line 459, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.most-section h3 {
+  text-align: center;
+  font-size: 1.7em;
+  letter-spacing: 0.03em;
+  margin-bottom: 30px;
+  width: 100%;
+  text-align: center;
+  top: -60px;
+}
+
+/* line 468, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.most-section .vid-row {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* line 471, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.most-section .vid-row .col:first-child .section-grid {
+  border-right: 1px solid #b2b2b2;
+}
+
+/* line 475, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.most-section .thumb-list-child {
+  margin: 0;
+}
+
+/* line 480, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.editor-story h2 {
+  font-size: 2.3em;
+  font-family: "LemonMilkbold", sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* line 488, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.editor-story h3 {
+  font-size: 1.3em;
+  font-family: "LemonMilkbold", sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* line 496, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.editor-story hr {
+  border-top: 1px solid #ed4848;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* line 502, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.editor-story .direct-img img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 510, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.editor-story p {
+  color: #b2b2b2;
+  font-family: "LemonMilklight", sans-serif;
+  letter-spacing: 0.05em;
+  line-height: 2em;
+  font-size: 0.8em;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* line 521, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+section .section-title {
+  margin-top: 45px;
+  margin-bottom: 45px;
+  font-family: "LemonMilkbold", sans-serif;
+  font-size: 1.7em;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: black;
+  text-align: center;
+}
+
+/* line 533, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+section.recent-view .section-title {
+  text-align: left;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* line 540, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.bottom-social {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+/* line 543, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.bottom-social ul {
+  list-style: none;
+  display: inline-block;
+}
+
+/* line 546, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.bottom-social ul li {
+  float: left;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+/* line 550, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.bottom-social ul li:first-child {
+  padding-left: 0;
+}
+
+/* line 553, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.bottom-social ul li:last-child {
+  padding-right: 0;
+}
+
+/* line 557, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.bottom-social ul li a .social-ico {
+  height: 18px;
+  width: auto;
+}
+
+/* line 565, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.category-banner {
+  position: relative;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 30px;
+}
+
+/* line 570, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.category-banner img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 575, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.banner-title {
+  position: absolute;
+  max-width: 45%;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: white;
+  font-size: 7em;
+  font-weight: bold;
+  line-height: 1em;
+  letter-spacing: 0.08em;
+}
+
+/* line 592, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.feature-playlist {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* line 597, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.category-thumb-list .selector-holder {
+  margin-top: 45px;
+}
+
+/* line 600, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.category-thumb-list .top-view-all {
+  margin-top: 45px;
+  float: right;
+}
+
+/* line 604, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.category-thumb-list .loadmore-bar {
+  text-align: center;
+}
+
+/* line 607, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.category-thumb-list .loadmore {
+  margin-top: 30px;
+  display: inline-block;
+  float: none;
+}
+
+/* line 613, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.flag-row {
+  text-align: left;
+  color: black;
+  font-family: "LemonMilklight", sans-serif;
+  font-size: 1.25em;
+  margin-top: 30px;
+}
+
+/* line 620, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.normal-button {
+  padding: 10px 15px;
+  border: 1px solid #b2b2b2;
+  text-decoration: none;
+  color: #b2b2b2;
+  font-family: "LemonMilklight", sans-serif;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+/* line 628, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.normal-button:hover {
+  color: black;
+  text-decoration: none;
+}
+
+/* line 633, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.selector-holder {
+  position: relative;
+  width: auto;
+  float: left;
+  border: 1px solid #b2b2b2;
+  padding: 10px;
+}
+
+/* line 639, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.selector-holder .ico {
+  position: absolute;
+  right: 0;
+  width: 11px;
+  height: auto;
+  right: 10px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+/* line 649, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.form-selector {
+  outline: none;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-padding-end: 20px;
+  -moz-padding-end: 20px;
+  -webkit-padding-start: 10px;
+  -moz-padding-start: 10px;
+  border-radius: 0;
+  border: none;
+  color: #b2b2b2;
+  font-family: "LemonMilklight", sans-serif;
+  font-size: 0.9em;
+}
+
+/* line 677, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.search-bar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 65px;
+}
+
+/* line 681, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.search-bar .col:first-child {
+  flex-grow: 9;
+  padding-right: 0;
+}
+
+/* line 685, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.search-bar input[type="text"] {
+  width: 100%;
+  margin-right: -15px;
+}
+
+/* line 689, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.search-bar .selector-holder {
+  float: right;
+}
+
+/* line 693, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+inputStyle, input[type="text"] {
+  border: 1px solid #b2b2b2;
+  padding: 10px;
+}
+
+/* line 700, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.filter-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 704, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.filter-menu li {
+  border-bottom: 1px solid #b2b2b2;
+}
+
+/* line 706, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.filter-menu li a {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: "LemonMilklight", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.95em;
+  color: #b2b2b2;
+  text-decoration: none;
+  -moz-transition: all 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+/* line 719, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.filter-menu li a:hover {
+  color: black;
+}
+
+/* line 725, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.side-bar-title {
+  color: black;
+  font-size: 1.2em;
+  border-bottom: 1px solid #b2b2b2;
+  padding-bottom: 10px;
+}
+
+/* line 731, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.video-cat-name {
+  color: #b2b2b2;
+  font-family: "LemonMilklight", sans-serif;
+  font-size: 0.95em;
+}
+
+/* line 736, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.video-counter {
+  color: #b2b2b2;
+  font-family: "LemonMilklight", sans-serif;
+  font-size: 0.95em;
+  text-align: right;
+}
+
+/* line 743, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.cat-meta hr {
+  border-top: 1px solid #b2b2b2;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 751, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.main-player {
+  position: relative;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+/* line 755, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.main-player .cover {
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+/* line 760, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.main-player .play-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: block;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+/* line 771, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.main-player .play-btn img {
+  max-width: 105px;
+  height: auto;
+}
+
+/* line 778, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.vote-box .vote-row {
+  display: inline-block;
+  width: auto;
+  position: relative;
+  top: 2px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* line 785, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.vote-box .vote-row a {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  background-color: #c6c7c9;
+  border-radius: 100%;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+/* line 793, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.vote-box .vote-row a.active {
+  background-color: black;
+}
+
+/* line 799, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.under-player-section {
+  margin-top: 22px;
+  margin-bottom: 50px;
+}
+
+/* line 802, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.under-player-section .under-player-child {
+  border-right: 1px solid #ed4848;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-family: "LemonMilklight", sans-serif;
+  font-size: 0.95em;
+  letter-spacing: 0.03em;
+  color: black;
+}
+
+/* line 811, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.under-player-section .under-player-child:last-child {
+  border: none;
+}
+
+/* line 814, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.under-player-section .under-player-child .ico {
+  height: 14px;
+  width: auto;
+  margin-right: 5px;
+}
+
+/* line 819, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.under-player-section .under-player-child a {
+  color: black;
+  text-decoration: none;
+}
+
+/* line 825, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.player-content {
+  height: 5em;
+  overflow: hidden;
+}
+
+/* line 828, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.player-content .normal-button {
+  float: right;
+}
+
+/* line 832, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.player-content .post-meta h2 {
+  font-size: 2.1em;
+  font-weight: bold;
+}
+
+/* line 836, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.player-content .post-meta span {
+  font-size: 1em;
+  font-style: italic;
+}
+
+/* line 841, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.player-content .content-section {
+  height: 2em;
+  overflow: hidden;
+  -moz-transition: all 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+/* line 846, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.player-content .related-list {
+  opacity: 0;
+  -moz-transition: all 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+/* line 851, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.player-content.active {
+  height: auto;
+}
+
+/* line 853, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.player-content.active .view-more {
+  display: none;
+  opacity: 0;
+}
+
+/* line 857, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.player-content.active .view-less {
+  opacity: 1;
+}
+
+/* line 860, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.player-content.active .related-list {
+  opacity: 1;
+}
+
+/* line 864, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.player-content.active .content-section {
+  height: auto;
+}
+
+/* line 871, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.playlist-section .thumb-list-child {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+/* line 875, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.playlist-section .thumb-caption {
+  margin-top: 0;
+}
+
+/* line 877, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.playlist-section .thumb-caption a {
+  font-size: 1.8em;
+}
+
+/* line 879, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.playlist-section .thumb-caption a span {
+  font-size: 0.55em;
+}
+
+/* line 886, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.content-section p {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: lighter;
+  line-height: 2.1em;
+}
+
+/* line 894, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.related-sidebar .top-btn {
+  text-align: right;
+}
+
+/* line 896, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.related-sidebar .top-btn a {
+  float: none;
+  display: inline-block;
+}
+
+/* line 901, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.related-sidebar .bottom-btn {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* line 904, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.related-sidebar .bottom-btn a {
+  float: none;
+  display: inline-block;
+}
+
+/* line 911, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.related-list h3 {
+  font-family: "LemonMilk", sans-serif;
+  font-size: 1.3em;
+}
+
+/* line 915, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.related-list .thumb-list-child {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 920, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.category-header {
+  padding-bottom: 50px;
+  position: relative;
+}
+
+/* line 923, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.category-header h2 {
+  text-align: center;
+  font-family: "LemonMilk", sans-serif;
+  font-size: 1.5em;
+}
+
+/* line 928, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.category-header .follow-box {
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: center;
+}
+
+/* line 934, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.category-header .follow-box span {
+  font-family: "LemonMilk", sans-serif;
+  font-size: 0.65em;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* line 940, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.category-header .follow-box a {
+  display: block;
+  border: 1px solid #ed4848;
+  font-family: "LemonMilkbold", sans-serif;
+  font-size: 0.8em;
+  padding: 5px 10px;
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+/* line 950, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.category-header .follow-box a:hover {
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
+/* line 958, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.thumb-slide {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+/* line 961, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.thumb-slide .bx-wrapper {
+  max-width: none !important;
+  width: 100%;
+  margin: 0;
+  float: right;
+}
+
+/* line 966, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.thumb-slide .bx-wrapper .bx-viewport {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  background: none;
+  left: auto;
+}
+
+/* line 975, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.thumb-slide .bx-wrapper .bx-controls-direction a {
+  width: 44px;
+  height: 44px;
+  top: 40%;
+  margin-top: -22px;
+  background-position: left top;
+}
+
+/* line 981, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.thumb-slide .bx-wrapper .bx-controls-direction a:hover {
+  background-position: left top;
+}
+
+/* line 986, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.thumb-slide .bx-wrapper .bx-prev {
+  background-image: url(../images/common/thumbslide-left.svg);
+  left: 0;
+}
+
+/* line 990, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.thumb-slide .bx-wrapper .bx-next {
+  background-image: url(../images/common/thumbslide-right.svg);
+  right: 0;
+}
+
+/* line 996, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.mostplay-title {
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* line 1000, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.mostplay-title h3 {
+  font-family: "LemonMilk", sans-serif;
+  font-size: 1.4em;
+}
+
+/* line 1004, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+.mostplay-title h4 {
+  font-family: "LemonMilk", sans-serif;
+  font-size: 0.95em;
+}
+
+/*********************** responsive *******************/
+@media (min-width: 1400px) {
+  /* line 1011, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+  .container, .container-fluid {
+    max-width: 1400px;
+    margin: auto;
+  }
+  /* line 1015, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry/css/layout.scss */
+  .full-width {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
