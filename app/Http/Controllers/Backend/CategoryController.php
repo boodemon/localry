@@ -76,7 +76,19 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $row = Category::where('id',$id)->first();
+        if( $row ){
+            $data = [
+                'code' => 200,
+                'data' => Category::fieldRows( $row )
+            ];
+        }else{ 
+            $data = [
+                'code' => 202,
+                'data' => []
+            ];
+        }
+        return response()->json($data);
     }
 
     /**
@@ -88,8 +100,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        $row = Category::where('id',$id)->first();
+        $row->subject = json_encode( $request->input('subject') );
+        $row->category_sort = $request->input('category_sort');
+        $row->category_type = 'menu';
+        $row->save();
+        return redirect()->back();    }
 
     /**
      * Remove the specified resource from storage.
@@ -99,6 +115,19 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ids = explode('-',$id);
+            if( Category::whereIn('id',$ids)->delete() ){
+                $result = [
+                    'result'    => 'successful',
+                    'code'      => 200
+                ];
+            }else{
+                $result = [
+                    'result'    => 'error',
+                    'msg'       => 'เกิดข้อผิดพลาดจากระบบไม่สามารถทำการลบข้อมูลได้ โปรดลองใหม่ภายหลัง',
+                    'code'      =>  204
+                ];
+            }
+        return Response()->json($result);
     }
 }

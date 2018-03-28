@@ -15,9 +15,12 @@
                     console.log('data', data);
                     if (data.code == 200) {
                         var res = data.data;
+                        $.each(res.subject,function(i,v){
+                            console.log('i => ', i ,' v => ', v );
+                            $('input[name="subject['+ i +']"').val( v );
+                        });
                         $('input[name="id"]').val(res.id);
-                        $('input[name="code"]').val(res.code);
-                        $('input[name="name"]').val(res.name);
+                        $('input[name="category_sort"]').val(res.category_sort);
                         $('input[name="_method"]').val('PUT');
 
                     }
