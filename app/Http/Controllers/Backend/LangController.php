@@ -17,7 +17,10 @@ class LangController extends Controller
      */
     public function index()
     {
-        $rows = Lang::orderBy('code')->orderBy('name')->paginate(24);
+        $rows = Lang::orderBy('lang_sort')
+                    ->orderBy('code')
+                    ->orderBy('name')
+                    ->paginate(24);
         $data = [
             '_breadcrumb'   => 'Language setting',
             'rows'          => $rows
@@ -46,6 +49,7 @@ class LangController extends Controller
         $row = new Lang;
         $row->code = $request->input('code');
         $row->name = $request->input('name');
+        $row->lang_sort = $request->input('lang_sort');
         $row->save();
         return redirect()->back();
     }
@@ -96,6 +100,7 @@ class LangController extends Controller
         $row = Lang::where('id',$id)->first();
         $row->code = $request->input('code');
         $row->name = $request->input('name');
+        $row->lang_sort = $request->input('lang_sort');
         $row->save();
         return redirect()->back();
     }

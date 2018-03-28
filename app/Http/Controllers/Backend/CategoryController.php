@@ -22,7 +22,14 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $rows = Category::orderBy('category_sort')->paginate('24');
+        $data = [
+            'rows' => $rows,
+            '_breadcrumb'   => 'CATEGORY MENU',
+            'langs'         => @json_decode($this->langs)
+        ];
+       
+        return view('backend.category.index',$data);
     }
 
     /**
@@ -32,7 +39,6 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -43,7 +49,12 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $row = new Category;
+        $row->subject = json_encode( $request->input('subject') );
+        $row->category_sort = $request->input('category_sort');
+        $row->category_type = 'menu';
+        $row->save();
+        return redirect()->back();
     }
 
     /**

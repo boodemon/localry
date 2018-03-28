@@ -2,15 +2,15 @@
 
     function frmlanguage() {
         this.clearInput = function () {
-            $('#frm-language').attr('action', _base + '/backend/setting/language');
+            $('#frm-language').attr('action', _base + '/backend/category');
             $('input[type="text"]').val('');
             $('input[name="id"]').val(0);
             $('input[name="_method"]').val('POST');
         }
         this.edit = function (id) {
-            $('#frm-language').attr('action', _base + '/backend/setting/language/' + id);
+            $('#frm-language').attr('action', _base + '/backend/category/' + id);
             $.ajax({
-                url: _base + '/backend/setting/language/' + id + '/edit',
+                url: _base + '/backend/category/' + id + '/edit',
                 success: function (data) {
                     console.log('data', data);
                     if (data.code == 200) {
@@ -18,7 +18,6 @@
                         $('input[name="id"]').val(res.id);
                         $('input[name="code"]').val(res.code);
                         $('input[name="name"]').val(res.name);
-                        $('input[name="lang_sort"]').val(res.lang_sort);
                         $('input[name="_method"]').val('PUT');
 
                     }
@@ -28,7 +27,7 @@
 
         this.delete = function (id) {
             $.ajax({
-                url: _base + '/backend/setting/language/' + id,
+                url: _base + '/backend/category/' + id,
                 method: 'POST',
                 data: { _token: $('input[name="_token"]').val(), _method: 'DELETE' },
                 success: function (data) {
@@ -44,7 +43,7 @@
             var frm = $input.closest('form');
             var inputName = $input.attr('name');
             $.ajax({
-                url: _base + '/backend/setting/language/checker',
+                url: _base + '/backend/category/checker',
                 data: {
                     _token: $('input[name="_token"]').val(),
                     type: inputName,
@@ -69,22 +68,22 @@
         }
 
         this.validate = function () {
-            var id   = $('input[name="id"]');
+            var id = $('input[name="id"]');
             var code = $('input[name="code"]');
             var name = $('input[name="name"]');
 
-                this.checker(code);
-                if (code.val() == '' || code.val() === null) {
-                    $('.require-code').html('<span class="text-require">* Please enter language code</span>');
-                } else {
-                    $('.require-code').html('');
-                }
+            this.checker(code);
+            if (code.val() == '' || code.val() === null) {
+                $('.require-code').html('<span class="text-require">* Please enter language code</span>');
+            } else {
+                $('.require-code').html('');
+            }
 
-                if (name.val() == '' || name.val() === null) {
-                    $('.require-name').html('<span class="text-require">* Please endter language name</span>');
-                } else {
-                    $('.require-name').html('');
-                }
+            if (name.val() == '' || name.val() === null) {
+                $('.require-name').html('<span class="text-require">* Please endter language name</span>');
+            } else {
+                $('.require-name').html('');
+            }
         }
 
 
@@ -95,8 +94,8 @@
     var frm = new frmlanguage();
     $('#btn-new').on('click', function () {
         frm.clearInput();
-        var count = $('.checkboxAll').length+1;
-        $('input[name="lang_sort"]').val( count );
+        var count = $('input[name="total"]').val();
+        $('input[name="category_sort"]').val( count );
         $('#modal-language').modal('show');
     });
 

@@ -13,6 +13,7 @@ class Lang extends Model
             'id'         => $row->id,
             'code'       => $row->code,
             'name'       => $row->name,
+            'lang_sort'  => $row->lang_sort,
             'created_at' => date('Y-m-d H:i:s', strtotime( $row->created_at) ),
             'updated_at' => date('Y-m-d H:i:s', strtotime( $row->updated_at) )
         ];
@@ -26,6 +27,6 @@ class Lang extends Model
                 $lang[] = Lang::fieldRows($row);
             }
         }
-        return $lang;
+        return json_encode($lang);
     }
 }

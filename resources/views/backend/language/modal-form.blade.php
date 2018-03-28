@@ -29,6 +29,13 @@
                 <span class="require-name"></span>
               </div>
             </div>
+            <div class="form-group row">
+              <label class="col-md-3 form-control-label">Sort : </label>
+              <div class="col-md-2">
+                <input type="text" class="form-control" name="lang_sort" id="lang_sort"/>
+                <span class="require-name"></span>
+              </div>
+            </div>
 
             <div class="form-groups text-right">
               <button type="submit" class="btn btn-primary">
