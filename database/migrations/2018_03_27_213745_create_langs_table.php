@@ -16,6 +16,7 @@ class CreateLangsTable extends Migration
             $table->increments('id');
             $table->string('code',2);
             $table->string('name',60);
+            $table->integer('lang_sort');
             $table->timestamps();
         });
     }

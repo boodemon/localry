@@ -73,7 +73,7 @@ class LangController extends Controller
         if( $row ){
             $data = [
                 'code' => 200,
-                'data' => Lang::arrField( $row )
+                'data' => Lang::fieldRows( $row )
             ];
         }else{ 
             $data = [
