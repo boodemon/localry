@@ -96,4 +96,17 @@ class Lib
     }
     return $yimg;
   }
+
+  public static function bcm($_breadcrumb){
+	  $bcm = '';
+		if( is_array($_breadcrumb) ){
+			$max = count($_breadcrumb)-1;
+			foreach( $_breadcrumb as $i => $text ){
+				$bcm .= '<li class="breadcrumb-item '.( $i == $max ? 'active':'' ).'">'. $text .'</li>';
+			}
+		}else{
+			$bcm .= '<li class="breadcrumb-item active">'. $_breadcrumb .'</li>';
+		}
+	return $bcm;
+  }
 }

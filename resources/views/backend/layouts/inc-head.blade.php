@@ -7,7 +7,7 @@
   <meta name="keyword" content="">
   <meta name="robots" CONTENT="noindex, nofollow">
   <link rel="shortcut icon" href="{{ asset('public/img/favicon.png') }}">
-  <title>SET CONFERENCE ORDER MANAMENT</title>
+  <title>LOCALRY BACKEND ADMINISTRATOR</title>
 
   <!-- Icons -->
   <link href="{{ asset('node_modules/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">

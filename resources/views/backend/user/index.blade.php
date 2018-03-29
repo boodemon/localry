@@ -39,7 +39,7 @@
                         {!! Lib::active( $row->active ) !!}
                     </td>
                     <td class="action">
-                        <a title="Edit" class="text-primary onEdit href="#" data-id="{{ $row->id }}" ><i class="icon-note"></i></a>
+                        <a title="Edit" class="text-primary onEdit" href="{{ url('backend/conttent/'. $row->id  ) }}" ><i class="icon-note"></i></a>
                          @if($row->id != 1)
                         <a title="Delete" class="text-danger onDelete" data-id="{{ $row->id }}" ><i class="icon-trash"></i></a>
                         @endif

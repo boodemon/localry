@@ -2,7 +2,7 @@
 @section('content')
     <div class="card">
       <div class="card-header">
-        <i class="fa fa-user"></i> Category menu
+        <i class="icon-directions"></i> Category menu
         <div class="pull-right">
             <button type="button" id="btn-new" data-id="0" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> New</button>
             <button type="button" class="btn btn-sm btn-danger btn-delete"><i class="fa fa-trash"></i> Delete</button>
@@ -35,7 +35,7 @@
                     <td>{{ $subject->$code }}</td>
                     @endforeach
                     <td class="action">
-                        <a title="Edit" class="text-primary onEdit href="#" data-id="{{ $row->id }}" ><i class="icon-note"></i></a>
+                        <a title="Edit" class="text-primary onEdit" href="#" data-id="{{ $row->id }}" ><i class="icon-note"></i></a>
                         <a title="Delete" class="text-danger onDelete" data-id="{{ $row->id }}" ><i class="icon-trash"></i></a>
                     </td>
                 </tr>

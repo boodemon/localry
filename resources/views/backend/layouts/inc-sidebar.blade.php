@@ -9,11 +9,11 @@
             UI Elements
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ url('backend/category') }}"><i class="icon-note"></i> CATEGORY</a>
+            <a class="nav-link" href="{{ url('backend/category') }}"><i class="icon-layers"></i> CATEGORY</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="{{ url('backend/content') }}"><i class="icon-note"></i> CONTENTS</a>
+            <a class="nav-link" href="{{ url('backend/content') }}"><i class="icon-notebook"></i> CONTENTS</a>
         </li>
 
         <li class="nav-item nav-dropdown">
