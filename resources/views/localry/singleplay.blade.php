@@ -180,11 +180,17 @@
 		$(document).ready(function(){
 			$(".view-more").click(function(e){
 				e.preventDefault();
-				$(".player-content").slideDown().addClass("active");
+				$(".content-section").slideDown().fadeIn();
+				setTimeout(function(){
+					$(".player-content").addClass("active");
+					$(".related-list").fadeIn();
+				}, 100);
 			})
 			$(".view-less").click(function(e){
 				e.preventDefault();
 				$(".player-content").removeClass("active");
+				$(".related-list").fadeOut('fast');
+				$(".content-section").slideUp().fadeOut();
 			})
 		})
 		var tag = document.createElement('script');
