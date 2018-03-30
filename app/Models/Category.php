@@ -19,4 +19,16 @@ class Category extends Model
             'updated_at' => date('Y-m-d H:i:s', strtotime( $row->updated_at) )
         ];
     }
+
+    public static function option($lang = '',$selected=''){
+        $rows = Category::orderBy('category_sort')->get();
+        $opt = '';
+        if( $rows ){
+            foreach( $rows as $row){
+                $subject = @json_decode( $row->subject);
+                $opt .= '<option value="'. $row->id .'" '. ( $row->id == $selected ? 'selected' : '' ) .'>'. $subject->$lang .'</option>';
+            }
+        }
+        return $opt;
+    }
 }

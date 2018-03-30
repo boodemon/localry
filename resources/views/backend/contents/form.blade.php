@@ -1,4 +1,10 @@
 @extends('backend.layouts.template')
+@section('stylesheet')
+	<link href="{{asset('public/lib/jquery-ui-1.12.1.custom/jquery-ui.css')}}" rel="stylesheet">
+	<link href="{{asset('public/lib/plupload-2.1.8/jquery.ui.plupload/css/jquery.ui.plupload.css')}}" rel="stylesheet">
+	<link href="{{asset('public/css/picture-preview.css')}}" rel="stylesheet">	
+@endsection
+
 @section('content')
     <div class="card">
         <div class="card-header">
@@ -13,19 +19,62 @@
       
         <div class="card-body">
             <!-- START FORM -->
-            <form enctype="multipart/form-data" class="form-horizontal" id="frm-language" method="POST" action="{{ $_action }}">
+            <form enctype="multipart/form-data" class="form-horizontal" id="frm-content" method="POST" action="{{ $_action }}">
                   <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
                   <input type="hidden" name="id" id="id" value="{{ $id }}" />
                   <input type="hidden" name="_method" value="{{ $_method }}" />
                 <div class="clearfix" style="margin-top:10px; padding-left:10px;">
                   <div class="form-group row" >
                     <label class="col-md-3 form-control-label">CATEGORY : </label>
-                    <div class="col-md-2">
-                      <select class="form-control" name="category_id"></select>
+                    <div class="col-md-4">
+                      <select class="form-control" name="category_id">
+                          {!! App\Models\Category::option( $langs[0]->code ) !!}
+                      </select>
                       <span class="require-category_id"></span>
                     </div>
                   </div>
+
+                  <div class="form-group row" >
+                    <label class="col-md-3 form-control-label">PHOTO GALLERY : </label>
+                    <div class="col-md-8">
+                        <div id="gallery" class="multiupload" upload-url="{{ url('backend/content/upload' ) }}">					
+                          <ul id="preview" class="preview">
+                            @if($gallery)
+                              @foreach($gallery as $g)
+                                <li id="gall_{{$g->id}}" class="img-gallery col-sm-4">
+                                  <a href="{{ url('backend/content/image-delete/'. $g->id  ) }}" class="color-red del-preview"><i class="icon-close"></i></a>
+                                  <b></b><img src="{{ asset( 'public/images/contents/'. $g->image_name ) }}" id="img-product-{{ $g->id }}" class="img-preview">
+                                  <input type="hidden" name="gimage[]" value="{{ $g->id }}" />
+                                </li>
+                              @endforeach
+                            @endif
+                          </ul>
+                          <button type="button" class="btn btn-default" id="btn-select"><i class="fa fa-image"></i> เลือกรูปภาพ</button>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row" >
+                    <label class="col-md-3 form-control-label">SORT : </label>
+                    <div class="col-md-2">
+                      <input type="text" class="form-control" name="category_sort" />
+                      <span class="require-category_sort"></span>
+                    </div>
+                  </div>
+
+                  <div class="form-group row" >
+                    <label class="col-md-3 form-control-label"></label>
+                    <div class="col-md-8">
+                        <label class="checkbox">
+                            <input type="checkbox" name="category_sort" /> ACTIVE
+                        </label>
+                      <span class="require-category_sort"></span>
+                    </div>
+                  </div>
+
                 </div>
+                <h4>CONTENT FROM</h4>
+                <hr>
               <!-- Start Tab language input header -->
               @if( $langs )
               <ul class="nav nav-tabs" role="tablist">
@@ -66,9 +115,9 @@
                         </div>
                     </div>
 
-                    <div class="form-group row">
-                        <label class="col-md-3 form-control-label">{{ $lang->code }} DETAIL : </label>
-                        <div class="col-md-8">
+                    <div class="form-group">
+                        <label class="form-control-label">{{ $lang->code }} DETAIL : </label>
+                        <div class="">
                           <textarea type="text" class="form-control editor" name="detail[{{ $lang->code }}]" ></textarea>
                           <span class="require-detail"></span>
                         </div>
@@ -81,36 +130,26 @@
               <!-- / End Tab language input -->
               <!-- /Form category input -->
               <div class="clearfix" style="margin-top:10px; padding-left:10px;">
-                  <div class="form-group row" >
-                    <label class="col-md-3 form-control-label">SORT : </label>
-                    <div class="col-md-2">
-                      <input type="text" class="form-control" name="category_sort" />
-                      <span class="require-category_sort"></span>
-                    </div>
-                  </div>
-
-                  <div class="form-group row" >
-                    <label class="col-md-3 form-control-label"></label>
-                    <div class="col-md-8">
-                        <label class="checkbox">
-                            <input type="checkbox" name="category_sort" /> ACTIVE
-                        </label>
-                      <span class="require-category_sort"></span>
-                    </div>
-                  </div>
-
                   <div class="form-groups text-right">
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-primary" id="btn-save">
                       <i class="fa fa-save"></i> SAVE</button>
-                    <button type="button" class="btn btn-danger"  data-dismiss="modal">
+                    <button type="button" class="btn btn-danger" >
                       <i class="fa fa-times"></i> CANCEL</button>
                   </div>
-                </div>
+              </div>
             </form>
             <!-- /End FORM -->
         </div>
     </div>
 @endsection
 @section('javascript')
-    <script src="{{ asset('public/build/backend/js/content-form.js') }}"></script>
+	<script src="{{ asset('public/lib/jquery-ui-1.12.1.custom/jquery-ui.js') }}"></script>
+	<script src="{{ asset('public/lib/tinymce/tinymce.min.js')}}" type="text/javascript"></script>
+  <script src="{{ asset('public/lib/tools/tiny-editor-v2.js')}}" type="text/javascript"></script>
+  
+	<script type="text/javascript" src="{{asset('public/lib/plupload-2.1.8/plupload.full.min.js') }}"></script>
+	<script type="text/javascript" src="{{asset('public/lib/plupload-2.1.8/jquery.plupload.queue/jquery.plupload.queue.min.js') }}"></script>
+	<script type="text/javascript" src="{{asset('public/lib/plupload-2.1.8/jquery.ui.plupload/jquery.ui.plupload.js') }}"></script>
+	<script type="text/javascript" src="{{asset('public/lib/tools/plupload-v2.js')}}"></script>
+  <script src="{{ asset('public/build/backend/js/content-form.js') }}"></script>
 @endsection

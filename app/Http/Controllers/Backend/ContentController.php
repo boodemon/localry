@@ -43,7 +43,8 @@ class ContentController extends Controller
             'langs'         => @json_decode($this->langs),
             'id'            => 0,
             '_method'        => 'POST',
-            '_action'       => url('backend/content')
+            '_action'       => url('backend/content'),
+            'gallery'       => []
         ];
        
         return view('backend.contents.form',$data);
@@ -102,7 +103,7 @@ class ContentController extends Controller
      */
     public function destroy($id)
     {
-$ids = explode('-',$id);
+        $ids = explode('-',$id);
             if( Content::whereIn('id',$ids)->delete() ){
                 $result = [
                     'result'    => 'successful',
@@ -115,5 +116,47 @@ $ids = explode('-',$id);
                     'code'      =>  204
                 ];
             }
-        return Response()->json($result);    }
+        return Response()->json($result);    
+    }
+        
+    public function upload(Request $request){
+		if($request->hasFile('file')){
+			$file 	= $request->file('file');
+			$path 	= 'public/images/contents/';
+			Lib::makeFolder($path);
+			$name = time().'-'. Lib::encodelink( $file->getClientOriginalName() );
+			$ftype = $file->getClientOriginalExtension();
+			$filename = $name;
+			// . '.' . $ftype;	
+			//Image::make($file)->heighten(87)->widen(87)->save($path . 'thumb/' . $filename);
+			Image::make($file)->save($path . $filename);
+							
+			$images = new Images;
+			$images->image_name 	= $filename;
+			$images->image_type		= 'content';
+			$images->save();
+			return $images->id;
+		}
+    }
+    	public function imageDelete($id = 0){
+		$row = Images::where('id',$id)->first();
+		@File::delete('public/images/picture/'. $row->image_name);
+		$row->delete();
+		return redirect()->back();
+	}
+	
+	public function sortable(Request $request){
+		$ref = $request->input('ref');
+		parse_str($request->input('pics'),$rows);
+		if(isset($rows['rows'])){
+			foreach($rows['rows'] as $key => $id ){
+				Images::where('id',$id)->update([
+					'image_sort' => $key,
+				]);
+				$sort = $key+1;
+				//echo '<p> '. $sort .' => '. $id .'</p>';
+			}
+		}
+
+	}
 }
