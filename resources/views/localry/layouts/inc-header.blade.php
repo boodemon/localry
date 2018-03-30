@@ -11,6 +11,45 @@
 							<li><a href="#">Playlists</a></li>
 						</ul>
 						<ul>
+							<li><a href="{{ url('category') }}">FASHION & BEAUTY</a></li>
+							<li><a href="{{ url('category') }}">FOOD</a></li>
+							<li><a href="{{ url('category') }}">LOVE & TRAVEL</a></li>
+							<li><a href="{{ url('category') }}">MUSIC</a></li>
+							<li><a href="{{ url('category') }}">PEOPLE</a></li>
+						</ul>
+						<ul>
+							<li><a href="#">ABOUT US</a></li>
+						</ul>
+						<ul>
+							<li><a href="#">CONTACT US</a></li>
+						</ul>
+						<div class="social-block">
+							<ul>
+								<li><a href="#"><img src="images/common/ico-fb.svg" class="social-ico"></a></li>
+								<li><a href="#"><img src="images/common/ico-tw.svg" class="social-ico"></a></li>
+								<li><a href="#"><img src="images/common/ico-vm.svg" class="social-ico"></a></li>
+								<li><a href="#"><img src="images/common/ico-ig.svg" class="social-ico"></a></li>
+								<li><a href="#"><img src="images/common/ico-yt.svg" class="social-ico"></a></li>
+							</ul>
+						</div>
+						<!--<div class="lang-menu">
+							<div class="lang-dropdown">
+								<a href="#">Languages <i class="fa"></i></a>
+
+							</div>
+							<div class="lang-popover">
+								<ul>
+									<li><a href="#">ภาษาไทย</a></li>
+									<li><a href="#">CHAINESE</a></li>
+								</ul>
+							</div>
+						</div>-->
+					</div>
+					<!--<div class="slide-menu">
+						<ul>
+							<li><a href="#">Playlists</a></li>
+						</ul>
+						<ul>
 							<li><a href="#">Series</a></li>
 						</ul>
 						<ul>
@@ -56,7 +95,7 @@
 								</ul>
 							</div>
 						</div>
-					</div>
+					</div>-->
 				</div>
 			</div>
 			<div class="col header-mid-col">
