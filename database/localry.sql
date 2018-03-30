@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.25-MariaDB)
-# Date: 2018-03-29 22:38:48
+# Date: 2018-03-30 07:53:26
 # Generator: MySQL-Front 6.0  (Build 2.20)
 
 
@@ -12,6 +12,7 @@ CREATE TABLE `attaches` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `ref_id` int(11) NOT NULL,
   `attach_file` mediumtext NOT NULL,
+  `attach_sort` int(11) DEFAULT '0',
   `attach_type` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,

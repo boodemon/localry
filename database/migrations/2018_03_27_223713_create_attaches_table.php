@@ -17,6 +17,7 @@ class CreateAttachesTable extends Migration
             $table->integer('ref_id');
             $table->mediumText('attach_file');
             $table->string('attach_type');
+            $table->integer('attach_sort');
             $table->timestamps();
         });
     }
