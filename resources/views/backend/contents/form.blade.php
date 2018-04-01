@@ -57,8 +57,8 @@
                   <div class="form-group row" >
                     <label class="col-md-3 form-control-label">SORT : </label>
                     <div class="col-md-2">
-                      <input type="text" class="form-control" name="category_sort" />
-                      <span class="require-category_sort"></span>
+                      <input type="text" class="form-control" name="content_sort" />
+                      <span class="require-content_sort"></span>
                     </div>
                   </div>
 
@@ -66,9 +66,9 @@
                     <label class="col-md-3 form-control-label"></label>
                     <div class="col-md-8">
                         <label class="checkbox">
-                            <input type="checkbox" name="category_sort" /> ACTIVE
+                            <input type="checkbox" name="published" /> PUBLISH
                         </label>
-                      <span class="require-category_sort"></span>
+                      <span class="require-published"></span>
                     </div>
                   </div>
 
@@ -98,11 +98,17 @@
                           <span class="require-video"></span>
                         </div>
                     </div>
+                    	<div class="form-group">
+                        <label class="col-md-4 control-label"></label>
+                        <div class="col-md-6" id="preview">
+                         
+                        </div>
+                      </div>
 
                     <div class="form-group row">
                         <label class="col-md-3 form-control-label">{{ $lang->code }} IMAGE FRONT : </label>
                         <div class="col-md-8">
-                          <input type="file" name="thumb[{{ $lang->code }}]" />
+                          <input type="file" name="thumb[{{ $lang->code }}]" class="thumb" />
                           <span class="require-thumb"></span>
                         </div>
                     </div>

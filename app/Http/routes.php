@@ -28,7 +28,10 @@ Route::resource('backend/login', 'Backend\AuthController');
 Route::group(['middleware'=>'admin','prefix' => 'backend'], function () {
     Route::resource('dashboard', 'Backend\DashboardController');
     Route::resource('category', 'Backend\CategoryController');
+	Route::post('content/sortable','Backend\ContentController@sortable');
+    Route::post('content/upload','Backend\ContentController@upload');
     Route::resource('content', 'Backend\ContentController');
+
 
     // SETTING MENU //
     Route::post('setting/language/checker', 'Backend\LangController@checker');

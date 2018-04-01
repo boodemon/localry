@@ -209,6 +209,7 @@ return [
 
         'Lib'   => App\Lib::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'Image' => Intervention\Image\Facades\Image::class
 
     ],
 

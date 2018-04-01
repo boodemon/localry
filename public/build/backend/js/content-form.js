@@ -8,7 +8,7 @@
     gallery.btn_browse = 'btn-select';
     gallery.filelist = '.preview';
     gallery.container_id = 'gallery';
-    gallery.limit = 12;
+    gallery.limit = 32;
     gallery.multipart = true;
     gallery.redirect = 'back';
     gallery.return_id = $('input[name="id"]');
@@ -24,5 +24,13 @@
     $('.preview').css('height', pheight + 'px');
 
     $('#preview').sortable();
+
+    var img = new images();
+
+    img.inputid = $('#signature');
+    img.previewid = $('#preview');
+    img.allowfile = 'png|gif';
+    img.inputclick();
+    
 
 }(jQuery));

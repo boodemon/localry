@@ -109,4 +109,24 @@ class Lib
 		}
 	return $bcm;
   }
+  	public static function createFolder($image){
+		$ex = explode('/',$image);
+		$f 	= count($ex)-2;
+		$path = [];
+		for($i=0; $i <= $f; $i++){
+			$path[] = $ex[$i];
+		}
+		$folder = implode('/',$path);
+		//echo $folder;
+		if(!file_exists($folder)){
+			File::makeDirectory($folder,0777,true);
+		}
+	}
+	
+	public static function makeFolder($folder){
+		//echo $folder;
+		if(!file_exists($folder)){
+			File::makeDirectory($folder,0777,true);
+		}
+	}
 }
