@@ -53,6 +53,21 @@
 กำลังสนใจเรื่องไหน ชอบอะไร แบรนด์มีบทบาทยังไงกับชีวิตเขา ถ้าอยากพูดด้วย ต้องพูดด้วยท่าทีแบบไหน มันๆ ซ่าๆ หรือนุ่มนวล อ่อนโยน เป็นกันเอง เข้าใจ 2 ส่วนนี้แล้วจึงค่อยเลือกว่าจะเล่าเรื่องไหน ผ่านตัวละครนิสัยยังไง สถานการณ์เป็นแบบไหนจุดเชื่อมโยงแบรนด์กับเนื้อเรื่อง
 และสิ่งที่อยากให้ผู้บริโภคจำได้คืออะไร เพื่อตอบโจทย์ที่ตั้งไว้ คุณอรรถวุฒิ เวศรานุรักษ์ (คุณเอิร์ธ) กรรมการผู้จัดการ บริษัท Adapter Digital จำกัด ในฐานะดิจิตอลเอเยนซีที่มีผลงานด้านการโฆษณาออนไลน์ กล่าวว่า “แค่ Storytelling ไม่พอต้องใช้วิธีคิดแบบ Story Selling เพื่อให้เรื่องราวที่เล่าอยู่นั้นสามารถช่วยลูกค้าขาย Brand Statement ของสินค้าให้ได้ เพราะนี่ไม่ใช่เเค่การขายของแต่คือการขาย Statement เพื่อบอกว่าเราต้องการทำอะไร ตอบอะไรในสิ่งที่เรากำลังสร้าง”  สุดท้ายแล้ว คลิปวิดีโอจะไม่ได้ทำให้แค่คนรู้จักหรือจำได้ว่า “ฉันอยู่ตรงนี้” เท่านั้น แต่ยังสร้าง Brand Consideration ให้คนสนใจสินค้า มองหาและ “เลือก” แบรนด์เป็นอันดับแรกด้วย ถ้าเข้าใจเรื่องนี้แล้ว คราวนี้จะใช้ Story Selling เป็นผู้ช่วยที่ทรงพลังขนาดไหนก็ขึ้นอยู่กับลีลามัดใจของแต่ละแบรนด์แล้วล่ะ เท่านั้น แต่ยังสร้าง Brand Consideration ให้คนสนใจสินค้า มองหาและ “เลือก” แบรนด์เป็นอันดับแรกด้วย ถ้าเข้าใจเรื่องนี้แล้ว คราวนี้จะใช้ Story Selling เป็นผู้ช่วยที่ทรงพลัง ขนาดไหนก็ขึ้นอยู่กับลีลามัดใจของแต่ละแบรนด์แล้วล่ะ
 					</p>
+
+					<!-- Gallery Section -->
+					<div class="gallery-section row">
+
+						<?php for($i=0;$i<10;$i++){ ?>
+						<a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="gallery" class="col-md-3">
+					      <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid rounded">
+					    </a>
+					    <a href="https://unsplash.it/1200/768.jpg?image=252" data-toggle="lightbox" data-gallery="gallery" class="col-md-3">
+					      <img src="https://unsplash.it/600.jpg?image=252" class="img-fluid rounded">
+					    </a>
+					    <?php } ?>
+					</div>
+					<!-- end Gallery Section -->
+
 				</div>
 			</div>
 			<div class="col-sm-3 offset-sm-1 related-sidebar">
@@ -61,7 +76,7 @@
 				</div>
 				<div class="related-list">
 					<h3>RELATED</h3>
-					<?php for($i=0;$i<3;$i++){ 
+					<?php for($i=0;$i<3;$i++){
 						$x = rand(0,12); ?>
 					<div class="thumb-list-child">
 						<div class="thumb-cover">
@@ -86,7 +101,7 @@
 		<!-- play list Zone -->
 		<div class="row playlist-section">
 			<div class="col-sm-8 offset-sm-2">
-				<?php for($i=0;$i<5;$i++){ 
+				<?php for($i=0;$i<5;$i++){
 					$y = rand(0,12); ?>
 				<div class="thumb-list-child row">
 					<div class="col">
@@ -113,6 +128,8 @@
 	</div>
 @endsection
 @section('javascript')
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.css"> <!-- include for Galelry -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.js"></script> <!-- include for Galelry -->
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$(".view-more").click(function(e){
@@ -140,6 +157,12 @@
 			playlist:'{{ Lib::videoID( $ytb) }}',
 			});
 		}
+
+		/* include for Galelry */
+		$(document).on("click", '[data-toggle="lightbox"]', function(event) {
+		  event.preventDefault();
+		  $(this).ekkoLightbox();
+		});
 
 	</script>
 @endsection
