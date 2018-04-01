@@ -30,15 +30,15 @@
                     <td class="text-center">
                         <input type="checkbox" class="checkboxAll" value="{{ $row->id }}" >
                     </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><img src="{{ asset('public/images/contents/'. @$row->thumb[0]->attach_thumb->$rc ) }}" /></td>
+                    <td>{{ $row->subject->$rc }}</td>
+                    <td>{{ $date[$row->category_id]->subject }}</td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td class="action">
-                        <a title="Edit" class="text-primary onEdit" href="#" data-id="{{ $row->id }}" ><i class="icon-note"></i></a>
-                        <a title="Delete" class="text-danger onDelete" data-id="{{ $row->id }}" ><i class="icon-trash"></i></a>
+                    <a title="Edit" class="text-primary onEdit" href="{{ url('backend/content/'. $row->id ) }}" data-id="{{ $row->id }}" ><i class="icon-note"></i></a>
+                        <a title="Delete" href="#" class="text-danger onDelete" data-id="{{ $row->id }}" ><i class="icon-trash"></i></a>
                     </td>
                 </tr>
                 @endforeach

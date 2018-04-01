@@ -25,6 +25,7 @@ class ContentController extends Controller
     {
         $rows = Content::orderBy('category_id')->paginate('24');
         $cdata = [];
+        $langs = @json_decode($this->langs);
         if( $rows ){
             foreach( $rows as $row ){
                 $cdata[] = Content::fieldRows( $row, $this->thumbnailRow($row->id),$this->gallery($row->id) );
@@ -32,12 +33,24 @@ class ContentController extends Controller
         }
         $records = json_encode( $cdata );
         $data = [
-            'rows' => @json_decode( $records ),
+            'rows'          => @json_decode( $records ),
             '_breadcrumb'   => 'CONTENTS DATA',
-            'langs'         => @json_decode($this->langs)
+            'langs'         => $langs,
+            'rc'            => $langs[0]->code,
+            'cate'          => $this->category()
         ];
        
         return view('backend.contents.index',$data);
+    }
+    public function category(){
+        $ctdata = [];
+        $rows = Category::get();
+        if( $rows ){
+            foreach( $rows as $row ){
+                $ctdata[$row->id] = Category::fieldRows( $row );
+            }
+        }
+        return $ctdata;
     }
     public function gallery($ref_id){
         $rows = Attach::where('ref_id',$ref_id)->where('attach_type','content-gallery')->get();
@@ -149,6 +162,7 @@ class ContentController extends Controller
     {
         $ids = explode('-',$id);
             if( Content::whereIn('id',$ids)->delete() ){
+                $this->delete( $id );
                 $result = [
                     'result'    => 'successful',
                     'code'      => 200
@@ -161,6 +175,29 @@ class ContentController extends Controller
                 ];
             }
         return Response()->json($result);    
+    }
+
+    public function delete($refId){
+        $rows = Attach::where('ref_id',$refId)->get();
+        if( $rows ){
+            foreach( $rows as $row ){
+
+                if( $row->attach_type == 'content-gallery'){
+                    @File::delete( 'public/images/contents/' . $row->attach_file );
+                }
+
+                if( $row->attach_type == 'content-thumbnail'){
+                    $atts = @json_decode( $row->attach_file );
+                    if( $atts ){
+                        foreach( $atts as $att ){
+                            @File::delete( 'public/images/contents/' . $row->attach_file );
+                        }
+                    }
+                }
+
+            }
+        }
+
     }
         
     public function upload(Request $request){
@@ -187,32 +224,25 @@ class ContentController extends Controller
 		if($request->file('thumb')){
             $filename = [];
             foreach( $request->file('thumb') as $l => $v ){
-                //echo '<p>'. $l . '|'. $v .'</p>';
-                
                 if( $request->hasFile('thumb.'. $l ) ){
-                    //echo 'hasfile'; 
                     $file 	= $v;
                     $path 	= 'public/images/contents/';
                     Lib::makeFolder($path);
-                    $name   = $l .'-' . time().'-'. Lib::encodelink( $file->getClientOriginalName() );
+                    $name   = $l .'-' . time().'-'. $ref_id .'.';
                     $ftype  = $file->getClientOriginalExtension();
-                    $filename[$l] = $name;
-                    // . '.' . $ftype;	
-                    //Image::make($file)->heighten(87)->widen(87)->save($path . 'thumb/' . $filename);
+                    $filename[$l] = $name . $ftype; 
                     Image::make($file)->save($path . $name);
-                    
                 }else{
                     $filename[$l] = null;
                 }
                 
             }
             
-                $images = new Attach;
-                $images->ref_id         = $ref_id;
-                $images->attach_file 	= json_encode($filename);
-                $images->attach_type	= 'content-thumbnail';
-                $images->save();
-                
+            $images = new Attach;
+            $images->ref_id         = $ref_id;
+            $images->attach_file 	= json_encode($filename);
+            $images->attach_type	= 'content-thumbnail';
+            $images->save();
 		}
     }
 

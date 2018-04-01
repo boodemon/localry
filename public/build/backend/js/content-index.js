@@ -3,7 +3,7 @@
     function frm() {
         this.delete = function (id) {
             $.ajax({
-                url: _base + '/backend/category/' + id,
+                url: _base + '/backend/content/' + id,
                 method: 'POST',
                 data: { _token: $('input[name="_token"]').val(), _method: 'DELETE' },
                 success: function (data) {
