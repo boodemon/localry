@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Attach extends Model
 {
-    protected $table = 'attachs';
+    protected $table = 'attaches';
 
-    public function fieldRows( $row ){
+    public static function fieldRows( $row ){
         return [
             'id'            => $row->id ,
             'ref_id'        => $row->ref_id ,

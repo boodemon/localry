@@ -30,8 +30,9 @@ class ContentController extends Controller
                 $cdata[] = Content::fieldRows( $row, $this->thumbnailRow($row->id),$this->gallery($row->id) );
             }
         }
+        $records = json_encode( $cdata );
         $data = [
-            'rows' => $cdata,
+            'rows' => @json_decode( $records ),
             '_breadcrumb'   => 'CONTENTS DATA',
             'langs'         => @json_decode($this->langs)
         ];
@@ -101,6 +102,7 @@ class ContentController extends Controller
             }
         }
         $this->thumbnail( $request,$content->id);
+        return redirect('backend/content');
     }
 
     /**

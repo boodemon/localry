@@ -34,6 +34,8 @@
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td></td>
+                    <td></td>
                     <td class="action">
                         <a title="Edit" class="text-primary onEdit" href="#" data-id="{{ $row->id }}" ><i class="icon-note"></i></a>
                         <a title="Delete" class="text-danger onDelete" data-id="{{ $row->id }}" ><i class="icon-trash"></i></a>
@@ -45,7 +47,6 @@
         </table>
     </div>
 </div>
-<input type="hidden" name="total" value="{{ $rows->total() + 1 }}" />
 @endsection
 @section('javascript')
     <script src="{{ asset('public/build/backend/js/content-index.js') }}"></script>
