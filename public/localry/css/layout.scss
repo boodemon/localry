@@ -127,6 +127,11 @@ header{
 	}
 }
 .slide-menu{
+	.mainmenu-holder.active{
+		.mainmenu{
+			border: none !important;
+		}
+	}
 	display: none;
 	overflow: auto;
 	position: fixed;
@@ -135,26 +140,33 @@ header{
 	margin-left: -15px;
 	margin-top: 10px;
 	height: 100%;
-	width: 250px;
+	width: 280px;
+	padding-right: 50px;
+	padding-left: 15px;
 	padding-bottom: 170px;
 	>ul{
 		margin: 0;
 		padding: 0;
 		list-style: none;
-		border-bottom: 1px solid black;
+		border-bottom: 1px solid rgba(0,0,0,0.3);
 		display: block;
 		@include clearfix;
 		>li{
+			border-bottom: 1px dashed rgba(0,0,0,0.3);
+			&:last-child{
+				border-bottom: none;
+			}
 			>a{
-				padding: 10px;
+				padding: 23px 10px;
 				display: block;
 				text-decoration: none;
 				color: black;
 				text-transform: uppercase;
+				font-family: $light;
+				font-size: 0.98em;
 				@include ts;
 				&:hover{
-					background-color: black;
-					color: white;
+					color: #ed4848;
 				}
 			}
 		}
@@ -175,11 +187,14 @@ header{
 				float: left;
 				display: inline-block;
 				a{
-					padding: 15px;
+					padding: 20px 15px;
+					text-align: center;
+					min-width:60px;
 					@include ts;
 					img{
-						height: 15px;
+						height: 18px;
 						width: auto;
+						display: inline-block;
 					}
 					&:hover{
 						opacity: 0.5;
@@ -295,14 +310,24 @@ footer{
 	padding-top: 70px;
 	padding-bottom: 50px;
 	p{
+		font-family: $light;
+		font-size: 1em;
+		letter-spacing: 0.08em;
 		color: white;
+		/*
 		font-size: 1.3em;
 		letter-spacing: 0.03em;
+		*/
 	}
 	.subscribe{
 		color: white;
+		font-family: $light;
+		font-size: 1em;
+		letter-spacing: 0.08em;
+		/*
 		font-size: 1.3em;
 		font-weight: bold;
+		*/
 		text-align: center;
 		letter-spacing: 0.08em;
 		display: block;
@@ -318,7 +343,9 @@ footer{
 	.copyright-text{
 		text-align: center;
 		margin-top: 30px;
-		font-size: 1.3em;
+		font-family: $light;
+		font-size: 1em;
+		letter-spacing: 0.08em;
 		color: #95989a;
 	}
 }
@@ -332,8 +359,8 @@ footer{
 		a{
 			color: white;
 			text-decoration: none;
-			font-size: 1.1em;
-			font-weight: bold;
+			font-family: $light;
+			font-size: 1em;
 			letter-spacing: 0.08em;
 			@include ts;
 			&:hover{
@@ -543,6 +570,8 @@ section{
 	ul{
 		list-style: none;
 		display: inline-block;
+		margin: 0;
+		padding: 0;
 		li{
 			float: left;
 			padding-left: 50px;
@@ -680,7 +709,6 @@ section{
 	margin-bottom: 65px;
 	.col:first-child{
 		flex-grow: 9;
-		padding-right: 0;
 	}
 	input[type="text"]{
 		width: 100%;
@@ -688,6 +716,25 @@ section{
 	}
 	.selector-holder{
 		float: right;
+	}
+	.normal-button{
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+	.search-bar-input{
+		position: relative;
+		.mb-search-btn{
+			position: absolute;
+			right: 0;
+			top:0;
+			height: 100%;
+			background: none;
+			border: none;
+			padding-right: 15px;
+			color: #8c8c8c;
+			cursor: pointer;
+		}
 	}
 }
 inputStyle{
@@ -699,8 +746,10 @@ input[type="text"]{
 }
 .filter-menu{
 	margin: 0;
+	margin-bottom: 15px;
 	padding: 0;
 	list-style: none;
+	border-top:1px solid $lightGray;
 	li{
 		border-bottom:1px solid $lightGray;
 		a{
@@ -722,10 +771,17 @@ input[type="text"]{
 		}
 	}
 }
+.side-bar{
+	.selector-holder{
+		width: 100%;
+		select{
+			width: 100%;
+		}
+	}
+}
 .side-bar-title{
 	color: black;
 	font-size: 1.2em;
-	border-bottom: 1px solid $lightGray;
 	padding-bottom: 10px;
 }
 .video-cat-name{
@@ -823,7 +879,7 @@ input[type="text"]{
 	}
 }
 .player-content{
-	height: 5em;
+	//height: 5em;
 	overflow: hidden;
 	.normal-button{
 		float: right;
@@ -839,30 +895,39 @@ input[type="text"]{
 		}
 	}
 	.content-section{
-		height: 2em;
-		overflow: hidden;
-		@include ts;
+		//height: 2em;
+		//overflow: hidden;
+		display: none;
+		//@include ts;
 	}
 	.related-list{
-		opacity: 0;
-		@include ts;
+		display: none;
+		//@include ts;
+	}
+	.view-less{
+		display: none;
+	}
+	.top-btn{
+		display: block;
+	}
+	.bottom-btn{
+		display: none;
 	}
 
 	&.active{
-		height: auto;
-		.view-more{
+		//height: auto;
+		.top-btn{
 			display: none;
-			opacity: 0;
+
 		}
-		.view-less{
-			opacity: 1;
+		.bottom-btn{
+			display: block;
 		}
 		.related-list{
 			opacity: 1;
 		}
-
 		.content-section{
-			height: auto;
+			//height: auto;
 		}
 
 	}
@@ -1006,6 +1071,24 @@ input[type="text"]{
 		font-size: 0.95em;
 	}
 }
+.gallery-section{
+	a{
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+}
+
+.ekko-lightbox{
+	z-index: 999999;
+	.modal-backdrop{
+		z-index: 999999;
+	}
+	.modal-dialog{
+		margin: 2rem auto;
+		top:50%;
+		transform: translate(0, -50%) !important;
+	}
+}
 /*********************** responsive *******************/
 @media (min-width:1400px){
 	.container ,.container-fluid{
@@ -1015,5 +1098,143 @@ input[type="text"]{
 	.full-width{
 		margin-left: -15px;
 		margin-right: -15px;
+	}
+}
+@media(max-width:768px){
+	.top-nav{
+		margin-top: 125px;
+		padding-bottom: 0;
+	}
+	.thumb-list-row{
+		.col{
+			flex: none;
+		}
+	}
+	.banner-title{
+		max-width: 100%;
+		font-size: 2.5em;
+	}
+	.editor-banner{
+		margin-top: 0;
+	}
+	.most-section{
+		.vid-row{
+			margin-top: 0;
+			margin-bottom: 0;
+			.row{
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
+		}
+		.col{
+			flex: none;
+		}
+	}
+	.editor-story{
+		.col{
+			flex: none;
+		}
+	}
+	.following-update,.recent-view{
+		.col{
+			flex: none;
+		}
+	}
+	.footer-menu{
+		margin-top: 15px;
+		margin-bottom: 15px;
+		@include clearfix;
+	}
+	.bottom-social{
+		ul{
+			li{
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+		}
+	}
+	.under-player-section{
+		.under-player-child{
+			&:first-child{
+				flex: none;
+				border-right: none;
+				padding-bottom: 25px;
+			}
+		}
+	}
+	.category-header{
+		padding-top: 40px;
+		padding-bottom: 15px;
+		h2{
+			margin-bottom: 15px;
+		}
+		.follow-box{
+			position: relative;
+			text-align: right;
+		}
+	}
+	.separator-line, .section-title{
+		margin-top: 25px !important;
+		margin-bottom: 25px !important;
+	}
+	.feature-playlist{
+		.col{
+			flex: none;
+		}
+	}
+	.filter-bar{
+		.order-2{
+			order: 1;
+			flex: none;
+		}
+		.order-1{
+			order:2;
+		}
+	}
+	.category-thumb-list{
+		.top-view-all{
+			display: block;
+			width: 100%;
+			text-align: center;
+		}
+		.selector-holder{
+			width: 100%;
+
+		}
+	}
+	.search-bar{
+		margin-bottom: 0px;
+		padding-top: 25px;
+		margin-bottom: 25px;
+	}
+	.cat-meta{
+		margin-top: 15px;
+		margin-bottom: 15px;
+		div{
+			text-align: center;
+		}
+	}
+	.related-sidebar{
+		.top-btn{
+			margin-top: 15px;
+			text-align: center;
+		}
+	}
+	.ekko-lightbox{
+		.modal-dialog{
+			max-width: 90% !important;
+		}
+	}
+
+}
+
+//iphone x landscape
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 812px)
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 3) {
+	.top-nav{
+		padding-bottom: 0;
 	}
 }
