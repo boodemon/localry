@@ -8,7 +8,7 @@ class Content extends Model
 {
     protected $table = 'contents';
 
-    public static function fieldRows($row, $thumb='', $attach = []){
+    public static function fieldRows($row, $thumb=[], $attach = []){
         return [
             'id'            => $row->id ,
             'category_id'   => $row->category_id ,
@@ -21,7 +21,7 @@ class Content extends Model
             'content_sort'  => $row->content_sort ,
             'created_at'    => strtotime($row->created_at) ,
             'updated_at'    => strtotime($row->updated_at) ,
-            'thumb'         => $thumb,
+            'thumb'         => @$thumb[0],
             'attach'        => $attach,
         ];
     }

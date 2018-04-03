@@ -40,4 +40,6 @@ ul#tablelist>li{margin:4px; float:left; cursor:move;}
 .preview li .del-preview{position:absolute; bottom:5px; right:5px;  top: inherit; text-decoration:none;}
 .top10{padding-top:10px;}
 .plupload_wrapper {min-width: 100% !important;}
-
+img{
+	max-width: 100%;
+}

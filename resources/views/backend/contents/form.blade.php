@@ -28,7 +28,7 @@
                     <label class="col-md-3 form-control-label">CATEGORY : </label>
                     <div class="col-md-4">
                       <select class="form-control" name="category_id">
-                          {!! App\Models\Category::option( $langs[0]->code ) !!}
+                          {!! App\Models\Category::option( $langs[0]->code , ( count($row) > 0 ? $row->category_id : '' ) ) !!}
                       </select>
                       <span class="require-category_id"></span>
                     </div>
@@ -39,11 +39,11 @@
                     <div class="col-md-8">
                         <div id="gallery" class="multiupload" upload-url="{{ url('backend/content/upload' ) }}">					
                           <ul id="preview" class="preview">
-                            @if($gallery)
-                              @foreach($gallery as $g)
+                            @if( count($row) > 0 && count($row->attach) > 0 )
+                              @foreach($row->attach as $g)
                                 <li id="gall_{{$g->id}}" class="img-gallery col-sm-4">
                                   <a href="{{ url('backend/content/image-delete/'. $g->id  ) }}" class="color-red del-preview"><i class="icon-close"></i></a>
-                                  <b></b><img src="{{ asset( 'public/images/contents/'. $g->image_name ) }}" id="img-product-{{ $g->id }}" class="img-preview">
+                                  <b></b><img src="{{ asset( 'public/images/contents/'. $g->attach_file ) }}" id="img-product-{{ $g->id }}" class="img-preview">
                                   <input type="hidden" name="gimage[]" value="{{ $g->id }}" />
                                 </li>
                               @endforeach
@@ -57,7 +57,7 @@
                   <div class="form-group row" >
                     <label class="col-md-3 form-control-label">SORT : </label>
                     <div class="col-md-2">
-                      <input type="text" class="form-control" name="content_sort" />
+                      <input type="text" class="form-control" name="content_sort" value="{{ count($row) > 0 ? $row->content_sort : old('content_sort') }}" />
                       <span class="require-content_sort"></span>
                     </div>
                   </div>
@@ -66,7 +66,7 @@
                     <label class="col-md-3 form-control-label"></label>
                     <div class="col-md-8">
                         <label class="checkbox">
-                            <input type="checkbox" name="published" /> PUBLISH
+                            <input type="checkbox" name="published" {{ ( count( $row ) > 0 && $row->published == 'Y' ) ? 'checked' : '' }} /> PUBLISH
                         </label>
                       <span class="require-published"></span>
                     </div>
@@ -89,19 +89,24 @@
               <div class="tab-content">
                 <!-- Start Loob tab content input -->
                  @foreach( $langs as $i => $lang )
+                 <?php
+                  $lc = $lang->code; 
+                 ?>
                 <div class="tab-pane {{ $i == 0 ? 'active' : '' }}" id="{{ $lang->code }}" role="tabpanel">
                     
                     <div class="form-group row">
                         <label class="col-md-3 form-control-label">{{ $lang->code }} VIDEO URL : </label>
                         <div class="col-md-8">
-                          <input type="text" class="form-control" name="video[{{ $lang->code }}]" />
+                          <input type="text" class="form-control" name="video[{{ $lang->code }}]" value="{{ count($row) > 0 ? $row->video_link->$lc : old(video[$lc]) }}" />
                           <span class="require-video"></span>
                         </div>
                     </div>
-                    	<div class="form-group">
-                        <label class="col-md-4 control-label"></label>
+                    	<div class="form-group row">
+                        <label class="col-md-3 control-label"> &nbsp; </label>
                         <div class="col-md-6" id="preview">
-                         
+                         @if( count( $row ) > 0 && count( $row->thumb) > 0 )
+                            <img src="{{ asset('public/images/contents/'. @$row->thumb->attach_thumb->$lc ) }}" />
+                         @endif
                         </div>
                       </div>
 
@@ -116,7 +121,7 @@
                     <div class="form-group row">
                         <label class="col-md-3 form-control-label">{{ $lang->code }} SUBJECT : </label>
                         <div class="col-md-8">
-                          <input type="text" class="form-control" name="subject[{{ $lang->code }}]" />
+                          <input type="text" class="form-control" name="subject[{{ $lang->code }}]" value="{{ count($row) > 0 ? $row->subject->$lc : old(subject[$lc]) }}"/>
                           <span class="require-subject"></span>
                         </div>
                     </div>
@@ -124,7 +129,7 @@
                     <div class="form-group">
                         <label class="form-control-label">{{ $lang->code }} DETAIL : </label>
                         <div class="">
-                          <textarea type="text" class="form-control editor" name="detail[{{ $lang->code }}]" ></textarea>
+                          <textarea type="text" class="form-control editor" name="detail[{{ $lang->code }}]" >{{ count($row) > 0 ? $row->detail->$lc : old(detail[$lc]) }}</textarea>
                           <span class="require-detail"></span>
                         </div>
                     </div>

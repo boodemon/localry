@@ -19,6 +19,10 @@ class Lib
 	}
     public static function encodelink($value=''){
 		$link = strtolower($value);
+		if (preg_match('/[^A-Za-z0-9]/', $link))
+		{
+			$link = 'encode-images';
+		}
 		$link = str_replace(' ', '-', $link);
 		$link = str_replace('/', '-', $link);
 		$link = str_replace('%', '-', $link);
@@ -96,6 +100,30 @@ class Lib
     }
     return $yimg;
   }
+
+  public static function youtubeThumbnail($url = '',$action = '', $name = '', $path = ''){
+    parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
+    $video_id = $my_array_of_vars['v'];
+    parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
+    $video_id = $my_array_of_vars['v'];
+	$qt      = ['maxresdefault','sddefault','mqdefault','hqdefault' ,'default'];
+	
+    for( $i = 0; $i <= count( $qt ) -1; $i++ ){
+      $yimg = 'http://img.youtube.com/vi/' . $video_id . '/' . $qt[$i] . '.jpg';
+      if( @file_get_contents($yimg) ) {
+		  if( $path == '' ){
+			  $path = public_path().'/images/thumbnails/';
+		  }
+		  $filename = ( $name == '' ? 'video' .'-'. time() : $name ) .'.jpg';
+		  if( $action == 'upload')
+		  file_put_contents( $path . $filename , file_get_contents($yimg));
+		  break;
+	  }
+	}
+	
+    return $filename;
+  }
+
 
   public static function bcm($_breadcrumb){
 	  $bcm = '';
