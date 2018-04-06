@@ -17,11 +17,12 @@ class Lib
 			return '<span class="badge badge-danger" >Unactive</span>';
 		}                 
 	}
-    public static function encodelink($value=''){
+    public static function encodelink($value='',$name = ''){
 		$link = strtolower($value);
-		if (preg_match('/[^A-Za-z0-9]/', $link))
-		{
-			$link = 'encode-images';
+		if( $name != '' ){
+			if (preg_match('/[^A-Za-z0-9]/', $link)){
+				$link = 'encode-images';
+			}
 		}
 		$link = str_replace(' ', '-', $link);
 		$link = str_replace('/', '-', $link);

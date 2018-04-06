@@ -240,7 +240,7 @@ class ContentController extends Controller
 			$file 	= $request->file('file');
 			$path 	= 'public/images/contents/';
 			Lib::makeFolder($path);
-			$name = time().'-'. Lib::encodelink( $file->getClientOriginalName() );
+			$name = time().'-'. Lib::encodelink( $file->getClientOriginalName() ,'check');
 			$ftype = $file->getClientOriginalExtension();
 			$filename = $name;
 			// . '.' . $ftype;	

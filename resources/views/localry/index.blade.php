@@ -4,17 +4,19 @@
 @endsection
 @section('content')
 <div class="container-fluid">
+
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="feature-banner">
-					<a href="{{ url('singleplay/0') }}">
-						<img src="{{ Lib::ybImage( $youtubes[0]['url'] ) }}" alt="feature-banner">
+					<a href="{{ url('singleplay/' . $youtubes[0]['id'] ) }}">
+						<img src="{{ asset('public/images/contents/'. $youtubes[0]['thumb']-> attach_thumb->$lng ) }}" alt="feature-banner">
 					</a>
 					<div class="vid-time-holder">
 						<span class="vid-time-num">05:20</span>
 					</div>
 				</div>
 			</div>
+
 			<div class="col-sm-12">
 				<div class="thumb-slide">
 					<ul>
@@ -24,12 +26,12 @@
 						<div class="thumb-list-child">
 							<div class="thumb-cover">
 								<a href="{{ url('playlist') }}">
-									<img src="{{ Lib::ybImage( $youtubes[$x]['url'] ) }}">
+									<img src="{{ asset('public/images/contents/'. $youtubes[$x]['thumb']-> attach_thumb->$lng ) }}">
 								</a>
 								<div class="vid-time-num">5:20</div>
 							</div>
 							<div class="thumb-caption">
-								<a href="{{ url('playlist') }}">{{ $youtubes[$x]['title'] }}</a>
+								<a href="{{ url('playlist') }}">{{ $youtubes[$x]['subject']->$lng }}</a>
 							</div>
 						</div>
 					</li>
@@ -53,13 +55,13 @@
 				<div class="col">
 					<div class="thumb-list-child">
 						<div class="thumb-cover">
-							<a href="{{ url('singleplay/' . $i ) }}">
-								<img src="{{ Lib::ybImage( $youtubes[$i]['url'] ) }}">
+							<a href="{{ url('singleplay/' . $youtubes[$i]['id']) }}">
+								<img src="{{ asset('public/images/contents/'. $youtubes[$i]['thumb']-> attach_thumb->$lng ) }}">
 							</a>
 							<div class="vid-time-num">5:20</div>
 						</div>
 						<div class="thumb-caption">
-							<a href="{{ url('singleplay/' . $i ) }}">{{ $youtubes[$i]['title'] }}</a>
+							<a href="{{ url('singleplay/' . $youtubes[$i]['id']) }}">{{ $youtubes[$i]['subject']->$lng }}</a>
 						</div>
 					</div>
 				</div>
@@ -79,13 +81,13 @@
 				<div class="col">
 					<div class="thumb-list-child">
 						<div class="thumb-cover">
-							<a href="{{ url('singleplay/' . $i ) }}">
-								<img src="{{ Lib::ybImage( $youtubes[$i]['url'] ) }}">
+							<a href="{{ url('singleplay/' . $youtubes[$i]['id']) }}">
+								<img src="{{ asset('public/images/contents/'. $youtubes[$i]['thumb']-> attach_thumb->$lng ) }}">
 							</a>
 							<div class="vid-time-num">5:20</div>
 						</div>
 						<div class="thumb-caption">
-							<a href="{{ url('singleplay/' . $i ) }}">{{ $youtubes[$i]['title'] }}</a>
+							<a href="{{ url('singleplay/' . $youtubes[$i]['id']) }}">{{ $youtubes[$i]['subject']->$lng }}</a>
 						</div>
 					</div>
 				</div>
@@ -105,13 +107,13 @@
 				<div class="col">
 					<div class="thumb-list-child">
 						<div class="thumb-cover">
-							<a href="{{ url('singleplay/' . $i ) }}">
-								<img src="{{ Lib::ybImage( $youtubes[$i]['url'] ) }}">
+							<a href="{{ url('singleplay/' . $youtubes[$i]['id']) }}">
+								<img src="{{ asset('public/images/contents/'. $youtubes[$i]['thumb']-> attach_thumb->$lng ) }}">
 							</a>
 							<div class="vid-time-num">5:20</div>
 						</div>
 						<div class="thumb-caption">
-							<a href="{{ url('singleplay/' . $i ) }}">{{ $youtubes[$i]['title'] }}</a>
+							<a href="{{ url('singleplay/' . $youtubes[$i]['id']) }}">{{ $youtubes[$i]['subject']->$lng }}</a>
 						</div>
 					</div>
 				</div>
@@ -131,13 +133,13 @@
 				<div class="col">
 					<div class="thumb-list-child">
 						<div class="thumb-cover">
-							<a href="{{ url('singleplay/' . $i ) }}">
-								<img src="{{ Lib::ybImage( $youtubes[$i]['url'] ) }}">
+							<a href="{{ url('singleplay/' . $youtubes[$i]['id']) }}">
+								<img src="{{ asset('public/images/contents/'. $youtubes[$i]['thumb']-> attach_thumb->$lng ) }}">
 							</a>
 							<div class="vid-time-num">5:20</div>
 						</div>
 						<div class="thumb-caption">
-							<a href="{{ url('singleplay/' . $i ) }}">{{ $youtubes[$i]['title'] }}</a>
+							<a href="{{ url('singleplay/' . $youtubes[$i]['id']) }}">{{ $youtubes[$i]['subject']->$lng }}</a>
 						</div>
 					</div>
 				</div>
@@ -157,13 +159,13 @@
 				<div class="col">
 					<div class="thumb-list-child">
 						<div class="thumb-cover">
-							<a href="{{ url('singleplay/' . $i ) }}">
-								<img src="{{ Lib::ybImage( $youtubes[$i]['url'] ) }}">
+							<a href="{{ url('singleplay/' . $youtubes[$i]['id']) }}">
+								<img src="{{ asset('public/images/contents/'. $youtubes[$i]['thumb']-> attach_thumb->$lng ) }}">
 							</a>
 							<div class="vid-time-num">5:20</div>
 						</div>
 						<div class="thumb-caption">
-							<a href="{{ url('singleplay/' . $i ) }}">{{ $youtubes[$i]['title'] }}</a>
+							<a href="{{ url('singleplay/' . $youtubes[$i]['id']) }}">{{ $youtubes[$i]['subject']->$lng }}</a>
 						</div>
 					</div>
 				</div>
@@ -203,7 +205,7 @@
 									<div class="thumb-list-child">
 										<div class="thumb-cover">
 											<a href="{{ url('singleplay') }}">
-												<img src="{{ Lib::ybImage( $youtubes[$i]['url'] ) }}">
+												<img src="{{ asset('public/images/contents/'. $youtubes[$i]['thumb']-> attach_thumb->$lng ) }}">
 											</a>
 											<div class="vid-time-num">5:20</div>
 										</div>
@@ -214,7 +216,7 @@
 						<div class="col-sm-8 offset-sm-2">
 								<div class="thumb-list-child">
 									<div class="thumb-caption">
-										<a href="{{ url('singleplay') }}"><?php echo $youtubes[$i]['title'] ; ?></a>
+										<a href="{{ url('singleplay') }}"><?php echo $youtubes[$i]['subject']->$lng ; ?></a>
 									</div>
 								</div>
 							</div>
@@ -248,12 +250,12 @@
 									<div class="thumb-list-child">
 										<div class="thumb-cover">
 											<a href="{{ url('playlist') }}">
-												<img src="{{ Lib::ybImage( $youtubes[$i]['url'] ) }}">
+												<img src="{{ asset('public/images/contents/'. $youtubes[$i]['thumb']-> attach_thumb->$lng ) }}">
 											</a>
 											<div class="vid-time-num">5:20</div>
 										</div>
 										<div class="thumb-caption">
-											<a href="{{ url('playlist') }}">{{ $youtubes[$i]['title'] }}</a>
+											<a href="{{ url('playlist') }}">{{ $youtubes[$i]['subject']->$lng }}</a>
 										</div>
 									</div>
 								</div>
@@ -288,12 +290,12 @@
 					<div class="thumb-list-child">
 						<div class="thumb-cover">
 							<a href="{{ url('singleplay') }}">
-								<img src="{{ Lib::ybImage( $youtubes[$i]['url'] ) }}">
+								<img src="{{ asset('public/images/contents/'. $youtubes[$i]['thumb']-> attach_thumb->$lng ) }}">
 							</a>
 							<div class="vid-time-num">5:20</div>
 						</div>
 						<div class="thumb-caption">
-							<a href="{{ url('singleplay') }}">{{ $youtubes[$i]['title'] }}</a>
+							<a href="{{ url('singleplay') }}">{{ $youtubes[$i]['subject']->$lng }}</a>
 						</div>
 					</div>
 				</div>
@@ -313,12 +315,12 @@
 					<div class="thumb-list-child">
 						<div class="thumb-cover">
 							<a href="{{ url('singleplay') }}">
-								<img src="{{ Lib::ybImage( $youtubes[$i]['url'] ) }}">
+								<img src="{{ asset('public/images/contents/'. $youtubes[$i]['thumb']-> attach_thumb->$lng ) }}">
 							</a>
 							<div class="vid-time-num">5:20</div>
 						</div>
 						<div class="thumb-caption">
-							<a href="{{ url('singleplay') }}"><?php echo  $youtubes[$i]['title']; ?></a>
+							<a href="{{ url('singleplay') }}"><?php echo  $youtubes[$i]['subject']->$lng; ?></a>
 						</div>
 					</div>
 				</div>
