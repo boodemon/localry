@@ -97,7 +97,7 @@
                     <div class="form-group row">
                         <label class="col-md-3 form-control-label">{{ $lang->code }} VIDEO URL : </label>
                         <div class="col-md-8">
-                          <input type="text" class="form-control" name="video[{{ $lang->code }}]" value="{{ count($row) > 0 ? $row->video_link->$lc : old(video[$lc]) }}" />
+                          <input type="text" class="form-control" name="video[{{ $lang->code }}]" value="{{ count($row) > 0 ? @$row->video_link->$lc : '' }}" />
                           <span class="require-video"></span>
                         </div>
                     </div>
@@ -121,7 +121,7 @@
                     <div class="form-group row">
                         <label class="col-md-3 form-control-label">{{ $lang->code }} SUBJECT : </label>
                         <div class="col-md-8">
-                          <input type="text" class="form-control" name="subject[{{ $lang->code }}]" value="{{ count($row) > 0 ? $row->subject->$lc : old(subject[$lc]) }}"/>
+                          <input type="text" class="form-control" name="subject[{{ $lang->code }}]" value="{{ count($row) > 0 ? $row->subject->$lc : '' }}"/>
                           <span class="require-subject"></span>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
                     <div class="form-group">
                         <label class="form-control-label">{{ $lang->code }} DETAIL : </label>
                         <div class="">
-                          <textarea type="text" class="form-control editor" name="detail[{{ $lang->code }}]" >{{ count($row) > 0 ? $row->detail->$lc : old(detail[$lc]) }}</textarea>
+                          <textarea type="text" class="form-control editor" name="detail[{{ $lang->code }}]" >{{ count($row) > 0 ? $row->detail->$lc : '' }}</textarea>
                           <span class="require-detail"></span>
                         </div>
                     </div>

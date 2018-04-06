@@ -6,10 +6,17 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\Lang;
+use App\Models\Content;
+use App\Models\Attach;
+use App\Models\Category;
+
 
 class PageController extends Controller
 {
     public function __construct(){
+        $this->langs = Lang::allLang();
+        parent::__construct();
         $this->youtube = [
                     [
                     'title'   => 'ตื่นอยู่ในใจ',

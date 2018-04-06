@@ -102,7 +102,9 @@ class Lib
   }
 
   public static function youtubeThumbnail($url = '',$action = '', $name = '', $path = ''){
-    parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
+	  //echo 'url => '. $url .'<br/>';
+	parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
+	//echo '<pre>',print_r($my_array_of_vars) ,'</pre>';
     $video_id = $my_array_of_vars['v'];
     parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
     $video_id = $my_array_of_vars['v'];
@@ -156,5 +158,15 @@ class Lib
 		if(!file_exists($folder)){
 			File::makeDirectory($folder,0777,true);
 		}
+	}
+
+	public static function lang($lang = 'en'){
+		$url = Req::fullUrl();
+		$crlang = App::getLocale();
+		$var = explode('/',$url);
+		$key 	= array_search($crlang,$var);
+		$var[$key] = $lang;
+		$return = $key ? implode('/', $var) : $lang;
+		return $return;		
 	}
 }

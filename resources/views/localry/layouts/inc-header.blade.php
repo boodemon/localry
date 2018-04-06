@@ -11,25 +11,31 @@
 							<li><a href="#">Playlists</a></li>
 						</ul>
 						<ul>
-							<li><a href="{{ url('category') }}">FASHION & BEAUTY</a></li>
+							@if( $menus )
+								@foreach( $menus as $menu )
+								<li><a href="{{ url('content/' . $menu['id'] ) }}">{{ @$menu['subject']->$lng }}</a></li>
+								@endforeach
+							@endif
+							<!--
 							<li><a href="{{ url('category') }}">FOOD</a></li>
 							<li><a href="{{ url('category') }}">LOVE & TRAVEL</a></li>
 							<li><a href="{{ url('category') }}">MUSIC</a></li>
 							<li><a href="{{ url('category') }}">PEOPLE</a></li>
+							-->
 						</ul>
 						<ul>
-							<li><a href="#">ABOUT US</a></li>
+							<li><a href="{{ url('aboutus') }}">ABOUT US</a></li>
 						</ul>
 						<ul>
-							<li><a href="#">CONTACT US</a></li>
+							<li><a href="{{ url('contactus') }}">CONTACT US</a></li>
 						</ul>
 						<div class="social-block">
 							<ul>
-								<li><a href="#"><img src="images/common/ico-fb.svg" class="social-ico"></a></li>
-								<li><a href="#"><img src="images/common/ico-tw.svg" class="social-ico"></a></li>
-								<li><a href="#"><img src="images/common/ico-vm.svg" class="social-ico"></a></li>
-								<li><a href="#"><img src="images/common/ico-ig.svg" class="social-ico"></a></li>
-								<li><a href="#"><img src="images/common/ico-yt.svg" class="social-ico"></a></li>
+								<li><a href="#"><img src="{{ asset('public/images/common/ico-fb.svg') }}" class="social-ico"></a></li>
+								<li><a href="#"><img src="{{ asset('public/images/common/ico-tw.svg') }}" class="social-ico"></a></li>
+								<li><a href="#"><img src="{{ asset('public/images/common/ico-vm.svg') }}" class="social-ico"></a></li>
+								<li><a href="#"><img src="{{ asset('public/images/common/ico-ig.svg') }}" class="social-ico"></a></li>
+								<li><a href="#"><img src="{{ asset('public/images/common/ico-yt.svg') }}" class="social-ico"></a></li>
 							</ul>
 						</div>
 						<!--<div class="lang-menu">
@@ -118,12 +124,19 @@
 	<div class="container">
 		<div class="header-category-menu d-none d-sm-block">
 			<ul>
+			@if( $menus )
+				@foreach( $menus as $menu )
+					<li><a href="{{ url('content/' . $menu['id'] ) }}">{{ @$menu['subject']->$lng }}</a></li>
+				@endforeach
+			@endif
+<!--
 				<li class="active"><a href="{{ url('/') }}">FEATURE VIDEO</a></li>
 				<li><a href="{{ url('category') }}">FASHION & BEAUTY</a></li>
 				<li><a href="{{ url('category') }}">FOOD</a></li>
 				<li><a href="{{ url('category') }}">TRAVEL</a></li>
 				<li><a href="{{ url('category') }}">MUSIC</a></li>
 				<li><a href="{{ url('category') }}">PEOPLE</a></li>
+-->	
 			</ul>
 		</div>
 	</div>
