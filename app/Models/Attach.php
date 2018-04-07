@@ -20,4 +20,24 @@ class Attach extends Model
             'updated_at'    => strtotime($row->updated_at) ,
         ];
     }
+
+    public static function queryThumb($ref_id = 0){
+        $row = Attach::where('ref_id',$ref_id)->where('attach_type','content-thumbnail')->first();
+        $gdata = [];
+        if( $row ){
+            $gdata = Attach::fieldRows( $row );
+        }
+        return json_encode( $gdata );
+    }
+
+    public static function queryGallery($ref_id = 0){
+        $rows = Attach::where('ref_id',$ref_id)->where('attach_type','content-gallery')->get();
+        $gdata = [];
+        if( $rows ){
+            foreach( $rows as $row ){
+                $gdata[] = Attach::fieldRows( $row );
+            }
+        }
+        return json_encode($gdata);
+    }
 }

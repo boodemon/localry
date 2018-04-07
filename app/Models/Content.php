@@ -21,7 +21,7 @@ class Content extends Model
             'content_sort'  => $row->content_sort ,
             'created_at'    => strtotime($row->created_at) ,
             'updated_at'    => strtotime($row->updated_at) ,
-            'thumb'         => @$thumb[0],
+            'thumb'         => @$thumb,
             'attach'        => $attach,
         ];
     }

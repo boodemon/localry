@@ -13,7 +13,7 @@
 						<ul>
 							@if( $menus )
 								@foreach( $menus as $menu )
-								<li><a href="{{ url('content/' . $menu['id'] ) }}">{{ @$menu['subject']->$lng }}</a></li>
+								<li><a href="{{ url('content/' . $menu['id'] .'/'. Lib::encodelink( $menu['subject']->$lng ) ) }}">{{ @$menu['subject']->$lng }}</a></li>
 								@endforeach
 							@endif
 							<!--
@@ -126,7 +126,7 @@
 			<ul>
 			@if( $menus )
 				@foreach( $menus as $menu )
-					<li><a href="{{ url('content/' . $menu['id'] ) }}">{{ @$menu['subject']->$lng }}</a></li>
+					<li><a href="{{ url('content/' . $menu['id']  .'/'. Lib::encodelink( $menu['subject']->$lng )) }}">{{ @$menu['subject']->$lng }}</a></li>
 				@endforeach
 			@endif
 <!--
