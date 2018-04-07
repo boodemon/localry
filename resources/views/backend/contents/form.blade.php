@@ -101,6 +101,14 @@
                           <span class="require-video"></span>
                         </div>
                     </div>
+                    
+                    <div class="form-group row">
+                        <label class="col-md-3 form-control-label">{{ $lang->code }} VIDEO TIME : </label>
+                        <div class="col-md-4">
+                          <input type="text" class="form-control" name="video-time[{{ $lang->code }}]" value="{{ count($row) > 0 ? @$row->video_time->$lc : '' }}" />
+                          <span class="require-video-time"></span>
+                        </div>
+                    </div>
                     	<div class="form-group row">
                         <label class="col-md-3 control-label"> &nbsp; </label>
                         <div class="col-md-6" id="preview">
