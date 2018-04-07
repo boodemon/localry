@@ -14,6 +14,7 @@ class Content extends Model
             'category_id'   => $row->category_id ,
             'tags'          => $row->tags ,
             'video_link'    => @json_decode($row->video_link) ,
+            'video_time'    => @json_decode($row->video_time) ,
             'subject'       => @json_decode($row->subject) ,
             'detail'        => @json_decode($row->detail) ,
             'published'     => $row->published ,

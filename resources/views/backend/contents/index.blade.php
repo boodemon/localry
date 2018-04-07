@@ -16,6 +16,7 @@
                 <th class="w20"><input type="checkbox" id="checkAll"/></th>
                 <th class="w120">Thumbnail</th>
                 <th>Subject</th>
+                <th class="w80">Time</th>
                 <th class="">Category</th>
                 <th class="w120">Vote</th>
                 <th class="w120">Comments</th>
@@ -34,6 +35,7 @@
                         <img class="img-thumbnail" src="{{ asset('public/images/contents/'. @$row->thumb->attach_thumb->$rc ) }}" />
                     </td>
                     <td>{{ $row->subject->$rc }}</td>
+                    <td class="text-center">{{ @$row->video_time->$rc }}</td>
                     <td>{{ @$cate[$row->category_id]['subject']->$rc }}</td>
                     <td class="text-center">0</td>
                     <td class="text-center">0</td>

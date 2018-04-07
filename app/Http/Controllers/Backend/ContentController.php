@@ -104,6 +104,7 @@ class ContentController extends Controller
         $content->category_id = $request->input('category_id');
         //$row->tags = $request->input('');
         $content->video_link        = json_encode($request->input('video'));
+        $content->video_time        = json_encode($request->input('video-time'));
         $content->subject           = json_encode($request->input('subject'));
         $content->detail            = json_encode($request->input('detail'));
         $content->content_type      = 'content';
@@ -171,6 +172,7 @@ class ContentController extends Controller
         $content->category_id = $request->input('category_id');
         //$row->tags = $request->input('');
         $content->video_link        = json_encode($request->input('video'));
+        $content->video_time        = json_encode($request->input('video-time'));
         $content->subject           = json_encode($request->input('subject'));
         $content->detail            = json_encode($request->input('detail'));
         $content->content_type      = 'content';
@@ -280,7 +282,7 @@ class ContentController extends Controller
                         }
                     }else{
                         $link = @json_decode( $chk->attach_file );
-                        $filename[$l] = $link->$l;
+                        $filename[$l] = @$link->$l;
                     }
                 }
             }
