@@ -13,6 +13,10 @@
         </li>
 
         <li class="nav-item">
+            <a class="nav-link" href="{{ url('backend/playlist') }}"><i class="icon-layers"></i> PLAYLIST</a>
+        </li>
+
+        <li class="nav-item">
             <a class="nav-link" href="{{ url('backend/content') }}"><i class="icon-notebook"></i> CONTENTS</a>
         </li>
 

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
+use App\Lib;
 use App\Models\Category;
 use App\Models\Lang;
 
@@ -22,7 +23,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $rows = Category::orderBy('category_sort')->paginate('24');
+        $rows = Category::where('category_type','menu')->orderBy('category_sort')->paginate('24');
         $data = [
             'rows' => $rows,
             '_breadcrumb'   => 'CATEGORY MENU',
@@ -50,7 +51,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $row = new Category;
-        $row->subject = json_encode( $request->input('subject') );
+        $row->subject = Lib::setJson( $request->input('subject') );
         $row->category_sort = $request->input('category_sort');
         $row->category_type = 'menu';
         $row->save();
@@ -101,7 +102,7 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $row = Category::where('id',$id)->first();
-        $row->subject = json_encode( $request->input('subject') );
+        $row->subject = Lib::setJson( $request->input('subject') );
         $row->category_sort = $request->input('category_sort');
         $row->category_type = 'menu';
         $row->save();

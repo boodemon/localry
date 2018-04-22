@@ -1,0 +1,25 @@
+.breadcrumb {
+  position: relative;
+}
+.breadcrumb .top-search {
+  position: absolute;
+  right: 10px;
+}
+.breadcrumb .top-search form {
+  margin-top: -10px;
+}
+.breadcrumb .top-search form select {
+  border-radius: 0;
+}
+
+.table thead tr th {
+  background: #29363d;
+  color: #fff;
+}
+.table td.action {
+  text-align: right;
+}
+.table td.action a {
+  text-decoration: none;
+  cursor: pointer;
+}

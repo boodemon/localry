@@ -11,6 +11,7 @@
 							<li><a href="#">Playlists</a></li>
 						</ul>
 						<ul>
+							<li><a href="{{ url('/') }}">FEATURE VIDEO</a></li>
 							@if( $menus )
 								@foreach( $menus as $menu )
 								<li><a href="{{ url('content/' . $menu['id'] .'/'. Lib::encodelink( $menu['subject']->$lng ) ) }}">{{ @$menu['subject']->$lng }}</a></li>
@@ -124,7 +125,8 @@
 	<div class="container">
 		<div class="header-category-menu d-none d-sm-block">
 			<ul>
-			@if( $menus )
+				<li><a href="{{ url('/') }}">FEATURE VIDEO</a></li>
+				@if( $menus )
 				@foreach( $menus as $menu )
 					<li><a href="{{ url('content/' . $menu['id']  .'/'. Lib::encodelink( $menu['subject']->$lng )) }}">{{ @$menu['subject']->$lng }}</a></li>
 				@endforeach

@@ -40,4 +40,14 @@ class Attach extends Model
         }
         return json_encode($gdata);
     }
+
+    public static function thumbnailRow($ref_id){
+        $row = Attach::where('ref_id',$ref_id)->where('attach_type','content-thumbnail')->first();
+        $gdata = [];
+        if( $row ){
+            $gdata[] = Attach::fieldRows( $row );
+        }
+        return $gdata;
+    }
+
 }

@@ -1,0 +1,9 @@
+.breadcrumb {
+  position: relative;
+}
+
+.breadcrumb .top-search {
+  position: absolute;
+  right: 10px;
+}
+/*# sourceMappingURL=styles.css.map */

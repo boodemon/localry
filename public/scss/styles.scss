@@ -1,0 +1,35 @@
+$main-bg:#29363d;
+$white:#fff;
+$red:#f00;
+.breadcrumb{
+    position: relative;
+
+    .top-search{
+        position: absolute;
+        right: 10px;
+        form{
+            margin-top:-10px;
+            select{
+                border-radius: 0;
+            }
+        }
+    }
+}
+
+.table{
+    thead{
+        tr{
+            th{
+                background:$main-bg;
+                color:$white;
+            }
+        }
+    }
+    td.action{
+        text-align: right;
+        a{
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}

@@ -16,5 +16,6 @@
   <!-- Main styles for this application -->
   <link href="{{ asset('public/css/core.css') }}" rel="stylesheet">
   <link href="{{ asset('public/css/style.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/styles.css') }}" rel="stylesheet">
   <link href="{{ asset('public/css/layouts.css') }}" rel="stylesheet">
   <!-- Styles required by this views -->

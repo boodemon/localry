@@ -83,13 +83,16 @@ class Lib
 		return $image;
 	}
 
+
+
 	public static function videoID($url = ''){
     parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
-    return $my_array_of_vars['v'];
+    return @$my_array_of_vars['v'];
   }
   
   public static function ybImage($url = ''){
-    parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
+	parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
+	if( !isset( $my_array_of_vars['v'] ) ) return false;
     $video_id = $my_array_of_vars['v'];
     parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
     $video_id = $my_array_of_vars['v'];
@@ -169,5 +172,13 @@ class Lib
 		$var[$key] = $lang;
 		$return = $key ? implode('/', $var) : $lang;
 		return $return;		
+	}
+
+	public static function thaiword($txt=''){
+		return iconv('TIS-620','UTF-8//IGNORE',$txt);
+	}
+
+	public static function setJson($arr=[]){
+		return @json_encode($arr,JSON_UNESCAPED_UNICODE);
 	}
 }

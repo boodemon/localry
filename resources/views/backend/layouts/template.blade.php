@@ -18,6 +18,9 @@
         @else
         <li class="breadcrumb-item active">Dashboard</li>
         @endif
+        <li class="top-search">
+            @yield('top-search')
+        </li>
       </ol>
 
       <div class="container-fluid">

@@ -8,6 +8,9 @@ class Category extends Model
 {
     protected $table = 'categories';
 
+    public function scopeType($query,$type='menu'){
+        return $query->where('category_type',$type);
+    }
     public static function fieldRows($row){
         return [
             'id'            => $row->id ,

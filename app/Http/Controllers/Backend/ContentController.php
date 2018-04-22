@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use Illuminate\Http\Request;
 use Image;
 use File;
+use Request as Req;
 use App\Lib;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -24,7 +25,24 @@ class ContentController extends Controller
      */
     public function index()
     {
-        $rows = Content::orderBy('category_id')->paginate('24');
+        $rows = Content::orderBy('category_id');
+        if( Req::exists('group')){
+            if( Req::input('group') != 'all'){
+                $rows = $rows->where('category_id',Req::input('group'));
+            }
+        }
+        if( Req::exists('keywords') ){
+            if( !empty( Req::input('keywords') ) ){
+                $keywords = Req::input('keywords');
+                $rows = $rows->where(function($query) use ($keywords){
+                    $keys = explode(' ', $keywords);
+                    foreach( $keys as $no => $key){
+                        $query->where('subject','like','%'. $key .'%');
+                    }
+                });
+            }
+        }
+        $rows = $rows->paginate('24');
         $cdata = [];
         $langs = @json_decode($this->langs);
         if( $rows ){
@@ -32,7 +50,7 @@ class ContentController extends Controller
                 $cdata[] = Content::fieldRows( $row, $this->thumbnailRow($row->id),$this->gallery($row->id) );
             }
         }
-        $records = json_encode( $cdata );
+        $records = Lib::setJson( $cdata );
         $data = [
             'rows'          => @json_decode( $records ),
             '_breadcrumb'   => 'CONTENTS DATA',
@@ -103,13 +121,14 @@ class ContentController extends Controller
         $content = new Content;
         $content->category_id = $request->input('category_id');
         //$row->tags = $request->input('');
-        $content->video_link        = json_encode($request->input('video'));
-        $content->video_time        = json_encode($request->input('video-time'));
-        $content->subject           = json_encode($request->input('subject'));
-        $content->detail            = json_encode($request->input('detail'));
+        $content->video_link        = Lib::setJson($request->input('video'));
+        $content->video_time        = Lib::setJson($request->input('video-time'));
+        $content->subject           = Lib::setJson($request->input('subject'));
+        $content->detail            = Lib::setJson($request->input('detail'));
         $content->content_type      = 'content';
         $content->content_sort      = $request->input('content_sort');
         $content->published         = $request->has('published') ? 'Y' : 'N';
+        $content->feature_video         = $request->has('feature_video') ? 'Y' : 'N';
         $content->save();
         if( $request->input('gimage')){
             foreach( $request->input('gimage') as $i => $id){
@@ -145,7 +164,7 @@ class ContentController extends Controller
         if( $row ){
             $cdata = Content::fieldRows( $row, $this->thumbnailRow($row->id),$this->gallery($row->id) );
         }
-        $records = json_encode( $cdata );
+        $records = Lib::setJson( $cdata );
         $data = [
             'row'           => @json_decode( $records ),
             '_breadcrumb'   => ['<a href="'. url('backend/content') .'">CONTENTS DATA</a>','UPDATE CONTENT'],
@@ -171,13 +190,20 @@ class ContentController extends Controller
         $content = Content::where('id',$id)->first();
         $content->category_id = $request->input('category_id');
         //$row->tags = $request->input('');
-        $content->video_link        = json_encode($request->input('video'));
-        $content->video_time        = json_encode($request->input('video-time'));
-        $content->subject           = json_encode($request->input('subject'));
-        $content->detail            = json_encode($request->input('detail'));
+        $subject = [];
+        foreach( @json_decode($this->langs)  as $in => $lng){
+            $code = $lng->code;
+            echo 'code '. $code .' subject '. $request->input('subject.'. $code );
+            $subject[$code] = $request->input('subject.'. $code );
+        }
+        $content->video_link        = Lib::setJson($request->input('video'));
+        $content->video_time        = Lib::setJson($request->input('video-time'));
+        $content->subject           = Lib::setJson($subject,JSON_UNESCAPED_UNICODE);
+        $content->detail            = Lib::setJson($request->input('detail'));
         $content->content_type      = 'content';
         $content->content_sort      = $request->input('content_sort');
         $content->published         = $request->has('published') ? 'Y' : 'N';
+        $content->feature_video     = $request->has('feature_video') ? 'Y' : 'N';
         $content->save();
         if( $request->input('gimage')){
             foreach( $request->input('gimage') as $i => $id){
@@ -186,7 +212,6 @@ class ContentController extends Controller
         }
         $this->thumbnail( $request,$content->id);
         return redirect('backend/content');
-        //
     }
 
     /**
@@ -286,7 +311,7 @@ class ContentController extends Controller
                     }
                 }
             }
-            $images->attach_file 	= json_encode($filename);
+            $images->attach_file 	= Lib::setJson($filename);
         }
         $images->save();
     }

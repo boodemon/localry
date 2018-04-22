@@ -33,45 +33,6 @@
                       <span class="require-category_id"></span>
                     </div>
                   </div>
-
-                  <div class="form-group row" >
-                    <label class="col-md-3 form-control-label">PHOTO GALLERY : </label>
-                    <div class="col-md-8">
-                        <div id="gallery" class="multiupload" upload-url="{{ url('backend/content/upload' ) }}">					
-                          <ul id="preview" class="preview">
-                            @if( count($row) > 0 && count($row->attach) > 0 )
-                              @foreach($row->attach as $g)
-                                <li id="gall_{{$g->id}}" class="img-gallery col-sm-4">
-                                  <a href="{{ url('backend/content/image-delete/'. $g->id  ) }}" class="color-red del-preview"><i class="icon-close"></i></a>
-                                  <b></b><img src="{{ asset( 'public/images/contents/'. $g->attach_file ) }}" id="img-product-{{ $g->id }}" class="img-preview">
-                                  <input type="hidden" name="gimage[]" value="{{ $g->id }}" />
-                                </li>
-                              @endforeach
-                            @endif
-                          </ul>
-                          <button type="button" class="btn btn-default" id="btn-select"><i class="fa fa-image"></i> เลือกรูปภาพ</button>
-                        </div>
-                    </div>
-                  </div>
-
-                  <div class="form-group row" >
-                    <label class="col-md-3 form-control-label">SORT : </label>
-                    <div class="col-md-2">
-                      <input type="text" class="form-control" name="content_sort" value="{{ count($row) > 0 ? $row->content_sort : old('content_sort') }}" />
-                      <span class="require-content_sort"></span>
-                    </div>
-                  </div>
-
-                  <div class="form-group row" >
-                    <label class="col-md-3 form-control-label"></label>
-                    <div class="col-md-8">
-                        <label class="checkbox">
-                            <input type="checkbox" name="published" {{ ( count( $row ) > 0 && $row->published == 'Y' ) ? 'checked' : '' }} /> PUBLISH
-                        </label>
-                      <span class="require-published"></span>
-                    </div>
-                  </div>
-
                 </div>
                 <h4>CONTENT FROM</h4>
                 <hr>
@@ -93,7 +54,31 @@
                   $lc = $lang->code; 
                  ?>
                 <div class="tab-pane {{ $i == 0 ? 'active' : '' }}" id="{{ $lang->code }}" role="tabpanel">
+                    <div class="form-group row">
+                        <label class="col-md-3 form-control-label">{{ $lang->code }} SUBJECT : </label>
+                        <div class="col-md-8">
+                          <input type="text" class="form-control" name="subject[{{ $lang->code }}]" value="{{ count($row) > 0 ? @$row->subject->$lc : '' }}"/>
+                          <span class="require-subject"></span>
+                        </div>
+                    </div>
                     
+                    <div class="form-group row">
+                        <label class="col-md-3 control-label"> &nbsp; </label>
+                        <div class="col-md-6" id="preview">
+                         @if( count( $row ) > 0 && count( $row->thumb) > 0 )
+                            <img src="{{ asset('public/images/contents/'. @$row->thumb->attach_thumb->$lc ) }}" />
+                         @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-3 form-control-label">{{ $lang->code }} IMAGE FRONT : </label>
+                        <div class="col-md-8">
+                          <input type="file" name="thumb[{{ $lang->code }}]" class="thumb" />
+                          <span class="require-thumb"></span>
+                        </div>
+                    </div>
+
                     <div class="form-group row">
                         <label class="col-md-3 form-control-label">{{ $lang->code }} VIDEO URL : </label>
                         <div class="col-md-8">
@@ -107,30 +92,6 @@
                         <div class="col-md-2">
                           <input type="text" class="form-control" name="video-time[{{ $lang->code }}]" value="{{ count($row) > 0 ? @$row->video_time->$lc : '' }}" />
                           <span class="require-video-time"></span>
-                        </div>
-                    </div>
-                    	<div class="form-group row">
-                        <label class="col-md-3 control-label"> &nbsp; </label>
-                        <div class="col-md-6" id="preview">
-                         @if( count( $row ) > 0 && count( $row->thumb) > 0 )
-                            <img src="{{ asset('public/images/contents/'. @$row->thumb->attach_thumb->$lc ) }}" />
-                         @endif
-                        </div>
-                      </div>
-
-                    <div class="form-group row">
-                        <label class="col-md-3 form-control-label">{{ $lang->code }} IMAGE FRONT : </label>
-                        <div class="col-md-8">
-                          <input type="file" name="thumb[{{ $lang->code }}]" class="thumb" />
-                          <span class="require-thumb"></span>
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label class="col-md-3 form-control-label">{{ $lang->code }} SUBJECT : </label>
-                        <div class="col-md-8">
-                          <input type="text" class="form-control" name="subject[{{ $lang->code }}]" value="{{ count($row) > 0 ? $row->subject->$lc : '' }}"/>
-                          <span class="require-subject"></span>
                         </div>
                     </div>
 
@@ -149,6 +110,52 @@
               <!-- / End Tab language input -->
               <!-- /Form category input -->
               <div class="clearfix" style="margin-top:10px; padding-left:10px;">
+                  <div class="form-group row" >
+                      <label class="col-md-3 form-control-label">PHOTO GALLERY : </label>
+                      <div class="col-md-8">
+                          <div id="gallery" class="multiupload" upload-url="{{ url('backend/content/upload' ) }}">					
+                            <ul id="preview" class="preview">
+                              @if( count($row) > 0 && count($row->attach) > 0 )
+                                @foreach($row->attach as $g)
+                                  <li id="gall_{{$g->id}}" class="img-gallery col-sm-4">
+                                    <a href="{{ url('backend/content/image-delete/'. $g->id  ) }}" class="color-red del-preview"><i class="icon-close"></i></a>
+                                    <b></b><img src="{{ asset( 'public/images/contents/'. $g->attach_file ) }}" id="img-product-{{ $g->id }}" class="img-preview">
+                                    <input type="hidden" name="gimage[]" value="{{ $g->id }}" />
+                                  </li>
+                                @endforeach
+                              @endif
+                            </ul>
+                            <button type="button" class="btn btn-default" id="btn-select"><i class="fa fa-image"></i> เลือกรูปภาพ</button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group row" >
+                      <label class="col-md-3 form-control-label">PIN : </label>
+                      <div class="col-md-8">
+                          <label class="checkbox">
+                              <input type="checkbox" name="feature_video" {{ ( count( $row ) > 0 && $row->feature_video == 'Y' ) ? 'checked' : '' }} /> FEATURE VIDEO
+                          </label>
+                        <span class="require-published"></span>
+                      </div>
+                  </div>
+                  <div class="form-group row" >
+                      <label class="col-md-3 form-control-label">SORT : </label>
+                      <div class="col-md-2">
+                        <input type="text" class="form-control" name="content_sort" value="{{ count($row) > 0 ? $row->content_sort : old('content_sort') }}" />
+                        <span class="require-content_sort"></span>
+                      </div>
+                  </div>
+  
+                  <div class="form-group row" >
+                      <label class="col-md-3 form-control-label"></label>
+                      <div class="col-md-8">
+                          <label class="checkbox">
+                              <input type="checkbox" name="published" {{ ( count( $row ) > 0 && $row->published == 'Y' ) ? 'checked' : '' }} /> PUBLISH
+                          </label>
+                        <span class="require-published"></span>
+                      </div>
+                  </div>
+                  
                   <div class="form-groups text-right">
                     <button type="submit" class="btn btn-primary" id="btn-save">
                       <i class="fa fa-save"></i> SAVE</button>

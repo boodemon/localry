@@ -12,7 +12,7 @@
   <link rel="shortcut icon" href="{{ asset('public/img/favicon.png') }}">
   <!-- <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
 
-  <title>Administrator by set confrents</title>
+  <title>Administrator by LOCALRY</title>
 
   <!-- Icons -->
   <link href="{{ asset('node_modules/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">

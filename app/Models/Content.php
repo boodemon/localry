@@ -8,6 +8,18 @@ class Content extends Model
 {
     protected $table = 'contents';
 
+    public function scopeType($query,$type='content'){
+        return $query->where('content_type',$type);
+    }
+
+    public function scopePublished($query,$status='Y'){
+        return $query->where('published',$status);
+    }
+
+    public function scopeFeature($query,$status='Y'){
+        return $query->where('feature_video',$status);
+    }
+
     public static function fieldRows($row, $thumb=[], $attach = []){
         return [
             'id'            => $row->id ,
@@ -18,6 +30,7 @@ class Content extends Model
             'subject'       => @json_decode($row->subject) ,
             'detail'        => @json_decode($row->detail) ,
             'published'     => $row->published ,
+            'feature_video' => $row->feature_video ,
             'content_type'  => $row->content_type ,
             'content_sort'  => $row->content_sort ,
             'created_at'    => strtotime($row->created_at) ,

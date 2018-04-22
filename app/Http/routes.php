@@ -31,7 +31,11 @@ Route::group(['middleware'=>'admin','prefix' => 'backend'], function () {
 	Route::post('content/sortable','Backend\ContentController@sortable');
     Route::post('content/upload','Backend\ContentController@upload');
     Route::resource('content', 'Backend\ContentController');
-
+    Route::resource('playlist','Backend\PlaylistController');
+    //Ajax search //
+    Route::post('video-search','Backend\PlaylistController@searchVideo');
+    Route::post('video-add','Backend\PlaylistController@addVideo');
+    Route::get('video-remove/{id?}','Backend\PlaylistController@removeVideo');
 
     // SETTING MENU //
     Route::post('setting/language/checker', 'Backend\LangController@checker');
