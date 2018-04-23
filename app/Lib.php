@@ -20,8 +20,10 @@ class Lib
     public static function encodelink($value='',$name = ''){
 		$link = strtolower($value);
 		if( $name != '' ){
+			$ex = explode('.',$link);
+			$ext = $ex[ count($ex)-1 ];
 			if (preg_match('/[^A-Za-z0-9]/', $link)){
-				$link = 'encode-images';
+				$link = 'encode-images.' . $ext;
 			}
 		}
 		$link = str_replace(' ', '-', $link);
@@ -81,6 +83,23 @@ class Lib
 		}
 		
 		return $image;
+	}
+
+	public static function filename($filename = '', $path = ''){
+		$file = $path . $filename;
+		$ex = explode('.',$filename);
+		$ext = '.' . $ex[ count($ex) -1 ];
+		if( file_exists($file) ){
+			$exf  = explode('-',$filename);
+			$newname = time()+1 .'-';
+			for($i=0; $i < count($exf); $i++){
+				if( $i > 0)
+				$newname .= $exf[$i];
+			}
+			return Lib::filename($newname,$path);
+		}else{
+			return $filename;
+		}
 	}
 
 

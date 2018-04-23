@@ -269,13 +269,14 @@ class ContentController extends Controller
 			Lib::makeFolder($path);
 			$name = time().'-'. Lib::encodelink( $file->getClientOriginalName() ,'check');
 			$ftype = $file->getClientOriginalExtension();
-			$filename = $name;
+			$filename = Lib::filename($name,$path);
 			// . '.' . $ftype;	
 			//Image::make($file)->heighten(87)->widen(87)->save($path . 'thumb/' . $filename);
 			Image::make($file)->save($path . $filename);						
 			$images = new Attach;
 			$images->attach_file 	= $filename;
 			$images->attach_type		= 'content-gallery';
+			$images->save();
 			$images->save();
 			return $images->id;
 		}

@@ -37,6 +37,7 @@ class Content extends Model
             'updated_at'    => strtotime($row->updated_at) ,
             'thumb'         => @$thumb,
             'attach'        => $attach,
+            'gallery'       => @json_decode( $attach )
         ];
     }
 }

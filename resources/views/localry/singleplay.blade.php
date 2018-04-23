@@ -6,7 +6,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="main-player">
-					<div id="main-player"><img src="{{ Lib::ybImage( $ytb['url'] ) }}" class="cover"></div>
+					<div id="main-player"><img src="{{ asset('public/images/contents/'. $content->thumb[0]-> attach_thumb->$lng ) }}" class="cover"></div>
 					<a href="#" class="play-btn">
 						<img src="{{ asset('public/images/common/ico-play.svg') }}">
 					</a>
@@ -46,26 +46,22 @@
 		<div class="row player-content">
 			<div class="col-sm-8">
 				<div class="post-meta">
-					<h2>ทำไมคนจึงจดจำแบรนด์</h2>
+					<h2>{{ $content->subject->$lng }}</h2>
 				</div>
 				<div class="content-section">
 					<p>
-					การท่องเที่ยวคนเดียวสำหรับผู้หญิงอาจจะดูเป็นเรื่องที่ลำบากและน่ากลัว แต่สำหรับผู้หญิงคนนี้ การออกเดินทางกลายเป็นดั่งตัวตนและส่วนหนึ่ง ของชีวิตเธอไปแล้ว เคยไหม เวลาท่องหนังสือสอบยากๆ หรือแม่ใช้ให้ไปซื้อของยาวเป็นหางว่าว เราจะจำไม่ค่อยได้หรอก ถ้าไม่จดลงกระดาษ ก็ต้องมีการทวนซ้ำหรือใช้เทคนิคช่วยจำบางอย่าง  การทำให้ลูกค้ารู้จักและจดจำแบรนด์ได้ก็เช่นกัน มันต้องมีเทคนิค! Story Selling  (การเล่าเป็นเรื่อง...และขายได้ด้วย) คือ เทคนิคนั้น หลายคนเข้าใจผิดว่าต้องเริ่มต้นจากการคิดเรื่องให้สนุก ให้คนอยากแชร์ แต่ที่จริงแล้ว ต้องเริ่มจาก 2 สิ่งแรกที่สำคัญที่สุด คือ เข้าใจแบรนด์ และ เข้าใจผู้บริโภค เสียก่อนเช้าใจแบรนด์อย่างไร - ถ้าไม่มีเวลาเปิดพจนานุกรม หาคำว่า Brand Statement เราบอกให้เลยว่านั่นหมายถึง สิ่งที่แบรนด์อยากบอกว่าตัวเองเป็นใคร ต้องการอะไร ว่าง่ายๆ คือ ต้องเคลียร์ ตัวเองก่อน เพราะขนาดตัวเองยังงง คนอื่นคงไม่รอดแน่ๆ เข้าใจผู้บริโภคอย่างไร - ลองไปคุ้ยแงะแกะเกามาให้เจอว่าคนที่ฟังเราบอก
-กำลังสนใจเรื่องไหน ชอบอะไร แบรนด์มีบทบาทยังไงกับชีวิตเขา ถ้าอยากพูดด้วย ต้องพูดด้วยท่าทีแบบไหน มันๆ ซ่าๆ หรือนุ่มนวล อ่อนโยน เป็นกันเอง เข้าใจ 2 ส่วนนี้แล้วจึงค่อยเลือกว่าจะเล่าเรื่องไหน ผ่านตัวละครนิสัยยังไง สถานการณ์เป็นแบบไหนจุดเชื่อมโยงแบรนด์กับเนื้อเรื่อง
-และสิ่งที่อยากให้ผู้บริโภคจำได้คืออะไร เพื่อตอบโจทย์ที่ตั้งไว้ คุณอรรถวุฒิ เวศรานุรักษ์ (คุณเอิร์ธ) กรรมการผู้จัดการ บริษัท Adapter Digital จำกัด ในฐานะดิจิตอลเอเยนซีที่มีผลงานด้านการโฆษณาออนไลน์ กล่าวว่า “แค่ Storytelling ไม่พอต้องใช้วิธีคิดแบบ Story Selling เพื่อให้เรื่องราวที่เล่าอยู่นั้นสามารถช่วยลูกค้าขาย Brand Statement ของสินค้าให้ได้ เพราะนี่ไม่ใช่เเค่การขายของแต่คือการขาย Statement เพื่อบอกว่าเราต้องการทำอะไร ตอบอะไรในสิ่งที่เรากำลังสร้าง”  สุดท้ายแล้ว คลิปวิดีโอจะไม่ได้ทำให้แค่คนรู้จักหรือจำได้ว่า “ฉันอยู่ตรงนี้” เท่านั้น แต่ยังสร้าง Brand Consideration ให้คนสนใจสินค้า มองหาและ “เลือก” แบรนด์เป็นอันดับแรกด้วย ถ้าเข้าใจเรื่องนี้แล้ว คราวนี้จะใช้ Story Selling เป็นผู้ช่วยที่ทรงพลังขนาดไหนก็ขึ้นอยู่กับลีลามัดใจของแต่ละแบรนด์แล้วล่ะ เท่านั้น แต่ยังสร้าง Brand Consideration ให้คนสนใจสินค้า มองหาและ “เลือก” แบรนด์เป็นอันดับแรกด้วย ถ้าเข้าใจเรื่องนี้แล้ว คราวนี้จะใช้ Story Selling เป็นผู้ช่วยที่ทรงพลัง ขนาดไหนก็ขึ้นอยู่กับลีลามัดใจของแต่ละแบรนด์แล้วล่ะ
+					{!! $content->detail->$lng !!}
 					</p>
 
 					<!-- Gallery Section -->
 					<div class="gallery-section row">
-
-						<?php for($i=0;$i<10;$i++){ ?>
-						<a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="gallery" class="col-md-3">
-					      <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid rounded">
-					    </a>
-					    <a href="https://unsplash.it/1200/768.jpg?image=252" data-toggle="lightbox" data-gallery="gallery" class="col-md-3">
-					      <img src="https://unsplash.it/600.jpg?image=252" class="img-fluid rounded">
-					    </a>
-					    <?php } ?>
+						@if( count( $content->gallery ) > 0)
+						@foreach( $content->gallery as $gallery)
+							<a href="{{ asset('public/images/contents/'. $gallery->attach_file .'?image=251' ) }}" data-toggle="lightbox" data-gallery="gallery" class="col-md-3">
+							<img src="{{ url('public/images/contents/'. $gallery->attach_file .'?image=251' ) }}" class="img-fluid rounded">
+						  </a>
+						  @endforeach
+						@endif
 					</div>
 					<!-- end Gallery Section -->
 
@@ -78,16 +74,16 @@
 				<div class="related-list">
 					<h3>RELATED</h3>
 					<?php for($i=0;$i<3;$i++){
-						$x = rand(0,12);  ?>
+						$x = rand(0, count( $recents )-1 );  ?>
 					<div class="thumb-list-child">
 						<div class="thumb-cover">
-							<a href="{{ url('singleplay/'. $x ) }}">
-								<img src="{{ Lib::ybImage( $youtubes[$x]['url'] ) }}">
+							<a href="{{ url('singleplay/'. $recents[$x]->id .'/'. Lib::encodelink( $recents[$x]->subject->$lng )) }}">
+								<img src="{{ asset('public/images/contents/'. $recents[$x]->thumb[0]-> attach_thumb->$lng ) }}">
 							</a>
-							<div class="vid-time-num">5:20</div>
+							<div class="vid-time-num">{{ @$recents[$x]->video_time->$lng }}</div>
 						</div>
 						<div class="thumb-caption">
-							<a href="{{ url('singleplay/'. $x ) }}">{{ $youtubes[$x]['title'] }}</a>
+							<a href="{{ url('singleplay/'. $recents[$x]->id .'/'. Lib::encodelink( $recents[$x]->subject->$lng )) }}">{{ $recents[$x]->subject->$lng }}</a>
 						</div>
 					</div>
 					<?php } ?>
@@ -107,17 +103,17 @@
 			<h2 class="section-title">MOST VIEWED IN FASHION & BEAUTY</h2>
 			<div class="row">
 				<?php for($i=0;$i<3;$i++){
-						$x = rand(0,12);  ?>
+						$x = rand(0,count( $recents)-1);  ?>
 				<div class="col">
 					<div class="thumb-list-child">
 						<div class="thumb-cover">
-							<a href="{{ url('singleplay/'. $x ) }}">
-								<img src="{{ Lib::ybImage( $youtubes[$x]['url'] ) }}">
+							<a href="{{ url('singleplay/'. $recents[$x]->id .'/'. Lib::encodelink( $recents[$x]->subject->$lng )) }}">
+								<img src="{{ asset('public/images/contents/'. $recents[$x]->thumb[0]-> attach_thumb->$lng ) }}">
 							</a>
-							<div class="vid-time-num">5:20</div>
+							<div class="vid-time-num">{{ @$recents[$x]->video_time->$lng }}</div>
 						</div>
 						<div class="thumb-caption">
-							<a href="{{ url('singleplay/'. $x ) }}">{{ $youtubes[$x]['title'] }}</a>
+							<a href="{{ url('singleplay/'. $recents[$x]->id .'/'. Lib::encodelink( $recents[$x]->subject->$lng )) }}">{{ $recents[$x]->subject->$lng }}</a>
 						</div>
 					</div>
 				</div>
@@ -129,7 +125,7 @@
 	</div>
 
 	<div class="container-fluid">
-		<!-- Editor's Choices -->
+		<!-- Editor s Choices -->
 		<section class="editor">
 			<h2 class="section-title">EDITOR’S CHOICE</h2>
 			<div class="row">
@@ -143,7 +139,7 @@
 				</div>
 			</div>
 		</section>
-		<!-- End Editor's Choices -->
+		<!-- End Editor s Choices -->
 	</div>
 
 
@@ -152,22 +148,23 @@
 		<section class="recent-view full-width">
 			<h2 class="section-title">RECENT VIEWS</h2>
 			<div class="row">
-				<?php for($i=0;$i<5;$i++){
-						$x = rand(0,12);  ?>
+					@if( count($features) > 0 )
+                    @for($i = 0; $i < 5; $i++)
+                    <?php $x = rand(0, count( $features )-1); ?>
 				<div class="col">
 					<div class="thumb-list-child">
 						<div class="thumb-cover">
-							<a href="{{ url('singleplay/'. $x ) }}">
-								<img src="{{ Lib::ybImage( $youtubes[$x]['url'] ) }}">
-							</a>
-							<div class="vid-time-num">5:20</div>
+							<a href="{{ url('singleplay/'. $features[$x]->id .'/'. Lib::encodelink( $features[$x]->subject->$lng )) }}">
+								<img src="{{ asset('public/images/contents/'. $features[$x]->thumb[0]-> attach_thumb->$lng ) }}"/>
+							<div class="vid-time-num">{{ @$features[$x]->video_time->$lng }}</div>
 						</div>
 						<div class="thumb-caption">
-							<a href="{{ url('singleplay/'. $x ) }}"><?php echo  $youtubes[$x]['title']; ?></a>
+							<a href="{{ url('singleplay/'. $features[$x]->id .'/'. Lib::encodelink( $features[$x]->subject->$lng )) }}">{{ $features[$x]->subject->$lng }}</a>
 						</div>
 					</div>
 				</div>
-				<?php } ?>
+				@endfor
+                @endif
 			</div>
 		</section>
 		<!-- end recent view -->
@@ -205,7 +202,7 @@
 			player = new YT.Player('main-player', {
 			height: '100%',
 			width: '100%',
-			videoId: '{{ Lib::videoID( $ytb["url"]) }}'
+			videoId: '{{ Lib::videoID( $content->video_link->$lng) }}'
 			});
 		}
 

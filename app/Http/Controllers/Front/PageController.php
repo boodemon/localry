@@ -86,38 +86,48 @@ class PageController extends Controller
                     'contents.video_link',
                     'contents.video_time')
         ->join('contents','contents.id','=','play.content_id')
-        ->where('play.category_id',$id)
+       // ->where('play.category_id',1)
         ->inRandomOrder()
         ->get();
         $play = [];
         if( $rows ){
             foreach( $rows as $row ){
-                $play[] = Content::fieldRows( $row , Attach::thumbnailRow( $row->content_id ) );
+                $play[] = Content::fieldRows( $row , Attach::thumbnailRow( $row->content_id ) ,Attach::queryGallery($row->content_id));
             }
         }
         return json_encode( $play );
     }
-    public function category(){
+    //:: Front end url : category :://
+    public function category($id,$subject=''){
+        $row = Category::where('id',$id)->first();
         $data = [
-            'youtubes' => $this->youtube,
+            'category' => @json_decode(json_encode( Category::fieldRows($row) ) ),
+            'contents' => @json_decode(json_encode( $this->queryContent( $id ) )),
+            'playlist' => @json_decode( $this->queryPlaylist() ),
+            'features' => @json_decode( $this->queryFeature() ),
         ];
         return view('localry.category',$data);
     }
+    //:: Front end url : Playlist :://
 
     public function playlist(){
-        $youtubes =  $this->youtube;
         $data = [
-            'youtubes'  =>   $youtubes,
-            'ytb'       =>      $youtubes[rand(0,12)]['url']
+            'playlist' => @json_decode( $this->queryPlaylist() ),
+            'features' => @json_decode( $this->queryFeature() ),
         ];
         return view('localry.playlist',$data);
     }
-
+    
+    //:: Front end url : singleplay :://
     public function singleplay($id = 0){
-        $youtubes =  $this->youtube;
+        $row = Content::where('id',$id)->first();
+        $cont = @json_decode(json_encode( Content::fieldRows( $row, Attach::thumbnailRow( $id ), Attach::queryGallery($id) ) ) ); 
+        $recents = @json_decode(json_encode(  $this->queryContent($cont->category_id) ));
+        //echo '<pre>', print_r( $recents ) ,'</pre>';
         $data = [
-           'youtubes'  =>   $youtubes,
-           'ytb'       => $youtubes[ $id ]
+           'recents'  =>   $recents,
+           'content'       => $cont,
+           'features' => @json_decode( $this->queryFeature() ),
         ];
         return view('localry.singleplay',$data);
     }

@@ -14,7 +14,7 @@
 							<li><a href="{{ url('/') }}">FEATURE VIDEO</a></li>
 							@if( $menus )
 								@foreach( $menus as $menu )
-								<li><a href="{{ url('content/' . $menu['id'] .'/'. Lib::encodelink( $menu['subject']->$lng ) ) }}">{{ @$menu['subject']->$lng }}</a></li>
+								<li><a href="{{ url('category/' . $menu['id'] .'/'. Lib::encodelink( $menu['subject']->$lng ) ) }}">{{ @$menu['subject']->$lng }}</a></li>
 								@endforeach
 							@endif
 							<!--
@@ -128,7 +128,7 @@
 				<li><a href="{{ url('/') }}">FEATURE VIDEO</a></li>
 				@if( $menus )
 				@foreach( $menus as $menu )
-					<li><a href="{{ url('content/' . $menu['id']  .'/'. Lib::encodelink( $menu['subject']->$lng )) }}">{{ @$menu['subject']->$lng }}</a></li>
+					<li><a href="{{ url('category/' . $menu['id']  .'/'. Lib::encodelink( $menu['subject']->$lng )) }}">{{ @$menu['subject']->$lng }}</a></li>
 				@endforeach
 			@endif
 <!--

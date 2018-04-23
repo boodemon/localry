@@ -29,6 +29,7 @@ Route::group(['middleware'=>'admin','prefix' => 'backend'], function () {
     Route::resource('dashboard', 'Backend\DashboardController');
     Route::resource('category', 'Backend\CategoryController');
 	Route::post('content/sortable','Backend\ContentController@sortable');
+	Route::get('content/image-delete/{id?}','Backend\ContentController@imageDelete');
     Route::post('content/upload','Backend\ContentController@upload');
     Route::resource('content', 'Backend\ContentController');
     Route::resource('playlist','Backend\PlaylistController');
@@ -53,6 +54,6 @@ Route::group(['middleware'=>'admin','prefix' => 'backend'], function () {
 //::=====================================================================================:://
 Route::get('/','Front\PageController@index');
 Route::get('index','Front\PageController@index');
-Route::get('category','Front\PageController@category');
+Route::get('category/{id?}/{subject?}','Front\PageController@category');
 Route::get('playlist','Front\PageController@playlist');
-Route::get('singleplay/{id?}','Front\PageController@singleplay');
+Route::get('singleplay/{id?}/{subject?}','Front\PageController@singleplay');

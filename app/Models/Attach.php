@@ -41,6 +41,17 @@ class Attach extends Model
         return json_encode($gdata);
     }
 
+    public static function galleryRows($ref_id){
+        $rows = Attach::where('ref_id',$ref_id)->where('attach_type','content-gallery')->get();
+        $gdata = [];
+        if( $rows ){
+            foreach( $rows as $row ){
+                $gdata[] = Attach::fieldRows( $row );
+            }
+        }
+        return $gdata;
+    }
+    
     public static function thumbnailRow($ref_id){
         $row = Attach::where('ref_id',$ref_id)->where('attach_type','content-thumbnail')->first();
         $gdata = [];

@@ -192,21 +192,23 @@
 			<h2 class="section-title">UPDATE FROM FOLLOWING CHANEL</h2>
 			<div class="row">
                     @if( count($features) > 0 )
-                    @foreach( $features as $feature )
+
+                    @for($i = 0; $i < 3; $i++)
+                    <?php $x = rand(0, count( $features )); ?>
 				<div class="col">
                         <div class="thumb-list-child">
                                 <div class="thumb-cover">
                                     <a href="{{ url('playlist') }}">
-                                        <img src="{{ asset('public/images/contents/'. $feature->thumb[0]-> attach_thumb->$lng ) }}">
+                                        <img src="{{ asset('public/images/contents/'. $features[$x]->thumb[0]-> attach_thumb->$lng ) }}">
                                     </a>
-                                    <div class="vid-time-num">{{ @$feature->video_time->$lng }}</div>
+                                    <div class="vid-time-num">{{ @$features[$x]->video_time->$lng }}</div>
                                 </div>
                                 <div class="thumb-caption">
-                                    <a href="{{ url('playlist') }}">{{ $feature->subject->$lng }}</a>
+                                    <a href="{{ url('playlist') }}">{{ $features[$x]->subject->$lng }}</a>
                                 </div>
                             </div>
 				</div>
-				@endforeach
+				@endfor
                 @endif
 			</div>
 		</section>
@@ -219,20 +221,21 @@
 			<h2 class="section-title">RECENT VIEWS</h2>
 			<div class="row">
                     @if( count($features) > 0 )
-                    @foreach( $features as $feature )
+                    @for($i = 0; $i < 5; $i++)
+                    <?php $x = rand(0, count( $features )); ?>
 				<div class="col">
 					<div class="thumb-list-child">
 						<div class="thumb-cover">
-							<a href="{{ url('singleplay/'. $feature->id .'/'. Lib::encodelink( $feature->subject->$lng )) }}">
-								<img src="{{ asset('public/images/contents/'. $feature->thumb[0]-> attach_thumb->$lng ) }}"/>
-							<div class="vid-time-num">{{ @$feature->video_time->$lng }}</div>
+							<a href="{{ url('singleplay/'. $features[$x]->id .'/'. Lib::encodelink( $features[$x]->subject->$lng )) }}">
+								<img src="{{ asset('public/images/contents/'. $features[$x]->thumb[0]-> attach_thumb->$lng ) }}"/>
+							<div class="vid-time-num">{{ @$features[$x]->video_time->$lng }}</div>
 						</div>
 						<div class="thumb-caption">
-							<a href="{{ url('singleplay/'. $feature->id .'/'. Lib::encodelink( $feature->subject->$lng )) }}">{{ $feature->subject->$lng }}</a>
+							<a href="{{ url('singleplay/'. $features[$x]->id .'/'. Lib::encodelink( $features[$x]->subject->$lng )) }}">{{ $features[$x]->subject->$lng }}</a>
 						</div>
 					</div>
 				</div>
-				@endforeach
+				@endfor
                 @endif
 			</div>
 		</section>
