@@ -6,7 +6,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="main-player">
-					<div id="main-player"><img src="{{ asset('public/images/contents/'. $content->thumb[0]-> attach_thumb->$lng ) }}" class="cover"></div>
+					<div id="main-player"><img src="{{ asset('public/images/contents/'. @$content->thumb[0]-> attach_thumb->$lng ) }}" class="cover"></div>
 					<a href="#" class="play-btn">
 						<img src="{{ asset('public/images/common/ico-play.svg') }}">
 					</a>
@@ -78,7 +78,7 @@
 					<div class="thumb-list-child">
 						<div class="thumb-cover">
 							<a href="{{ url('singleplay/'. $recents[$x]->id .'/'. Lib::encodelink( $recents[$x]->subject->$lng )) }}">
-								<img src="{{ asset('public/images/contents/'. $recents[$x]->thumb[0]-> attach_thumb->$lng ) }}">
+								<img src="{{ asset('public/images/contents/'. @$recents[$x]->thumb[0]-> attach_thumb->$lng ) }}">
 							</a>
 							<div class="vid-time-num">{{ @$recents[$x]->video_time->$lng }}</div>
 						</div>
@@ -108,7 +108,7 @@
 					<div class="thumb-list-child">
 						<div class="thumb-cover">
 							<a href="{{ url('singleplay/'. $recents[$x]->id .'/'. Lib::encodelink( $recents[$x]->subject->$lng )) }}">
-								<img src="{{ asset('public/images/contents/'. $recents[$x]->thumb[0]-> attach_thumb->$lng ) }}">
+								<img src="{{ asset('public/images/contents/'. @$recents[$x]->thumb[0]-> attach_thumb->$lng ) }}">
 							</a>
 							<div class="vid-time-num">{{ @$recents[$x]->video_time->$lng }}</div>
 						</div>

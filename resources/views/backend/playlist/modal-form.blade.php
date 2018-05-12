@@ -32,7 +32,7 @@
                       <div class="form-group row">
                           <label class="col-md-3 form-control-label">{{ $lang->code }} Playlist Name : </label>
                           <div class="col-md-8">
-                            <input type="text" class="form-control" name="subject[{{ $lang->code }}]" />
+                            <input type="text" class="form-control" id="subject-{{ $lang->code }}" name="subject[{{ $lang->code }}]" />
                             <span class="require-code"></span>
                           </div>
                       </div>

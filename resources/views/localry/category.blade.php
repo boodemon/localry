@@ -20,7 +20,7 @@
 				<div class="category-banner">
 					<a href="{{ url('singleplay/' .$contents[0]->id .'/' . Lib::encodelink( $contents[0]->subject->$lng )) }}">
 						<div class="banner-title">{{ $contents[0]->subject->$lng }}</div>
-						<img src="{{ asset('public/images/contents/'. $contents[0]->thumb[0]-> attach_thumb->$lng ) }}" alt="feature-banner">
+						<img src="{{ asset('public/images/contents/'. @$contents[0]->thumb[0]-> attach_thumb->$lng ) }}" alt="feature-banner">
 					</a>
 					<div class="vid-time-holder">
 						<span class="vid-time-num">{{ @$contents[0]->video_time->$lng }}</span>
@@ -45,7 +45,7 @@
 						<div class="thumb-list-child">
 							<div class="thumb-cover">
 								<a href="{{ url('singleplay/' .$content->id .'/' . Lib::encodelink( $content->subject->$lng )) }}">
-									<img src="{{ asset('public/images/contents/'. $content->thumb[0]-> attach_thumb->$lng ) }}">
+									<img src="{{ asset('public/images/contents/'. @$content->thumb[0]-> attach_thumb->$lng ) }}">
 								</a>
 								<div class="vid-time-num">{{ @$content->video_time->$lng }}</div>
 							</div>

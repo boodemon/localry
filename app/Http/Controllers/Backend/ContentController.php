@@ -193,7 +193,7 @@ class ContentController extends Controller
         $subject = [];
         foreach( @json_decode($this->langs)  as $in => $lng){
             $code = $lng->code;
-            echo 'code '. $code .' subject '. $request->input('subject.'. $code );
+           // echo 'code '. $code .' subject '. $request->input('subject.'. $code );
             $subject[$code] = $request->input('subject.'. $code );
         }
         $content->video_link        = Lib::setJson($request->input('video'));
@@ -300,20 +300,65 @@ class ContentController extends Controller
                     $filename[$l] = $name . $ftype; 
                     Image::make($file)->save($path . $filename[$l]);
                 }else{
+                    //echo '<p>run else file</p>';
+                    $video = $request->input('video.' . $l );
+                    //echo '<p>videl url : '. $video .'</p>';
                     if( !$chk ){
-                        $video = $request->input('video.' . $l );
+                        //echo'<p>run chk false</p>';
+                        
                         if( !empty( $video ) ){
                             $thumbnail = 'youtube-thumbnail-' . time();
                             $filename[$l] = Lib::youtubeThumbnail( $video,'upload', $thumbnail,$path);
                         }
                     }else{
+                        //echo'<p>run chk true</p>';
                         $link = @json_decode( $chk->attach_file );
+                        if( !empty( $link->$l ) ){
+                            //echo'<p>run thumb not empty '. $l .'</p>';
+                            $filename[$l] = @$link->$l;
+                        }else{
+                            //echo'<p>run thumb empty '. $l .'</p>';
+                            if( !empty( $video ) ){
+                                //echo'<p>run video not empty '. $l .'</p>';
+                                $thumbnail = 'youtube-thumbnail-' . time();
+                                $thumb = Lib::youtubeThumbnail( $video,'upload', $thumbnail,$path);
+                                $filename[$l] = $thumb;
+                                //echo 'thumb url = '. $thumb .'<br>';
+                            }else{ 
+                                $filename[$l] = '';
+                                //echo'<p>run video empty '. $l .'</p>';
+                            }
+                        }
+                    }
+                }
+                //echo '<hr>';
+            }
+            $images->attach_file 	= Lib::setJson($filename);
+        }else{
+            $filename = '';
+            //echo 'run else <br/>';
+            foreach( $request->file('video') as $l => $v ){
+                $video = $request->input('video.' . $l );
+                if( $chk ){
+                    $link = @json_decode( $chk->attach_file );
+                    if( !empty( $link->$l ) ){
                         $filename[$l] = @$link->$l;
+                    }else{ 
+                        if( !empty( $video ) ){
+                            $thumbnail = 'youtube-thumbnail-' . time();
+                            $filename[$l] = Lib::youtubeThumbnail( $video,'upload', $thumbnail,$path);
+                        }
+                    }
+                }else{
+                    if( !empty( $video ) ){
+                        $thumbnail = 'youtube-thumbnail-' . time();
+                        $filename[$l] = Lib::youtubeThumbnail( $video,'upload', $thumbnail,$path);
                     }
                 }
             }
             $images->attach_file 	= Lib::setJson($filename);
         }
+        //echo '<pre>', print_r( $filename ) ,'</pre>';
         $images->save();
     }
 

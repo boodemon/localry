@@ -59,8 +59,8 @@
 				<div class="col">
 					<div class="thumb-list-child">
 						<div class="thumb-cover">
-							<a href="{{ url('singleplay/' . $content->id .'/'. Lib::encodelink($content->subject->$lng) ) }}">
-								<img src="{{ asset('public/images/contents/'. $content->thumb[0]->attach_thumb->$lng ) }}">
+							<a href="{{ url('singleplay/' . $content->id .'/'. Lib::encodelink(@$content->subject->$lng) ) }}">
+								<img src="{{ asset('public/images/contents/'. @$content->thumb[0]->attach_thumb->$lng ) }}">
 							</a>
 							<div class="vid-time-num">{{ @$content->video_time->$lng }}</div>
 						</div>
@@ -226,12 +226,12 @@
 				<div class="col">
 					<div class="thumb-list-child">
 						<div class="thumb-cover">
-							<a href="{{ url('singleplay/'. $features[$x]->id .'/'. Lib::encodelink( $features[$x]->subject->$lng )) }}">
-								<img src="{{ asset('public/images/contents/'. $features[$x]->thumb[0]-> attach_thumb->$lng ) }}"/>
+							<a href="{{ url('singleplay/'. @$features[$x]->id .'/'. Lib::encodelink( @$features[$x]->subject->$lng )) }}">
+								<img src="{{ asset('public/images/contents/'. @$features[$x]->thumb[0]-> attach_thumb->$lng ) }}"/>
 							<div class="vid-time-num">{{ @$features[$x]->video_time->$lng }}</div>
 						</div>
 						<div class="thumb-caption">
-							<a href="{{ url('singleplay/'. $features[$x]->id .'/'. Lib::encodelink( $features[$x]->subject->$lng )) }}">{{ $features[$x]->subject->$lng }}</a>
+							<a href="{{ url('singleplay/'. @$features[$x]->id .'/'. Lib::encodelink( $features[$x]->subject->$lng )) }}">{{ $features[$x]->subject->$lng }}</a>
 						</div>
 					</div>
 				</div>

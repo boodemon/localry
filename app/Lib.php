@@ -125,23 +125,23 @@ class Lib
   }
 
   public static function youtubeThumbnail($url = '',$action = '', $name = '', $path = ''){
-	  //echo 'url => '. $url .'<br/>';
-	parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
-	//echo '<pre>',print_r($my_array_of_vars) ,'</pre>';
-    $video_id = $my_array_of_vars['v'];
     parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
-    $video_id = $my_array_of_vars['v'];
+	$video_id = $my_array_of_vars['v'];
+	//echo '<p>video id = '. $video_id .'</p>';
 	$qt      = ['maxresdefault','sddefault','mqdefault','hqdefault' ,'default'];
-	
+	$filename = '';
     for( $i = 0; $i <= count( $qt ) -1; $i++ ){
-      $yimg = 'http://img.youtube.com/vi/' . $video_id . '/' . $qt[$i] . '.jpg';
-      if( @file_get_contents($yimg) ) {
+	  $yimg = 'http://img.youtube.com/vi/' . $video_id . '/' . $qt[$i] . '.jpg';
+	  //echo '<p>yimg = '. $yimg .'<br/><img src="'. $yimg .'"/></p>';
+      if( file_get_contents( $yimg ) ) {
 		  if( $path == '' ){
 			  $path = public_path().'/images/thumbnails/';
 		  }
 		  $filename = ( $name == '' ? 'video' .'-'. time() : $name ) .'.jpg';
-		  if( $action == 'upload')
+		  if( $action == 'upload'){
+			//echo '<p>UPLOAD FILE : '. $filename .'</p>';
 		  file_put_contents( $path . $filename , file_get_contents($yimg));
+		  }
 		  break;
 	  }
 	}
