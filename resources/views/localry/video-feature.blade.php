@@ -25,7 +25,7 @@
 						<div class="thumb-list-child">
 							<div class="thumb-cover">
 								<a href="{{ url('playlist') }}">
-									<img src="{{ asset('public/images/contents/'. $feature->thumb[0]->attach_thumb->$lng ) }}">
+									<img src="{{ asset('public/images/contents/'. @$feature->thumb[0]->attach_thumb->$lng ) }}">
 								</a>
 								<div class="vid-time-num">{{ @$feature->video_time->$lng }}</div>
 							</div>
@@ -194,7 +194,7 @@
                     @if( count($features) > 0 )
 
                     @for($i = 0; $i < 3; $i++)
-                    <?php $x = rand(0, count( $features )); ?>
+                    <?php $x = rand(0, (count( $features )-1)); ?>
 				<div class="col">
                         <div class="thumb-list-child">
                                 <div class="thumb-cover">
@@ -222,7 +222,7 @@
 			<div class="row">
                     @if( count($features) > 0 )
                     @for($i = 0; $i < 5; $i++)
-                    <?php $x = rand(0, count( $features )); ?>
+                    <?php $x = rand(0, (count( $features )-1)); ?>
 				<div class="col">
 					<div class="thumb-list-child">
 						<div class="thumb-cover">
