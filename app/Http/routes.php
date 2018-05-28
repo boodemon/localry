@@ -57,3 +57,8 @@ Route::get('index','Front\PageController@index');
 Route::get('category/{id?}/{subject?}','Front\PageController@category');
 Route::get('playlist','Front\PageController@playlist');
 Route::get('singleplay/{id?}/{subject?}','Front\PageController@singleplay');
+
+// :: AUTH FOR FRONT END 
+Route::get('login','Front\AuthController@login');
+Route::get('register','Front\AuthController@register');
+Route::get('forgot','Front\AuthController@forgot');

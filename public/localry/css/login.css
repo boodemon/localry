@@ -1,0 +1,12 @@
+@media(min-width:768px){
+    .card-login{
+        width:420px;
+        margin:20px  auto;
+
+    }
+    .card-forgot{
+        width:600px;
+        margin:20px  auto;
+
+    }
+}

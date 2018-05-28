@@ -131,5 +131,7 @@ class PageController extends Controller
         ];
         return view('localry.singleplay',$data);
     }
+
+
     
 }

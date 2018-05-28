@@ -112,7 +112,7 @@
 				</a>
 			</div>
 			<div class="col">
-				<a href="#" class="member-menu">
+				<a href="{{ url('login') }}" class="member-menu">
 					<img src="{{ asset('public/images/common/member-icon.svg') }}">
 				</a>
 			</div>
