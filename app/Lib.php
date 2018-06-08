@@ -126,6 +126,7 @@ class Lib
 
   public static function youtubeThumbnail($url = '',$action = '', $name = '', $path = ''){
     parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
+	if( !isset( $my_array_of_vars['v'] ) ) return false;
 	$video_id = $my_array_of_vars['v'];
 	//echo '<p>video id = '. $video_id .'</p>';
 	$qt      = ['maxresdefault','sddefault','mqdefault','hqdefault' ,'default'];
