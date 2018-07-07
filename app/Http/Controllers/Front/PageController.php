@@ -134,8 +134,8 @@ class PageController extends Controller
 
 
     /////////////////////////////// Member zone //////////////////////////////////
-    //:: Front end url : profile-follow :://
-    public function profilefollow(){
-        return view('localry.profile-follow');
+    //:: Front end url : profile/following/playlist :://
+    public function profileFollowingPlaylist(){
+        return view('localry.profile-follow-playlist');
     }
 }

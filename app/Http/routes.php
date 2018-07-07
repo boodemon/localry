@@ -57,7 +57,7 @@ Route::get('index','Front\PageController@index');
 Route::get('category/{id?}/{subject?}','Front\PageController@category');
 Route::get('playlist','Front\PageController@playlist');
 Route::get('singleplay/{id?}/{subject?}','Front\PageController@singleplay');
-Route::get('profile/follow','Front\PageController@profilefollow');
+Route::get('profile/following/playlist','Front\PageController@profileFollowingPlaylist');
 
 // :: AUTH FOR FRONT END
 Route::get('login','Front\AuthController@login');
