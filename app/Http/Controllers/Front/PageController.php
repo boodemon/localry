@@ -131,4 +131,11 @@ class PageController extends Controller
         ];
         return view('localry.singleplay',$data);
     }
+
+
+    /////////////////////////////// Member zone //////////////////////////////////
+    //:: Front end url : profile-follow :://
+    public function profilefollow(){
+        return view('localry.profile-follow');
+    }
 }
