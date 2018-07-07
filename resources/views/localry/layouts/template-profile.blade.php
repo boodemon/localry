@@ -30,7 +30,7 @@
 							<ul>
 								<li class="active"><a href="#">FEED</a></li>
 								<li><a href="{{ url('profile/following/playlist') }}">FOLLOWING</a></li>
-								<li><a href="{{ url('profile/community/findpeople') }}">COMMUNITY</a></li>
+								<li><a href="{{ url('profile/community/find-people') }}">COMMUNITY</a></li>
 								<li><a href="{{ url('profile/myplaylist/') }}">MY PLAYLISTS</a></li>
 								<li><a href="{{ url('profile/myrating/') }}">MY RATINGS</a></li>
 								<li><a href="{{ url('profile/recentlywatched/') }}">RECENTLY WATCHED</a></li>
