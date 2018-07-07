@@ -33,7 +33,7 @@ class PageController extends Controller
         return view('localry.video-feature',$data);
     }
     public function queryFeature(){
-        $features = Content::type()           
+        $features = Content::type()
                             ->feature()
                             ->published()
                             ->inRandomOrder()
@@ -74,7 +74,7 @@ class PageController extends Controller
         }
         return $data;
     }
-    
+
     public function queryPlaylist(){
         $rows = DB::table('playlists as play')
         ->select('play.id as play_id',
@@ -117,11 +117,11 @@ class PageController extends Controller
         ];
         return view('localry.playlist',$data);
     }
-    
+
     //:: Front end url : singleplay :://
     public function singleplay($id = 0){
         $row = Content::where('id',$id)->first();
-        $cont = @json_decode(json_encode( Content::fieldRows( $row, Attach::thumbnailRow( $id ), Attach::queryGallery($id) ) ) ); 
+        $cont = @json_decode(json_encode( Content::fieldRows( $row, Attach::thumbnailRow( $id ), Attach::queryGallery($id) ) ) );
         $recents = @json_decode(json_encode(  $this->queryContent($cont->category_id) ));
         //echo '<pre>', print_r( $recents ) ,'</pre>';
         $data = [
@@ -131,7 +131,4 @@ class PageController extends Controller
         ];
         return view('localry.singleplay',$data);
     }
-
-
-    
 }
