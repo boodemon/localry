@@ -1145,6 +1145,14 @@ input[type="text"]{
 		text-align: center;
 		font-family: $regular;
 		font-size: 1.5em;
+		letter-spacing: 0.08em;
+	}
+	.small-header{
+		font-family: $light;
+		color: black;
+		font-size: 0.9em;
+		letter-spacing: 0.08em;
+		text-align: center;
 	}
 }
 .avartar{
@@ -1250,6 +1258,103 @@ input[type="text"]{
 		}
 	}
 }
+.community-search-bar{
+	border-bottom: 1px solid black;
+	position: relative;
+	input{
+		width: 100%;
+		border:none;
+		background: none;
+		padding-top: 15px;
+		padding-left: 0;
+		padding-right: 100px;
+		//padding-bottom: 15px;
+		margin-bottom: -15px;
+		font-size: 1.2em;
+		font-family: $bold;
+		&:focus{
+			outline: none;
+		}
+	}
+	button{
+		background-color: white;
+		padding: 10px 15px;
+		border:none;
+		color: black;
+		font-size: 2em;
+		position: absolute;
+		right: 0;
+		top:0;
+		cursor: pointer;
+	}
+}
+.people{
+	&-list{
+		margin-left: -5px;
+		margin-right: -5px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	&-child{
+		display: inline;
+		float: left;
+		width: 20%;
+		padding-left: 5px;
+		padding-right: 5px;
+		text-align: center;
+		margin-bottom: 30px;
+		figure{
+			overflow: hidden;
+		}
+		.profile-name{
+			font-size: 1em;
+			font-family: $regular;
+			letter-spacing: 0.08em;
+			a{
+				color: black;
+				text-decoration: none;
+				&:hover{
+					color: $gold;
+				}
+			}
+		}
+		.meta{
+			font-family: $lightGray;
+			font-size: 0.9em;
+			color: $lightGray;
+		}
+		.has-hover{
+			position: relative;
+
+			img{
+				position: relative;
+				z-index: 1;
+			}
+			.hover-menu{
+				position: absolute;
+				right: 0;
+				background-color: $gold;
+				z-index: 2;
+				bottom: -50%;
+				@include ts;
+				a{
+					color: white;
+					display: block;
+					text-align: center;
+					font-weight: lighter;
+					font-size: 0.8em;
+					padding: 12px 15px;
+				}
+			}
+			&:hover{
+				.hover-menu{
+					bottom:0%;
+				}
+			}
+		}
+	}
+}
+
 
 /*********************** responsive *******************/
 @media (min-width:1400px){

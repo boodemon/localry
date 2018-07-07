@@ -62,6 +62,9 @@ Route::get('singleplay/{id?}/{subject?}','Front\PageController@singleplay');
 Route::get('profile/following/playlist','Front\PageController@profileFollowingPlaylist');
 Route::get('profile/following/series','Front\PageController@profileFollowingSeries');
 Route::get('profile/following/categories','Front\PageController@profileFollowingCategories');
+Route::get('profile/community/find-people','Front\PageController@profileCommunityFindpeople');
+Route::get('profile/community/you-follow','Front\PageController@profileCommunityYoufollow');
+Route::get('profile/community/follower','Front\PageController@profileCommunityFollower');
 
 
 

@@ -144,9 +144,30 @@ class PageController extends Controller
         return view('localry.profile-follow-series');
     }
 
-    //:: Front end url : profile/following/series :://
+    //:: Front end url : profile/following/categories :://
     public function profileFollowingCategories(){
         return view('localry.profile-follow-categories');
     }
+
+    //:: Front end url : profile/community/find-people :://
+    public function profileCommunityFindpeople(){
+        return view('localry.profile-community-findpeople');
+    }
+
+    //:: Front end url : profile/community/you-follow :://
+    public function profileCommunityYoufollow(){
+        return view('localry.profile-community-youfollow');
+    }
+
+    //:: Front end url : profile/community/follower :://
+    public function profileCommunityFollower(){
+        return view('localry.profile-community-follower');
+    }
+
+
+
+
+
+
 
 }
