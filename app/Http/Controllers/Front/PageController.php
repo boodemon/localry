@@ -138,4 +138,15 @@ class PageController extends Controller
     public function profileFollowingPlaylist(){
         return view('localry.profile-follow-playlist');
     }
+
+    //:: Front end url : profile/following/series :://
+    public function profileFollowingSeries(){
+        return view('localry.profile-follow-series');
+    }
+
+    //:: Front end url : profile/following/series :://
+    public function profileFollowingCategories(){
+        return view('localry.profile-follow-categories');
+    }
+
 }

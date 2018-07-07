@@ -1,4 +1,4 @@
-<hr class="separator-line full-width">
+
 <section class="bottom-social">
 	<div class="row">
 		<div class="col-sm-12">

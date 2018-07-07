@@ -1,5 +1,6 @@
 $lightGray:#b2b2b2;
 $lightRed:#ed4848;
+$gold:#c9a16e;
 
 /******************** Font *************************/
 
@@ -35,7 +36,6 @@ $lightItal:'LemonMilklightitalic',sans-serif;
 }
 
 
-
 html{
 	font-size: 14px;
 	-webkit-font-smoothing: antialiased;
@@ -49,10 +49,18 @@ body{
 	clear: both;
 	visibility: hidden;
 }
+.container{
+	max-width: 1200px;
+}
 .wrapper{
 	overflow: hidden;
 }
-
+figure{
+	img{
+		width: 100%;
+		height: auto;
+	}
+}
 header{
 	padding-top: 50px;
 	background-color: white;
@@ -567,6 +575,9 @@ section{
 .bottom-social{
 	text-align: center;
 	padding-bottom: 30px;
+	padding-top: 45px;
+	margin-top: 45px;
+	border-top:1px solid #b2b2b2;
 	ul{
 		list-style: none;
 		display: inline-block;
@@ -1077,7 +1088,6 @@ input[type="text"]{
 		padding-bottom: 15px;
 	}
 }
-
 .ekko-lightbox{
 	z-index: 999999;
 	.modal-backdrop{
@@ -1089,6 +1099,158 @@ input[type="text"]{
 		transform: translate(0, -50%) !important;
 	}
 }
+.profile-body{
+	border-top: 1px solid $lightGray;
+	position: relative;
+}
+.profile-bar{
+	background-color: #f8f8f8;
+	padding-top: 50px;
+	height: 200px;
+	position: absolute;
+	z-index: 2;
+	top:0;
+	left: 0;
+	width: 100%;
+	@include clearfix;
+
+	h2{
+		color: black;
+		font-family: $bold;
+		font-size: 1.7em;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+}
+.profile-left-col{
+	padding-left: 0;
+	padding-right: 0;
+	position: relative;
+	z-index: 2;
+	max-width: 16.66%;
+	.avartar{
+		margin-right: -1px;
+	}
+}
+.profile-right-col{
+	margin-top: 200px;
+	padding-top: 30px;
+	padding-left: 50px;
+	border-left: 1px solid $lightGray;
+	margin-bottom: -45px;
+	padding-bottom: 45px;
+	position: relative;
+	z-index: 1;
+	h3{
+		text-align: center;
+		font-family: $regular;
+		font-size: 1.5em;
+	}
+}
+.avartar{
+	width: 100%;
+	figure{
+		margin-bottom: 0;
+	}
+	img{
+		width: 100%;
+		height: auto;
+	}
+}
+.profile-mainmenu{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	ul{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li{
+			a{
+				text-align: right;
+				display: block;
+				padding: 13px 15px;
+				font-family: $lightGray;
+				color: rgb(108,108,108);
+				text-decoration: none;
+				&:hover{
+					border-right: 2px solid black;
+					padding-right: 13px;
+					color: black;
+				}
+			}
+			&.active{
+				a{
+					color:$gold;
+					border-right:2px solid $gold;
+					padding-right: 13px;
+				}
+			}
+		}
+	}
+}
+.profile-tab{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border-top:1px solid $lightGray;
+	border-bottom:1px solid $lightGray;
+	@include clearfix;
+	text-align: center;
+	a{
+		padding: 15px 15px 13px 15px;
+		display: block;
+		font-family: $light;
+		font-size: 0.9em;
+		letter-spacing: 0.08em;
+		text-decoration: none;
+		color: black;
+		border-bottom: 2px solid transparent;
+		span{
+			color: $gold;
+		}
+		&:hover{
+			color: $gold;
+
+		}
+		&.active{
+			color: $gold;
+			border-bottom: 2px solid $gold;
+		}
+	}
+
+}
+.profile-list{
+	.profile-row{
+		border-bottom: 1px solid $lightGray;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		figure{
+			margin-bottom: 0;
+		}
+		&-control{
+			text-align: right;
+			font-family: $light;
+			font-size: 0.8em;
+			color: $lightGray;
+			a{
+				color: $gold;
+				margin-left: 5px;
+				font-size: 1.1em;
+			}
+		}
+		h3{
+			font-family: $bold;
+			color: black;
+			font-size: 0.9em;
+			text-align: left;
+		}
+		.list-caption{
+			font-family: $light;
+			font-size: 0.8em;
+			color: $lightGray;
+		}
+	}
+}
+
 /*********************** responsive *******************/
 @media (min-width:1400px){
 	.container ,.container-fluid{
