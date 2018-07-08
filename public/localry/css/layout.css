@@ -1722,14 +1722,46 @@ inputStyle, input[type="text"] {
   bottom: 0%;
 }
 
+/* line 1364, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+.findfriend {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+/* line 1368, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+.findfriend button {
+  display: inline-block;
+  margin-top: 30px;
+  background: none;
+  border: 1px solid black;
+  padding: 0;
+  padding-right: 10px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+/* line 1377, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+.findfriend button i {
+  display: inline-block;
+  padding: 10px 15px;
+  border-right: 1px solid black;
+  margin-right: 10px;
+}
+
+/* line 1383, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+.findfriend button:hover {
+  box-shadow: 1px 1px 0px black;
+}
+
 /*********************** responsive *******************/
 @media (min-width: 1400px) {
-  /* line 1368, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1394, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .container, .container-fluid {
     max-width: 1400px;
     margin: auto;
   }
-  /* line 1372, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1398, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .full-width {
     margin-left: -15px;
     margin-right: -15px;
@@ -1737,47 +1769,47 @@ inputStyle, input[type="text"] {
 }
 
 @media (max-width: 768px) {
-  /* line 1378, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1404, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .top-nav {
     margin-top: 125px;
     padding-bottom: 0;
   }
-  /* line 1383, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1409, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .thumb-list-row .col {
     flex: none;
   }
-  /* line 1387, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1413, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .banner-title {
     max-width: 100%;
     font-size: 2.5em;
   }
-  /* line 1391, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1417, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .editor-banner {
     margin-top: 0;
   }
-  /* line 1395, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1421, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .most-section .vid-row {
     margin-top: 0;
     margin-bottom: 0;
   }
-  /* line 1398, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1424, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .most-section .vid-row .row {
     margin-top: 30px;
     margin-bottom: 30px;
   }
-  /* line 1403, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1429, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .most-section .col {
     flex: none;
   }
-  /* line 1408, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1434, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .editor-story .col {
     flex: none;
   }
-  /* line 1413, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1439, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .following-update .col, .recent-view .col {
     flex: none;
   }
-  /* line 1417, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1443, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .footer-menu {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -1789,87 +1821,87 @@ inputStyle, input[type="text"] {
     display: block;
     visibility: hidden;
   }
-  /* line 1424, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1450, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .bottom-social ul li {
     padding-left: 15px;
     padding-right: 15px;
   }
-  /* line 1432, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1458, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .under-player-section .under-player-child:first-child {
     flex: none;
     border-right: none;
     padding-bottom: 25px;
   }
-  /* line 1439, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1465, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .category-header {
     padding-top: 40px;
     padding-bottom: 15px;
   }
-  /* line 1442, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1468, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .category-header h2 {
     margin-bottom: 15px;
   }
-  /* line 1445, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1471, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .category-header .follow-box {
     position: relative;
     text-align: right;
   }
-  /* line 1450, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1476, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .separator-line, .section-title {
     margin-top: 25px !important;
     margin-bottom: 25px !important;
   }
-  /* line 1455, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1481, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .feature-playlist .col {
     flex: none;
   }
-  /* line 1460, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1486, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .filter-bar .order-2 {
     order: 1;
     flex: none;
   }
-  /* line 1464, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1490, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .filter-bar .order-1 {
     order: 2;
   }
-  /* line 1469, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1495, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .category-thumb-list .top-view-all {
     display: block;
     width: 100%;
     text-align: center;
   }
-  /* line 1474, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1500, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .category-thumb-list .selector-holder {
     width: 100%;
   }
-  /* line 1479, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1505, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .search-bar {
     margin-bottom: 0px;
     padding-top: 25px;
     margin-bottom: 25px;
   }
-  /* line 1484, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1510, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .cat-meta {
     margin-top: 15px;
     margin-bottom: 15px;
   }
-  /* line 1487, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1513, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .cat-meta div {
     text-align: center;
   }
-  /* line 1492, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1518, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .related-sidebar .top-btn {
     margin-top: 15px;
     text-align: center;
   }
-  /* line 1498, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1524, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .ekko-lightbox .modal-dialog {
     max-width: 90% !important;
   }
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3) {
-  /* line 1511, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
+  /* line 1537, /Volumes/Macintosh HD/Applications/XAMPP/xamppfiles/htdocs/localry-dev/public/localry/css/layout.scss */
   .top-nav {
     padding-bottom: 0;
   }

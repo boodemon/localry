@@ -10,6 +10,14 @@
 		<i class="fa fa-search"></i>
 	</button>
 </div>
+<div class="findfriend">
+	<h3>Discover Your Friend are Already on Localry</h3>
+
+	<button class="fb-search">
+		<i class="fa fa-facebook-f"></i> Find Friend
+	</button>
+
+</div>
 
 <hr class="separator-line full-width">
 <h4 class="small-header">Recommend for You</h3>
