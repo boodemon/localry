@@ -31,10 +31,10 @@
 								<li class="active"><a href="#">FEED</a></li>
 								<li><a href="{{ url('profile/following/playlist') }}">FOLLOWING</a></li>
 								<li><a href="{{ url('profile/community/find-people') }}">COMMUNITY</a></li>
-								<li><a href="{{ url('profile/myplaylist/') }}">MY PLAYLISTS</a></li>
+								<li><a href="{{ url('profile/my-playlist') }}">MY PLAYLISTS</a></li>
 								<li><a href="{{ url('profile/myrating/') }}">MY RATINGS</a></li>
-								<li><a href="{{ url('profile/recentlywatched/') }}">RECENTLY WATCHED</a></li>
-								<li><a href="{{ url('profile/mysetting/') }}">MY SETTINGS</a></li>
+								<li><a href="{{ url('profile/recently-watched/') }}">RECENTLY WATCHED</a></li>
+								<li><a href="{{ url('profile/my-settings/profile') }}">MY SETTINGS</a></li>
 								<li><a href="{{ url('/') }}">LOG OUT</a></li>
 							</ul>
 							<!--

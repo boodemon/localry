@@ -165,7 +165,58 @@ class PageController extends Controller
     }
 
 
+    //:: Front end url : profile/my-playlist :://
+    public function profileMyPlaylist(){
+        return view('localry.profile-myplaylist');
+    }
 
+	//:: Front end url : profile/edit-playlist :://
+    public function profileEditPlaylist(){
+        return view('localry.profile-editplaylist');
+    }
+
+
+    //:: Front end url : profile/my-loved :://
+    public function profileMyLoved(){
+        return view('localry.profile-myloved');
+    }
+
+    //:: Front end url : profile/recently-watched :://
+    public function profileRecentlyWatched(){
+        return view('localry.profile-recentlywatch');
+    }
+
+    //:: Front end url : profile/my-settings/profile :://
+    public function profileSettingProfile(){
+        return view('localry.profile-setting-profile');
+    }
+
+
+    //:: Front end url : profile/my-settings/notifications :://
+    public function profileSettingNoti(){
+        return view('localry.profile-setting-noti');
+    }
+
+    //:: Front end url : profile/my-settings/email :://
+    public function profileSettingEmail(){
+        return view('localry.profile-setting-email');
+    }
+
+    //:: Front end url : profile/my-settings/connections :://
+    public function profileSettingConnection(){
+        return view('localry.profile-setting-connection');
+    }
+
+    //:: Front end url : profile/my-settings/account :://
+    public function profileSettingAccount(){
+        return view('localry.profile-setting-account');
+    }
+
+
+    //:: Front end url : member :://
+    public function publicProfile(){
+        return view('localry.member');
+    }
 
 
 

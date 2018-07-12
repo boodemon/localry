@@ -65,6 +65,20 @@ Route::get('profile/following/categories','Front\PageController@profileFollowing
 Route::get('profile/community/find-people','Front\PageController@profileCommunityFindpeople');
 Route::get('profile/community/you-follow','Front\PageController@profileCommunityYoufollow');
 Route::get('profile/community/follower','Front\PageController@profileCommunityFollower');
+Route::get('profile/my-playlist','Front\PageController@profileMyPlaylist');
+Route::get('profile/edit-playlist','Front\PageController@profileEditPlaylist');
+Route::get('profile/my-loved','Front\PageController@profileMyLoved');
+Route::get('profile/recently-watched','Front\PageController@profileRecentlyWatched');
+Route::get('profile/my-settings/profile','Front\PageController@profileSettingProfile');
+Route::get('profile/my-settings/notifications','Front\PageController@profileSettingNoti');
+Route::get('profile/my-settings/email','Front\PageController@profileSettingEmail');
+Route::get('profile/my-settings/connections','Front\PageController@profileSettingConnection');
+Route::get('profile/my-settings/account','Front\PageController@profileSettingAccount');
+Route::get('member','Front\PageController@publicProfile');
+
+
+
+
 
 
 
