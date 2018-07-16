@@ -58,7 +58,32 @@ Route::get('category/{id?}/{subject?}','Front\PageController@category');
 Route::get('playlist','Front\PageController@playlist');
 Route::get('singleplay/{id?}/{subject?}','Front\PageController@singleplay');
 
-// :: AUTH FOR FRONT END 
+// :: Profile Page ::/
+Route::get('profile/following/playlist','Front\PageController@profileFollowingPlaylist');
+Route::get('profile/following/series','Front\PageController@profileFollowingSeries');
+Route::get('profile/following/categories','Front\PageController@profileFollowingCategories');
+Route::get('profile/community/find-people','Front\PageController@profileCommunityFindpeople');
+Route::get('profile/community/you-follow','Front\PageController@profileCommunityYoufollow');
+Route::get('profile/community/follower','Front\PageController@profileCommunityFollower');
+Route::get('profile/my-playlist','Front\PageController@profileMyPlaylist');
+Route::get('profile/edit-playlist','Front\PageController@profileEditPlaylist');
+Route::get('profile/my-loved','Front\PageController@profileMyLoved');
+Route::get('profile/recently-watched','Front\PageController@profileRecentlyWatched');
+Route::get('profile/my-settings/profile','Front\PageController@profileSettingProfile');
+Route::get('profile/my-settings/notifications','Front\PageController@profileSettingNoti');
+Route::get('profile/my-settings/email','Front\PageController@profileSettingEmail');
+Route::get('profile/my-settings/connections','Front\PageController@profileSettingConnection');
+Route::get('profile/my-settings/account','Front\PageController@profileSettingAccount');
+Route::get('member','Front\PageController@publicProfile');
+
+
+
+
+
+
+
+
+// :: AUTH FOR FRONT END
 Route::get('login','Front\AuthController@login');
 Route::get('register','Front\AuthController@register');
 Route::get('forgot','Front\AuthController@forgot');

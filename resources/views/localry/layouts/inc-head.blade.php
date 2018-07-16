@@ -33,3 +33,4 @@
 <script type="text/javascript" src="{{ asset('public/localry/js/jquery-1.11.3.min.js') }}"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="{{ asset('public/localry/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('public/localry/js/popper.js') }}"></script>

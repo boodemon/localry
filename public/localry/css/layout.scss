@@ -1,5 +1,6 @@
 $lightGray:#b2b2b2;
 $lightRed:#ed4848;
+$gold:#c9a16e;
 
 /******************** Font *************************/
 
@@ -35,7 +36,6 @@ $lightItal:'LemonMilklightitalic',sans-serif;
 }
 
 
-
 html{
 	font-size: 14px;
 	-webkit-font-smoothing: antialiased;
@@ -49,10 +49,18 @@ body{
 	clear: both;
 	visibility: hidden;
 }
+.container{
+	max-width: 1200px;
+}
 .wrapper{
 	overflow: hidden;
 }
-
+figure{
+	img{
+		width: 100%;
+		height: auto;
+	}
+}
 header{
 	padding-top: 50px;
 	background-color: white;
@@ -567,6 +575,9 @@ section{
 .bottom-social{
 	text-align: center;
 	padding-bottom: 30px;
+	padding-top: 45px;
+	margin-top: 45px;
+	border-top:1px solid #b2b2b2;
 	ul{
 		list-style: none;
 		display: inline-block;
@@ -1077,7 +1088,6 @@ input[type="text"]{
 		padding-bottom: 15px;
 	}
 }
-
 .ekko-lightbox{
 	z-index: 999999;
 	.modal-backdrop{
@@ -1088,6 +1098,575 @@ input[type="text"]{
 		top:50%;
 		transform: translate(0, -50%) !important;
 	}
+}
+.profile-body{
+	border-top: 1px solid $lightGray;
+	position: relative;
+}
+.profile-bar{
+	background-color: #f8f8f8;
+	padding-top: 50px;
+	height: 200px;
+	position: absolute;
+	z-index: 2;
+	top:0;
+	left: 0;
+	width: 100%;
+	@include clearfix;
+	&.relative{
+		position: relative;
+		height: auto;
+		padding: 0;
+	}
+	h2{
+		color: black;
+		font-family: $bold;
+		font-size: 1.7em;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+}
+.profile-left-col{
+	padding-left: 0;
+	padding-right: 0;
+	position: relative;
+	z-index: 2;
+	max-width: 16.66%;
+	.avartar{
+		margin-right: -1px;
+	}
+}
+.profile-right-col{
+	margin-top: 200px;
+	padding-top: 30px;
+	padding-left: 50px;
+	border-left: 1px solid $lightGray;
+	margin-bottom: -45px;
+	padding-bottom: 45px;
+	position: relative;
+	z-index: 1;
+	h3{
+		text-align: center;
+		font-family: $regular;
+		font-size: 1.5em;
+		letter-spacing: 0.08em;
+	}
+	.small-header{
+		font-family: $light;
+		color: black;
+		font-size: 0.9em;
+		letter-spacing: 0.08em;
+		text-align: center;
+	}
+}
+.avartar{
+	width: 100%;
+	figure{
+		margin-bottom: 0;
+	}
+	img{
+		width: 100%;
+		height: auto;
+	}
+}
+.profile-mainmenu{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	ul{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li{
+			a{
+				text-align: right;
+				display: block;
+				padding: 13px 15px;
+				font-family: $lightGray;
+				color: rgb(108,108,108);
+				text-decoration: none;
+				&:hover{
+					border-right: 2px solid black;
+					padding-right: 13px;
+					color: black;
+				}
+			}
+			&.active{
+				a{
+					color:$gold;
+					border-right:2px solid $gold;
+					padding-right: 13px;
+				}
+			}
+		}
+	}
+}
+.profile-top-title{
+	position: relative;
+	.title-option{
+		position: absolute;
+		right: 0;
+		top:0;
+	}
+	.dropdown{
+		button{
+			background: none;
+			border: 1px solid black;
+			border-radius: 0;
+			color: black;
+			&:hover{
+				background-color: black;
+				color: white;
+			}
+		}
+	}
+	.btn-list{
+		margin: 0;
+		padding: 0;
+		margin-left: -5px;
+		margin-right: -5px;
+		li{
+			display: inline;
+			float: left;
+			padding-left: 5px;
+			padding-right: 5px;
+			button{
+				padding: 10px 15px;
+				border:1px solid black;
+				background: none;
+				font-family: $regular;
+				font-size: 0.8em;
+				letter-spacing: 0.08em;
+				cursor: pointer;
+				&:hover{
+					background: black;
+					color: white;
+				}
+			}
+		}
+	}
+	h3{
+		text-align: center;
+		font-family: $regular;
+		font-size: 1.5em;
+		letter-spacing: 0.08em;
+	}
+}
+.profile-tab{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border-top:1px solid $lightGray;
+	border-bottom:1px solid $lightGray;
+	text-align: center;
+	@include clearfix;
+	&.no-top-border{
+		border-top: none;
+	}
+	a{
+		padding: 15px 15px 13px 15px;
+		display: block;
+		font-family: $light;
+		font-size: 0.9em;
+		letter-spacing: 0.08em;
+		text-decoration: none;
+		color: black;
+		border-bottom: 2px solid transparent;
+		span{
+			color: $gold;
+		}
+		&:hover{
+			color: $gold;
+
+		}
+		&.active{
+			color: $gold;
+			border-bottom: 2px solid $gold;
+		}
+	}
+
+}
+.profile-list{
+	.profile-row{
+		border-bottom: 1px solid $lightGray;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		figure{
+			margin-bottom: 0;
+		}
+		&-control{
+			text-align: right;
+			font-family: $light;
+			font-size: 0.8em;
+			color: $lightGray;
+			a{
+				color: $gold;
+				margin-left: 5px;
+				font-size: 1.1em;
+			}
+		}
+		h3{
+			font-family: $bold;
+
+			font-size: 0.9em;
+			text-align: left;
+			a{
+				color: black;
+				text-decoration: none;
+				&:hover{
+					color: $gold;
+				}
+			}
+		}
+		.list-caption{
+			font-family: $light;
+			font-size: 0.8em;
+			color: $lightGray;
+		}
+	}
+}
+.community-search-bar{
+	border-bottom: 1px solid black;
+	position: relative;
+	input{
+		width: 100%;
+		border:none;
+		background: none;
+		padding-top: 15px;
+		padding-left: 0;
+		padding-right: 100px;
+		//padding-bottom: 15px;
+		margin-bottom: -15px;
+		font-size: 1.2em;
+		font-family: $bold;
+		&:focus{
+			outline: none;
+		}
+	}
+	button{
+		background-color: white;
+		padding: 10px 15px;
+		border:none;
+		color: black;
+		font-size: 2em;
+		position: absolute;
+		right: 0;
+		top:0;
+		cursor: pointer;
+	}
+}
+.people{
+	&-list{
+		margin-left: -5px;
+		margin-right: -5px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	&-child{
+		display: inline;
+		float: left;
+		width: 20%;
+		padding-left: 5px;
+		padding-right: 5px;
+		text-align: center;
+		margin-bottom: 30px;
+		figure{
+			overflow: hidden;
+		}
+		.profile-name{
+			font-size: 1em;
+			font-family: $regular;
+			letter-spacing: 0.08em;
+			a{
+				color: black;
+				text-decoration: none;
+				&:hover{
+					color: $gold;
+				}
+			}
+		}
+		.meta{
+			font-family: $lightGray;
+			font-size: 0.9em;
+			color: $lightGray;
+		}
+		a{
+			&.option-link{
+				font-family: $light;
+				font-size: 0.7em;
+				letter-spacing: 0.08em;
+				color: $lightGray;
+				text-decoration: none;
+				&:hover{
+					color: $gold;
+				}
+			}
+		}
+	}
+}
+.findfriend{
+	margin-top: 80px;
+	margin-bottom: 80px;
+	text-align: center;
+	button{
+		display: inline-block;
+		margin-top: 30px;
+		background:none;
+		border:1px solid black;
+		padding: 0;
+		padding-right: 10px;
+		cursor: pointer;
+		font-size: 1.2em;
+		i{
+			display: inline-block;
+			padding: 10px 15px;
+			border-right: 1px solid black;
+			margin-right: 10px;
+		}
+		&:hover{
+
+			box-shadow: 1px 1px 0px black;
+		}
+	}
+}
+.profile-playlist{
+	margin-bottom: 50px;
+	.playlist-row{
+		padding: 15px;
+		border-bottom: 1px solid $lightGray;
+		@include ts;
+		@include clearfix;
+		&:hover{
+			background-color: #f8f8f8;
+			.control{
+				opacity: 1;
+			}
+		}
+		&:last-child{
+			border-bottom: none;
+		}
+	}
+	figure{
+		width: 100%;
+		position: relative;
+		margin: 0;
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+	h3{
+		font-family: $bold;
+		font-size: 1.2em;
+		text-align: left;
+		a{
+			color: black;
+			text-decoration: none;
+			&:hover{
+				color: $gold;
+			}
+		}
+	}
+	.control{
+		position: absolute;
+		right: 0;
+		top:0;
+		height: 100%;
+		background-color: red;
+		opacity: 0;
+		@include ts;
+		ul{
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			top:50%;
+			right: 0;
+			list-style: none;
+			transform: translate(0,-50%);
+			-webkit-transform: translate(0,-50%);
+			-moz-transform: translate(0,-50%);
+			-o-transform: translate(0,-50%);
+			-ms-transform: translate(0,-50%);
+			li{
+				text-align: right;
+				padding-right: 15px;
+				padding-top: 5px;
+				padding-bottom: 5px;
+			}
+		}
+		a{
+			color: black;
+			opacity: 0.5;
+			&:hover{
+				color: $gold;
+				opacity: 1;
+			}
+		}
+	}
+	.playlist-meta{
+		position: relative;
+		top:50%;
+		transform: translate(0,-50%);
+		-webkit-transform: translate(0,-50%);
+		-moz-transform: translate(0,-50%);
+		-o-transform: translate(0,-50%);
+		-ms-transform: translate(0,-50%);
+	}
+}
+figure{
+	&.has-hover{
+		position: relative;
+		overflow: hidden;
+
+		img{
+			position: relative;
+			z-index: 1;
+		}
+		.hover-menu{
+			position: absolute;
+			right: 0;
+			background-color: $gold;
+			z-index: 2;
+			bottom: -50%;
+			@include ts;
+			a{
+				color: white;
+				display: block;
+				text-align: center;
+				font-weight: lighter;
+				font-size: 0.8em;
+				padding: 12px 15px;
+			}
+		}
+		&:hover{
+			.hover-menu{
+				bottom:0%;
+			}
+		}
+	}
+}
+.profile-template{
+	.thumb-list-child{
+		margin-bottom: 30px;
+	}
+}
+
+.profile-setting-area{
+	.profile-name{
+		margin-top: 30px;
+		font-size: $light !important;
+		font-weight: lighter;
+		font-size: 1.2em;
+		letter-spacing: 0.02em;
+	}
+	a{
+		&.default-link{
+			color: $gold;
+			font-family: $light;
+			font-size: 1em;
+			letter-spacing: 0.08em;
+		}
+	}
+	&-top{
+		text-align: center;
+	}
+}
+.lc-form{
+	margin-bottom: 30px;
+	@include clearfix;
+	input[type="text"],input[type="password"],textarea{
+		width: 100%;
+		border:1px solid black;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		padding: 10px;
+	}
+	input[type="checkbox"]{
+		padding: 5px;
+	}
+	&-field-group{
+		label{
+			font-size: 0.9em;
+			font-family: $light;
+			white-space: nowrap;
+			padding-top: 20px;
+		}
+	}
+	.bottom-btn-group{
+		margin-top: 15px;
+		margin-bottom: 15px;
+		text-align: center;
+		@include clearfix;
+		button{
+			display: inline-block;
+			margin-left: 5px;
+			margin-right: 5px;
+			margin-top: 15px;
+			margin-bottom: 15px;
+			border: 1px solid black;
+			background: none;
+			cursor: pointer;
+			padding: 10px 30px;
+			&:hover{
+				background-color: black;
+				color: white;
+			}
+			&.btn-social-link{
+				width: auto;
+				min-width: 200px;
+				text-align: left;
+				padding-left: 15px;
+				padding-right: 15px;
+				i{
+					padding-right: 15px;
+				}
+			}
+		}
+	}
+}
+.select-holder{
+	position: relative;
+	border: 1px solid black;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: block;
+	@include clearfix;
+	select{
+		padding: 10px;
+		background: none;
+		border: none;
+		width: 100%;
+		border-radius: 0;
+		-webkit-appearance: button;
+		-moz-appearance: button;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-webkit-padding-end: 20px;
+		-moz-padding-end: 20px;
+		-webkit-padding-start: 10px;
+		-moz-padding-start: 10px;
+		::-webkit-input-placeholder {
+
+		}
+		:-moz-placeholder {
+
+		}
+		::-moz-placeholder {
+
+		}
+		:-ms-input-placeholder {
+
+		}
+	}
+	i{
+		position: absolute;
+		right: 10px;
+		top:50%;
+		transform: translate(0,-50%);
+		-webkit-transform: translate(0,-50%);
+		-moz-transform: translate(0,-50%);
+		-o-transform: translate(0,-50%);
+		-ms-transform: translate(0,-50%);
+	}
+
 }
 /*********************** responsive *******************/
 @media (min-width:1400px){
