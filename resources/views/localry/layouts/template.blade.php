@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div class="wrapper">
-		@include('localry.layouts.inc-header')
+		@include('localry.layouts.inc-header-no-menu')
 		<!-- content here-->
 		@yield('content')
 		<!-- end content here -->

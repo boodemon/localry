@@ -3,6 +3,7 @@
     <link type="text/css" rel="stylesheet" href="{{ asset('public/localry/css/player.css') }}" media="screen,projection"/>
 @endsection
 @section('content')<div class="container">
+		@if( !empty( $content->video_link->$lng ) )
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="main-player">
@@ -43,6 +44,7 @@
 				</div>
 			</div>
 		</div>
+		@endif
 		<div class="row player-content">
 			<div class="col-sm-8">
 				<div class="post-meta">
@@ -124,8 +126,8 @@
 		<hr class="separator-line full-width">
 	</div>
 
+	<!-- Editor s Choices --
 	<div class="container-fluid">
-		<!-- Editor s Choices -->
 		<section class="editor">
 			<h2 class="section-title">EDITOR’S CHOICE</h2>
 			<div class="row">
@@ -139,8 +141,8 @@
 				</div>
 			</div>
 		</section>
-		<!-- End Editor s Choices -->
 	</div>
+	<!-- End Editor s Choices -->
 
 
 	<div class="container-fluid">
@@ -202,7 +204,7 @@
 			player = new YT.Player('main-player', {
 			height: '100%',
 			width: '100%',
-			videoId: '{{ Lib::videoID( $content->video_link->$lng) }}'
+			videoId: '{{ Lib::videoID( $content->video_link->$lng ) }}'
 			});
 		}
 
@@ -211,6 +213,18 @@
 		  event.preventDefault();
 		  $(this).ekkoLightbox();
 		});
+
+		$(function(){
+			var vid = '{{ $content->video_link->$lng }}';
+			console.log('vid = ' , vid , vid.length);
+			if( vid.length == 0 ){
+				$(".content-section").slideDown().fadeIn();
+				setTimeout(function(){
+					$(".player-content").addClass("active");
+					$(".related-list").fadeIn();
+				}, 100);
+			}
+		}(jQuery));
 
     </script>
 

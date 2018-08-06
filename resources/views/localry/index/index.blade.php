@@ -1,4 +1,4 @@
-@extends('localry.layouts.template2')
+@extends('localry.layouts.template')
 @section('stylesheet')
 	<link rel="stylesheet" href="{{ asset('public/localry/css/jquery.bxslider.css') }}">
 @endsection
@@ -63,7 +63,7 @@
                 @endif
 			</div>
             <div class="text-right">
-                <a class="text-right" href="{{ url('all-video') }}">Read more...</a>
+                <a class="text-right" href="{{ url('#') }}">Read more...</a>
             </div>
         </section>
 		
