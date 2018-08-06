@@ -27,9 +27,9 @@
 
     var img = new images();
 
-    img.inputid = $('#signature');
+    img.inputid = $('input[name="thumb[TH]"]');
     img.previewid = $('#preview');
-    img.allowfile = 'png|gif';
+    img.allowfile = 'png|gif|jpg';
     img.inputclick();
     
 

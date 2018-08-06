@@ -25,12 +25,15 @@ class PageController extends Controller
         $data = [
             'features' => @json_decode( $this->queryFeature() ),
             'category' => $cates->groups,
-            'contents' => $cates->content,
+            //'contents' => $cates->content,
+            'contents' => @json_decode( $this->allContent(0,5) ),
+            'contents2' => @json_decode( $this->allContent(0,4) ),
             'playlist' => @json_decode( $this->queryPlaylist() )
         ];
         // echo '<pre>', print_r( $data ) ,'</pre>';
         // echo '<pre>',print_r( $data ),'</pre>';
-        return view('localry.video-feature',$data);
+        //return view('localry.video-feature',$data);
+        return view('localry.index.index',$data);
     }
     public function queryFeature(){
         $features = Content::type()
@@ -60,6 +63,26 @@ class PageController extends Controller
             }
         }
         return json_encode(['groups' => $data , 'content' => $content]);
+    }
+
+    public function allContent($skip = 0 , $take = 0){
+        echo 'skip = '. $skip . ' take = '. $take;
+        $features = Content::type()->feature()
+                            ->published();
+        if( $take != 0)
+            $features = $features->take( $take)
+                                ->skip( $skip );
+
+        $features = $features->inRandomOrder()
+                            ->get();
+        echo 'count is '. count( $features );
+        $data = [];
+        if( $features ){
+            foreach( $features as $row ){
+                $data[] = Content::fieldRows( $row , Attach::thumbnailRow( $row->id ) );
+            }
+        }
+        return json_encode( $data );
     }
 
     public function queryContent($cateId){

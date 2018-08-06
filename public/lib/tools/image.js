@@ -54,7 +54,7 @@ var image = {
 };
 
 
-function image() {
+function images() {
 	var inputid = '',
 		previewid = '',
 		imageid = '',

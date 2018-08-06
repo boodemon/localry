@@ -134,7 +134,7 @@ class Lib
     for( $i = 0; $i <= count( $qt ) -1; $i++ ){
 	  $yimg = 'http://img.youtube.com/vi/' . $video_id . '/' . $qt[$i] . '.jpg';
 	  //echo '<p>yimg = '. $yimg .'<br/><img src="'. $yimg .'"/></p>';
-      if( file_get_contents( $yimg ) ) {
+      if( @file_get_contents( $yimg ) ) {
 		  if( $path == '' ){
 			  $path = public_path().'/images/thumbnails/';
 		  }

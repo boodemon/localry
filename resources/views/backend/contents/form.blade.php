@@ -65,8 +65,8 @@
                     <div class="form-group row">
                         <label class="col-md-3 control-label"> &nbsp; </label>
                         <div class="col-md-6" id="preview">
-                         @if( count( $row ) > 0 && count( $row->thumb) > 0 )
-                            <img src="{{ asset('public/images/contents/'. @$row->thumb->attach_thumb->$lc ) }}" />
+                         @if( count( $row ) > 0 && count( $row->thumb) > 0)
+                            <img src="{{ asset('public/images/contents/'. @$row->thumb[0]->attach_thumb->$lc ) }}" />
                          @endif
                         </div>
                     </div>
@@ -177,5 +177,6 @@
 	<script type="text/javascript" src="{{asset('public/lib/plupload-2.1.8/jquery.plupload.queue/jquery.plupload.queue.min.js') }}"></script>
 	<script type="text/javascript" src="{{asset('public/lib/plupload-2.1.8/jquery.ui.plupload/jquery.ui.plupload.js') }}"></script>
 	<script type="text/javascript" src="{{asset('public/lib/tools/plupload-v2.js')}}"></script>
+	<script type="text/javascript" src="{{asset('public/lib/tools/image.js')}}"></script>
   <script src="{{ asset('public/build/backend/js/content-form.js') }}"></script>
 @endsection
