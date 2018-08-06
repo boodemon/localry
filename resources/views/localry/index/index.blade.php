@@ -63,7 +63,7 @@
                 @endif
 			</div>
             <div class="text-right">
-                <a class="text-right" href="{{ url('#') }}">Read more...</a>
+                <a class="text-right" href="{{ url('video') }}">Read more...</a>
             </div>
         </section>
 		
@@ -91,7 +91,7 @@
                 @endif
 			</div>
             <div class="text-right">
-                <a class="text-right" href="{{ url('all-video') }}">Read more...</a>
+                <a class="text-right" href="{{ url('video') }}">Read more...</a>
             </div>
         </section>
 		

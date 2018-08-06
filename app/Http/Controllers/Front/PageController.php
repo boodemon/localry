@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers\Front;
-
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -35,6 +33,25 @@ class PageController extends Controller
         //return view('localry.video-feature',$data);
         return view('localry.index.index',$data);
     }
+
+    public function video(){
+        $rows = Content::type()->feature()
+                    ->published()
+                    ->inRandomOrder()
+                    ->paginate(8);
+            $content = [];
+            if( $rows ){
+                foreach( $rows as $row ){
+                    $content[] = Content::fieldRows( $row , Attach::thumbnailRow( $row->id ) );
+                }
+            }
+        $data = [
+            'rows' => $rows,
+            'contents' => @json_decode( json_encode( $content ) ),
+        ];
+        return view('localry.video',$data);
+    }
+    
     public function queryFeature(){
         $features = Content::type()
                             ->feature()
@@ -66,7 +83,6 @@ class PageController extends Controller
     }
 
     public function allContent($skip = 0 , $take = 0){
-        echo 'skip = '. $skip . ' take = '. $take;
         $features = Content::type()->feature()
                             ->published();
         if( $take != 0)

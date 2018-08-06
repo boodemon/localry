@@ -17,6 +17,7 @@
 <link href="{{ asset('public/localry/css/font-awesome.css') }}" rel="stylesheet">
 <link href="{{ asset('public/localry/css/bootstrap.min.css') }}" rel="stylesheet">
 <link type="text/css" rel="stylesheet" href="{{ asset('public/localry/css/layout.css') }}" media="screen,projection"/>
+<link type="text/css" rel="stylesheet" href="{{ asset('public/localry/css/style.css') }}" media="screen,projection"/>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
