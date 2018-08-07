@@ -24,8 +24,8 @@ class PageController extends Controller
             'features' => @json_decode( $this->queryFeature() ),
             'category' => $cates->groups,
             //'contents' => $cates->content,
-            'contents' => @json_decode( $this->allContent(0,5) ),
-            'contents2' => @json_decode( $this->allContent(0,4) ),
+            'contents' => @json_decode( $this->allContents(12) ),
+            'contents2' => @json_decode( $this->allVideo(16) ),
             'playlist' => @json_decode( $this->queryPlaylist() )
         ];
         // echo '<pre>', print_r( $data ) ,'</pre>';
@@ -35,10 +35,10 @@ class PageController extends Controller
     }
 
     public function video(){
-        $rows = Content::type()->feature()
+        $rows = Content::type()
                     ->published()
                     ->inRandomOrder()
-                    ->paginate(8);
+                    ->paginate(24);
             $content = [];
             if( $rows ){
                 foreach( $rows as $row ){
@@ -46,12 +46,42 @@ class PageController extends Controller
                 }
             }
         $data = [
+            'features' => @json_decode( $this->queryFeature() ),
             'rows' => $rows,
             'contents' => @json_decode( json_encode( $content ) ),
         ];
         return view('localry.video',$data);
     }
-    
+    public function allContents($pagi = 24){
+        $rows = Content::type()
+                        ->published()
+                        ->where('video_link','like','%"TH":""%')
+                        ->inRandomOrder()
+                        ->paginate($pagi);
+                        $content = [];
+        if( $rows ){
+            foreach( $rows as $row ){
+                $content[] = Content::fieldRows( $row , Attach::thumbnailRow( $row->id ) );
+            }
+        }
+        return json_encode( $content );
+    }
+
+    public function allVideo($pagi = 24){
+        $rows = Content::type()
+                    ->where('video_link','not like','%"TH":""%')
+                    ->published()
+                    ->inRandomOrder()
+                    ->paginate($pagi);
+                    $content = [];
+        if( $rows ){
+            foreach( $rows as $row ){
+                $content[] = Content::fieldRows( $row , Attach::thumbnailRow( $row->id ) );
+            }
+        }
+        return json_encode( $content );
+    }
+
     public function queryFeature(){
         $features = Content::type()
                             ->feature()

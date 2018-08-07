@@ -41,12 +41,19 @@
 			</div>
         </div>
         @endif
+		<div class="row">
+			<div class="col-sm-12">
+				<fieldset class="featured-header">
+					<legend><h2>FEATURE CONTENT</h2></legend>
+				</fieldset>
+			</div>
+		</div>
         <!-- feature Video by Category -->
 		<section class="feature-section full-width">
 			<div class="row thumb-list-row">
                 @if( count( $contents ) > 0 )
                 @foreach( $contents as $content )
-				<div class="col">
+				<div class="col-md-3 col-sm-3">
 					<div class="thumb-list-child">
 						<div class="thumb-cover">
 							<a href="{{ url('singleplay/' . $content->id .'/'. Lib::encodelink(@$content->subject->$lng) ) }}">
@@ -67,14 +74,14 @@
             </div>
         </section>
 		
-		<!-- End feature Video by Category -->
+		<!-- End feature Video by Category --
 		<hr class="separator-line full-width">
 		<!-- feature Video by Category -->
 		<section class="feature-section full-width">
 			<div class="row thumb-list-row">
                 @if( count( $contents2 ) > 0 )
                 @foreach( $contents2 as $content )
-				<div class="col">
+				<div class="col-sm-3 col-md-3">
 					<div class="thumb-list-child">
 						<div class="thumb-cover">
 							<a href="{{ url('singleplay/' . $content->id .'/'. Lib::encodelink(@$content->subject->$lng) ) }}">

@@ -4,6 +4,7 @@
 @endsection
 @section('content')
 <div class="container">
+	@if( $playlist )
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="main-player">
@@ -45,15 +46,15 @@
 		<div class="row player-content">
 			<div class="col-sm-8">
 				<div class="post-meta">
-					<h2>{{ $playlist[0]->subject->$lng}}</h2>
+					<h2>{{ @$playlist[0]->subject->$lng}}</h2>
 				</div>
 				<div class="content-section">
 					<p>{!! @$playlist[0]->detail->$lng !!}</p>
 
 					<!-- Gallery Section -->
 					<div class="gallery-section row">
-						@if( count( $playlist[0]->gallery ) > 0)
-							@foreach( $playlist[0]->gallery as $gallery)
+						@if( count( @$playlist[0]->gallery ) > 0)
+							@foreach( @$playlist[0]->gallery as $gallery)
 								<a href="{{ asset('public/images/contents/'. $gallery->attach_file .'?image=251' ) }}" data-toggle="lightbox" data-gallery="gallery" class="col-md-3">
 								<img src="{{ url('public/images/contents/'. $gallery->attach_file .'?image=251' ) }}" class="img-fluid rounded">
 							  </a>
@@ -70,20 +71,22 @@
 				</div>
 				<div class="related-list">
 					<h3>RELATED</h3>
-					<?php for($i=0;$i<3;$i++){
+					<?php 
+					if( $playlist ){
+					for($i=0;$i<3;$i++){
 						$x = rand(0,count($playlist)-1); ?>
 					<div class="thumb-list-child">
 						<div class="thumb-cover">
-							<a href="{{  url('singleplay/'. $playlist[$x]->id .'/'. Lib::encodelink( $playlist[$x]->subject->$lng )) }}">
+							<a href="{{  url('singleplay/'. @$playlist[$x]->id .'/'. Lib::encodelink( $playlist[$x]->subject->$lng )) }}">
 								<img src="{{ asset('public/images/contents/'. $playlist[$x]->thumb[0]-> attach_thumb->$lng ) }}">
 							</a>
 							<div class="vid-time-num">{{@$recents[$x]->video_time->$lng}}</div>
 						</div>
 						<div class="thumb-caption">
-							<a href="{{  url('singleplay/'. $playlist[$x]->id .'/'. Lib::encodelink( $playlist[$x]->subject->$lng )) }}">{{ $playlist[$x]->subject->$lng }}</a>
+							<a href="{{  url('singleplay/'. @$playlist[$x]->id .'/'. Lib::encodelink( $playlist[$x]->subject->$lng )) }}">{{ $playlist[$x]->subject->$lng }}</a>
 						</div>
 					</div>
-					<?php } ?>
+					<?php } }?>
 				</div>
 				<div class="bottom-btn">
 					<a href="#" class="normal-button view-less">VIEW LESS</a>
@@ -117,6 +120,7 @@
 		</div>
 		<!-- end play list Zone -->
 	</div>
+	@endif
 @endsection
 @section('javascript')
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.css"> <!-- include for Galelry -->
@@ -150,8 +154,8 @@
 			player = new YT.Player('main-player', {
 			height: '100%',
 			width: '100%',
-			videoId: '{{ Lib::videoID( $playlist[0]->video_link->$lng ) }}',
-			playlist:'{{ Lib::videoID( $playlist[0]->video_link->$lng ) }}',
+			videoId: '{{ Lib::videoID( @$playlist[0]->video_link->$lng ) }}',
+			playlist:'{{ Lib::videoID( @$playlist[0]->video_link->$lng ) }}',
 			});
 		}
 
