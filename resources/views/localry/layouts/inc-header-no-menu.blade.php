@@ -112,9 +112,11 @@
 				</a>
 			</div>
 			<div class="col">
-				<a href="{{ url('login') }}" class="member-menu">
+				<!--
+				<a href="{{ url('login') }}" class="member-menu hide">
 					<img src="{{ asset('public/images/common/member-icon.svg') }}">
 				</a>
+				-->
 			</div>
 		</div>
 	</div>

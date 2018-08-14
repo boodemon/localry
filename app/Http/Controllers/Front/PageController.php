@@ -21,12 +21,12 @@ class PageController extends Controller
     public function index(){
         $cates = @json_decode( $this->queryGroup() );
         $data = [
-            'features' => @json_decode( $this->queryFeature() ),
-            'category' => $cates->groups,
+            'features'  => @json_decode( $this->queryFeature() ),
+            'category'  => $cates->groups,
             //'contents' => $cates->content,
-            'contents' => @json_decode( $this->allContents(12) ),
-            'contents2' => @json_decode( $this->allVideo(16) ),
-            'playlist' => @json_decode( $this->queryPlaylist() )
+            'contents'  => @json_decode( $this->allVideo(16) ),
+            'contents2' => @json_decode( $this->allContents(12) ),
+            'playlist'  => @json_decode( $this->queryPlaylist() )
         ];
         // echo '<pre>', print_r( $data ) ,'</pre>';
         // echo '<pre>',print_r( $data ),'</pre>';
