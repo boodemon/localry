@@ -8,16 +8,16 @@
 					</button>
 					<div class="slide-menu">
 						<ul>
-							<li><a href="#">Playlists</a></li>
+							{{-- <li><a href="#">Playlists</a></li> --}}
 						</ul>
 						<ul>
 							<li><a href="{{ url('/') }}">FEATURE VIDEO</a></li>
+							<!--
 							@if( $menus )
 								@foreach( $menus as $menu )
 								<li><a href="{{ url('category/' . $menu['id'] .'/'. Lib::encodelink( $menu['subject']->$lng ) ) }}">{{ @$menu['subject']->$lng }}</a></li>
 								@endforeach
 							@endif
-							<!--
 							<li><a href="{{ url('category') }}">FOOD</a></li>
 							<li><a href="{{ url('category') }}">LOVE & TRAVEL</a></li>
 							<li><a href="{{ url('category') }}">MUSIC</a></li>
@@ -25,10 +25,12 @@
 							-->
 						</ul>
 						<ul>
+						<!--
 							<li><a href="{{ url('aboutus') }}">ABOUT US</a></li>
+						-->
 						</ul>
 						<ul>
-							<li><a href="{{ url('contactus') }}">CONTACT US</a></li>
+							{{-- <li><a href="{{ url('contactus') }}">CONTACT US</a></li> --}}
 						</ul>
 						<div class="social-block">
 							<ul>

@@ -52,6 +52,30 @@ class PageController extends Controller
         ];
         return view('localry.video',$data);
     }
+    public function article($type){
+        $rows = Content::type();
+        if($type == 'video'){
+            $rows = $rows->where('video_link','!=','{"TH":"","CH":""}');
+        }else {
+            $rows = $rows->where('video_link','{"TH":"","CH":""}');
+        }
+        $rows = $rows->published()
+                    ->inRandomOrder()
+                    ->paginate(24);
+            $content = [];
+            if( $rows ){
+                foreach( $rows as $row ){
+                    $content[] = Content::fieldRows( $row , Attach::thumbnailRow( $row->id ) );
+                }
+            }
+        $data = [
+            'features' => @json_decode( $this->queryFeature() ),
+            'rows' => $rows,
+            'contents' => @json_decode( json_encode( $content ) ),
+            'subject'   => $type == 'video' ? 'ALL VIDEO FEATURE': 'ALL CONTENT FEATURE'
+        ];
+        return view('localry.video',$data);
+    }
     public function allContents($pagi = 24){
         $rows = Content::type()
                         ->published()

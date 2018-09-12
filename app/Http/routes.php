@@ -54,7 +54,7 @@ Route::group(['middleware'=>'admin','prefix' => 'backend'], function () {
 //::=====================================================================================:://
 Route::get('/','Front\PageController@index');
 Route::get('index','Front\PageController@index');
-Route::get('video','Front\PageController@video');
+Route::get('article/{type?}','Front\PageController@article');
 Route::get('category/{id?}/{subject?}','Front\PageController@category');
 Route::get('playlist','Front\PageController@playlist');
 Route::get('singleplay/{id?}/{subject?}','Front\PageController@singleplay');

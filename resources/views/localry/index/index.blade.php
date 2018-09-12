@@ -70,7 +70,7 @@
                 @endif
 			</div>
             <div class="text-right">
-                <a class="text-right" href="{{ url('video') }}">Read more...</a>
+                <a class="text-right" href="{{ url('article/video') }}">Read more...</a>
             </div>
         </section>
 		
@@ -98,7 +98,7 @@
                 @endif
 			</div>
             <div class="text-right">
-                <a class="text-right" href="{{ url('video') }}">Read more...</a>
+                <a class="text-right" href="{{ url('article/content') }}">Read more...</a>
             </div>
         </section>
 		

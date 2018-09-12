@@ -45,7 +45,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<fieldset class="featured-header">
-						<legend><h2>ALL VIDEO & CONTENT</h2></legend>
+						<legend><h2>{{ $subject }}</h2></legend>
 					</fieldset>
 				</div>
 			</div>
