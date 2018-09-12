@@ -38,7 +38,7 @@ class PageController extends Controller
         $rows = Content::type()
                     ->published()
                     ->inRandomOrder()
-                    ->paginate(24);
+                    ->paginate(52);
             $content = [];
             if( $rows ){
                 foreach( $rows as $row ){
@@ -61,7 +61,7 @@ class PageController extends Controller
         }
         $rows = $rows->published()
                     ->inRandomOrder()
-                    ->paginate(24);
+                    ->paginate(52);
             $content = [];
             if( $rows ){
                 foreach( $rows as $row ){
